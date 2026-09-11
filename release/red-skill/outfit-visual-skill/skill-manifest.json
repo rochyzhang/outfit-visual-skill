@@ -2,7 +2,7 @@
   "name": "Outfit Visual Skill",
   "version": "0.1.0",
   "description": "Generate menswear and genderless outfit visuals from uploaded product references using portable Skill workflows.",
-  "repository": "https://github.com/rochyzhang/fashionstyle-outfit-visual-images-studio",
+  "repository": "https://github.com/rochyzhang/outfit-visual-skill",
   "supportedContentTypes": ["men", "genderless"],
   "unsupportedContentTypes": ["couple"],
   "modes": {

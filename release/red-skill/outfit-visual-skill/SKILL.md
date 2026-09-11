@@ -1,8 +1,49 @@
+---
+name: Outfit Visual Skill
+description: Create outfit visuals using six reusable presentation styles. Users may request a style by 01-06 code, English Skill name, or short visual description.
+---
+
 # Outfit Visual Skill
 
 ## Purpose
 
 Create menswear and genderless outfit visuals from explicit user-provided product reference images. Product Fidelity is the highest priority: uploaded garments are authoritative and should keep their visible silhouette, color, material, construction, graphics, proportions, hardware, logos, and distinctive details.
+
+## Visual Skill Reference
+
+Use this exact mapping:
+
+01 = `SK01_MINIMAL_FLAT_LAY` — Minimal Flat Lay
+干净平铺穿搭图，适合整套搭配展示
+
+02 = `SK02_INVISIBLE_EDITORIAL` — Invisible Editorial
+隐形人物感穿搭编辑图，有动态、杂志感
+
+03 = `SK03_LOOK_BREAKDOWN` — Look Breakdown
+整套 Look + 单品拆解说明
+
+04 = `SK04_PROP_STYLING` — Prop Styling
+衣服与椅子、家具或小物一起陈列
+
+05 = `SK05_JAPANESE_CATALOG` — Japanese Catalog
+日杂 / 日系目录感穿搭视觉
+
+06 = `SK06_KOREAN_STREET_EDITORIAL` — Korean Street Editorial
+韩系 / 首尔街头编辑感穿搭图
+
+Users may refer to a visual style by:
+
+- number
+- English name
+- short visual description
+
+Examples:
+
+- "Use 02"
+- "Use Invisible Editorial"
+- "用 05 日杂目录感"
+
+Do not add complex auto-routing rules. These example images and labels describe presentation effects only; they are not product assets and must not be used for garment-role classification.
 
 ## Operating Modes
 
