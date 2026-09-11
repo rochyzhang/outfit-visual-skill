@@ -56,6 +56,56 @@ MCP is not mandatory for using the public Skill. Not every Agent supports image 
 
 Native Agent Mode does not add automatic asset classification: use explicit Top, Outer, Bottom, Shoes, and other slot assignments from the user, and ask for clarification when Required garment roles are ambiguous.
 
+## Visual Skill Gallery
+
+Users can refer to a Skill by:
+
+- number
+- English name
+- short visual description
+
+Examples:
+
+- "Use 02"
+- "Use Invisible Editorial"
+- "用 05 日杂目录感"
+
+### 01 — Minimal Flat Lay
+
+干净平铺穿搭图，适合整套搭配展示
+
+![01 — Minimal Flat Lay](public/skill-examples/01-minimal-flat-lay.jpg)
+
+### 02 — Invisible Editorial
+
+隐形人物感穿搭编辑图，有动态、杂志感
+
+![02 — Invisible Editorial](public/skill-examples/02-invisible-editorial.jpg)
+
+### 03 — Look Breakdown
+
+整套 Look + 单品拆解说明
+
+![03 — Look Breakdown](public/skill-examples/03-look-breakdown.jpg)
+
+### 04 — Prop Styling
+
+衣服与椅子、家具或小物一起陈列
+
+![04 — Prop Styling](public/skill-examples/04-prop-styling.jpg)
+
+### 05 — Japanese Catalog
+
+日杂 / 日系目录感穿搭视觉
+
+![05 — Japanese Catalog](public/skill-examples/05-japanese-catalog.png)
+
+### 06 — Korean Street Editorial
+
+韩系 / 首尔街头编辑感穿搭图
+
+![06 — Korean Street Editorial](public/skill-examples/06-korean-street-editorial.jpg)
+
 ## Agent Tools
 
 Outfit Visual Studio exposes four stable internal Agent Tools:
