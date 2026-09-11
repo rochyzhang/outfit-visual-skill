@@ -1,0 +1,41 @@
+CREATE TABLE `generation_images` (
+	`id` text PRIMARY KEY NOT NULL,
+	`generation_id` text NOT NULL,
+	`file_name` text NOT NULL,
+	`relative_path` text NOT NULL,
+	`public_url` text NOT NULL,
+	`mime_type` text NOT NULL,
+	`width` integer NOT NULL,
+	`height` integer NOT NULL,
+	`created_at` text NOT NULL,
+	FOREIGN KEY (`generation_id`) REFERENCES `generations`(`id`) ON UPDATE no action ON DELETE no action
+);
+--> statement-breakpoint
+CREATE TABLE `generations` (
+	`id` text PRIMARY KEY NOT NULL,
+	`project_id` text NOT NULL,
+	`provider_id` text NOT NULL,
+	`provider_mode` text NOT NULL,
+	`model` text,
+	`status` text NOT NULL,
+	`generation_type` text NOT NULL,
+	`created_at` text NOT NULL,
+	`completed_at` text,
+	`duration_ms` integer,
+	`error_code` text,
+	`error_message` text,
+	`prompt_qa_status` text NOT NULL,
+	`prompt_qa_issues_json` text NOT NULL,
+	`final_prompt` text NOT NULL,
+	`workflow_snapshot_json` text NOT NULL,
+	`generation_config_json` text NOT NULL,
+	`generation_plan_json` text NOT NULL,
+	`reference_asset_ids_json` text NOT NULL,
+	`composition_id` text NOT NULL,
+	`look_id` text NOT NULL,
+	`aspect_ratio` text NOT NULL,
+	`quality` text NOT NULL,
+	`count` integer NOT NULL,
+	`product_fidelity` text NOT NULL,
+	FOREIGN KEY (`project_id`) REFERENCES `projects`(`id`) ON UPDATE no action ON DELETE no action
+);

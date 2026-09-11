@@ -1,0 +1,41 @@
+{
+    "version":  "7",
+    "dialect":  "sqlite",
+    "entries":  [
+                    {
+                        "idx":  0,
+                        "version":  "6",
+                        "when":  1787646623769,
+                        "tag":  "0000_overjoyed_energizer",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  1,
+                        "version":  "6",
+                        "when":  1788267447292,
+                        "tag":  "0001_classy_thunderbolt_ross",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  2,
+                        "version":  "6",
+                        "when":  1788312866395,
+                        "tag":  "0002_outstanding_senator_kelly",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  3,
+                        "version":  "6",
+                        "when":  1788317573294,
+                        "tag":  "0003_mean_madame_hydra",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  4,
+                        "version":  "6",
+                        "when":  1788496800000,
+                        "tag":  "0004_fuzzy_skill_origin",
+                        "breakpoints":  true
+                    }
+                ]
+}

@@ -1,0 +1,57 @@
+{
+  "name": "Outfit Visual Studio",
+  "version": "0.1.0",
+  "description": "Generate menswear and genderless outfit visuals from explicit product references using reusable Skill workflows.",
+  "repository": "https://github.com/rochyzhang/fashionstyle-outfit-visual-images-studio",
+  "supportedContentTypes": ["men", "genderless"],
+  "unsupportedContentTypes": ["couple"],
+  "mcp": {
+    "supported": true,
+    "transport": "stdio",
+    "command": "pnpm run mcp:skills"
+  },
+  "tools": [
+    "list_outfit_skills",
+    "get_outfit_skill",
+    "validate_outfit_skill",
+    "execute_outfit_skill"
+  ],
+  "productFidelity": {
+    "enabled": true,
+    "canDisable": false,
+    "summary": "Uploaded product references are authoritative and must be preserved."
+  },
+  "skills": [
+    {
+      "id": "SK01_MINIMAL_FLAT_LAY",
+      "name": "Minimal Flat Lay"
+    },
+    {
+      "id": "SK02_INVISIBLE_EDITORIAL",
+      "name": "Invisible Editorial"
+    },
+    {
+      "id": "SK03_LOOK_BREAKDOWN",
+      "name": "Look Breakdown"
+    },
+    {
+      "id": "SK04_PROP_STYLING",
+      "name": "Prop Styling"
+    },
+    {
+      "id": "SK05_JAPANESE_CATALOG",
+      "name": "Japanese Catalog"
+    },
+    {
+      "id": "SK06_KOREAN_STREET_EDITORIAL",
+      "name": "Korean Street Editorial"
+    }
+  ],
+  "safety": {
+    "requiresExplicitAssetIds": true,
+    "noAutomaticSlotAssignment": true,
+    "noAssetDiscovery": true,
+    "missingAssetsRemainEmpty": true,
+    "englishGeneratedVisibleTextOnlyForCatalogGraphics": true
+  }
+}

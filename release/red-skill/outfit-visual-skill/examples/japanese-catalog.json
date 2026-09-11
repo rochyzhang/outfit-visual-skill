@@ -1,0 +1,15 @@
+{
+  "toolName": "execute_outfit_skill",
+  "input": {
+    "skillId": "SK05_JAPANESE_CATALOG",
+    "contentType": "men",
+    "assetBindings": {
+      "top": "asset_example_top",
+      "bottom": "asset_example_bottom",
+      "shoes": "asset_example_shoes"
+    },
+    "overrides": {
+      "providerId": "chatgpt_manual"
+    }
+  }
+}

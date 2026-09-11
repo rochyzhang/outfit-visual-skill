@@ -1,0 +1,16 @@
+{
+  "toolName": "execute_outfit_skill",
+  "input": {
+    "skillId": "SK02_INVISIBLE_EDITORIAL",
+    "contentType": "genderless",
+    "assetBindings": {
+      "outer": "asset_example_outer",
+      "bottom": "asset_example_bottom",
+      "shoes": "asset_example_shoes"
+    },
+    "overrides": {
+      "providerId": "openai",
+      "quality": "draft"
+    }
+  }
+}

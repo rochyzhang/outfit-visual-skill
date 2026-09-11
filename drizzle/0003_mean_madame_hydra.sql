@@ -1,0 +1,1 @@
+ALTER TABLE `generations` ADD `error_diagnostics_json` text;

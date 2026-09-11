@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "outfit-visual-studio-skills": {
+      "command": "pnpm",
+      "args": ["run", "mcp:skills"],
+      "cwd": "/path/to/outfit-visual-studio"
+    }
+  }
+}
