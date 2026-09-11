@@ -42,6 +42,20 @@ V1 includes six callable Skills:
 
 V1 supports `men` and `genderless` content types. Couple workflows are not supported by the V1 Skill layer.
 
+## Public Skill Usage
+
+Outfit Visual can be used in two ways:
+
+1. Native Agent Mode
+   Use the Skill directly with an Agent that already supports image generation/editing. No separate provider API key is required when your Agent already provides compatible image-generation capabilities.
+
+2. Studio + MCP Mode
+   Optional advanced local workflow with the open-source repository. Clone this project and connect the Outfit Visual MCP server to gain Skill Registry tools, validation, asset IDs, history, revision/retry, and provider automation.
+
+MCP is not mandatory for using the public Skill. Not every Agent supports image generation; when an Agent has neither compatible native image-generation capabilities nor MCP execution, generation cannot be completed in that environment.
+
+Native Agent Mode does not add automatic asset classification: use explicit Top, Outer, Bottom, Shoes, and other slot assignments from the user, and ask for clarification when Required garment roles are ambiguous.
+
 ## Agent Tools
 
 Outfit Visual Studio exposes four stable internal Agent Tools:
@@ -63,9 +77,23 @@ Agent calls still use explicit asset IDs. The system does not perform automatic 
 
 ## MCP Support
 
-A local MCP stdio adapter exposes the same four Agent Tools.
+A local MCP stdio adapter exposes the same four Agent Tools for optional Studio + MCP Mode.
 
-Start the MCP adapter:
+For a fresh local MCP setup:
+
+```bash
+git clone https://github.com/rochyzhang/fashionstyle-outfit-visual-images-studio.git
+cd fashionstyle-outfit-visual-images-studio
+pnpm install
+cp .env.example .env.local
+pnpm run db:generate
+pnpm run db:migrate
+pnpm run mcp:skills
+```
+
+Configure provider credentials in `.env.local` or in the Studio Provider Settings UI. Do not commit `.env.local`.
+
+Start only the MCP adapter:
 
 ```bash
 pnpm run mcp:skills

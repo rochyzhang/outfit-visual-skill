@@ -1,6 +1,26 @@
 # Inputs
 
-Tool calls use the same safe public input contract as Outfit Visual Studio's Skill API.
+Outfit Visual accepts different input forms depending on the mode.
+
+## Native Agent Mode Inputs
+
+Native Agent Mode uses the user's uploaded product reference images plus explicit garment-role instructions.
+
+The Agent should:
+
+- Inspect uploaded outfit/product reference images.
+- Use the user's explicitly stated roles when provided.
+- Ask when Required garment roles are missing, unclear, or ambiguous.
+- Avoid silently classifying or guessing Required garment roles from images alone.
+- Never invent missing uploaded products.
+- Keep Recommended Slots optional.
+
+Native Agent Mode does not require current-project asset IDs, a local database, or MCP.
+Native Agent Mode does not add automatic asset classification.
+
+## Studio + MCP Mode Inputs
+
+MCP tool calls use the same safe public input contract as Outfit Visual Studio's Skill API.
 
 ## Common Fields
 
@@ -32,6 +52,7 @@ Tool calls use the same safe public input contract as Outfit Visual Studio's Ski
 - Missing slots remain empty.
 - Recommended slots are optional.
 - Required slot failures are handled by Skill validation.
+- Asset IDs are only needed in Studio + MCP Mode.
 
 ## Supported Outfit Slot IDs
 

@@ -1,12 +1,27 @@
 {
-  "name": "Outfit Visual Studio",
+  "name": "Outfit Visual Skill",
   "version": "0.1.0",
-  "description": "Generate menswear and genderless outfit visuals from explicit product references using reusable Skill workflows.",
+  "description": "Generate menswear and genderless outfit visuals from uploaded product references using portable Skill workflows.",
   "repository": "https://github.com/rochyzhang/fashionstyle-outfit-visual-images-studio",
   "supportedContentTypes": ["men", "genderless"],
   "unsupportedContentTypes": ["couple"],
+  "modes": {
+    "nativeAgent": {
+      "default": true,
+      "requiresMcp": false,
+      "requiresSeparateProviderApiKey": false,
+      "requiresCompatibleNativeImageGeneration": true,
+      "summary": "Use the Skill directly with an Agent that already supports image generation or editing."
+    },
+    "studioMcp": {
+      "optional": true,
+      "requiresLocalStudio": true,
+      "summary": "Optional advanced local workflow with registry tools, validation, asset IDs, history, revision/retry, and provider automation."
+    }
+  },
   "mcp": {
     "supported": true,
+    "required": false,
     "transport": "stdio",
     "command": "pnpm run mcp:skills"
   },
@@ -48,9 +63,9 @@
     }
   ],
   "safety": {
-    "requiresExplicitAssetIds": true,
-    "noAutomaticSlotAssignment": true,
-    "noAssetDiscovery": true,
+    "requiresExplicitAssetIdsInMcpMode": true,
+    "allowsNativeReferenceInspection": true,
+    "noAssetDiscoveryInMcpMode": true,
     "missingAssetsRemainEmpty": true,
     "englishGeneratedVisibleTextOnlyForCatalogGraphics": true
   }
