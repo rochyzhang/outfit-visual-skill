@@ -25,6 +25,7 @@ const productAsset: Asset = {
 function createWorkflow(overrides: {
   contentType?: ContentTypeId;
   productFidelity?: boolean;
+  selectedSkillId?: WorkflowDraft["selectedSkillId"];
   scene?: ScenePresetId;
   customPrompt?: string;
   composition?: CompositionPresetId;
@@ -33,6 +34,7 @@ function createWorkflow(overrides: {
   withProduct?: boolean;
 } = {}): WorkflowDraft {
   return {
+    selectedSkillId: overrides.selectedSkillId ?? null,
     contentType: overrides.contentType ?? "genderless",
     productFidelity: overrides.productFidelity ?? true,
     outfitSlots: {
@@ -146,6 +148,23 @@ assert.match(plan({ graphic: "G04" }).finalPrompt, /English editorial fashion ca
 assert.match(plan({ composition: "C02" }).finalPrompt, /top-down fashion flat lay/);
 assert.match(plan({ composition: "C03" }).finalPrompt, /chair or object/);
 assert.match(plan({ composition: "C04" }).finalPrompt, /invisible person in motion/);
+const sk02Composition = section(
+  plan({ selectedSkillId: "SK02_INVISIBLE_EDITORIAL", composition: "C04", scene: "S05", look: "L03" }).finalPrompt,
+  "04 COMPOSITION"
+);
+assert.match(sk02Composition, /invisible person in motion/);
+assert.doesNotMatch(sk02Composition, /assembled editorial poster/);
+const sk06Prompt = plan({
+  selectedSkillId: "SK06_KOREAN_STREET_EDITORIAL",
+  scene: "S02",
+  composition: "C04",
+  graphic: "G02",
+  look: "L01"
+}).finalPrompt;
+assert.match(section(sk06Prompt, "04 COMPOSITION"), /Korean independent-brand assembled editorial poster/);
+assert.match(section(sk06Prompt, "04 COMPOSITION"), /not as a complete invisible walking body/);
+assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not create a strong continuous full-body invisible walking silhouette like SK02/);
+assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /No Hangul, Korean characters, or fake Korean visible text/);
 assert.doesNotMatch(plan({ composition: "C05" }).finalPrompt, /No visible human body/);
 assert.ok(plan({ withProduct: false }).warnings.includes("No products uploaded."));
 assert.ok(plan({ contentType: "couple" }).warnings.includes("Couple content type is selected, but V1 currently contains one outfit set."));

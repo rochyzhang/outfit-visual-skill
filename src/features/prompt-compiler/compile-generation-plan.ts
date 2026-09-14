@@ -40,8 +40,12 @@ function buildCompositionInstruction(config: GenerationConfig) {
   const requirements = config.composition.requirements.length
     ? ` Required constraints: ${config.composition.requirements.join("; ")}.`
     : "";
+  const skillModifier =
+    config.skillOrigin?.id === "SK06_KOREAN_STREET_EDITORIAL"
+      ? " Skill-specific modifier for SK06: use C04 only as a base for a Korean independent-brand assembled editorial poster, not as a complete invisible walking body. Prefer deliberate item spacing, partial suspension, slight misalignment between pieces, clean negative space, and graphic product indexing. The top or outer may retain wearable form, but the bottom, shoes, bag, and accessories should feel styled, suspended, offset, or independently placed rather than all worn by one continuous invisible person."
+      : "";
 
-  return `${config.promptFragments.composition}.${requirements}`;
+  return `${config.promptFragments.composition}.${requirements}${skillModifier}`;
 }
 
 function buildSceneInstruction(config: GenerationConfig) {
@@ -83,6 +87,13 @@ function buildProhibitedBehavior(config: GenerationConfig) {
   if (config.composition.id === "C01" || config.composition.id === "C04") {
     prohibited.push("No visible human body.");
     prohibited.push("No mannequin.");
+  }
+
+  if (config.skillOrigin?.id === "SK06_KOREAN_STREET_EDITORIAL") {
+    prohibited.push("Do not create a strong continuous full-body invisible walking silhouette like SK02.");
+    prohibited.push("Do not reconstruct a seamless shoulder-to-leg invisible person.");
+    prohibited.push("Do not make every garment behave as if worn by one invisible model.");
+    prohibited.push("No Hangul, Korean characters, or fake Korean visible text.");
   }
 
   if (config.composition.id === "C01") {

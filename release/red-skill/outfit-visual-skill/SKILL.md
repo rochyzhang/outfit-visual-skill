@@ -64,6 +64,11 @@ The Agent must not reinterpret a Skill using its own general knowledge. For exam
 - "Japanese Catalog" must not become a generic Japanese fashion model photograph. It must follow `SK05_JAPANESE_CATALOG`.
 - "Korean Street Editorial" must not become any generic Korean street-fashion portrait. It must follow `SK06_KOREAN_STREET_EDITORIAL`.
 
+Concise contrast:
+
+- `SK02_INVISIBLE_EDITORIAL`: dynamic invisible-body editorial.
+- `SK06_KOREAN_STREET_EDITORIAL`: Korean independent-brand assembled editorial poster.
+
 ## Operating Modes
 
 Use Studio + MCP Mode only when all four MCP tools are available:
@@ -280,16 +285,16 @@ If the host Agent supports using Skill package images as visual references, use 
 - ID: `SK06_KOREAN_STREET_EDITORIAL`
 - Name: Korean Street Editorial
 - Short visual description: 韩系 / 首尔街头编辑感穿搭图
-- Intent: Korean/Seoul-inspired editorial visual language applied to the canonical dynamic invisible outfit composition. This is not generic Korean model portrait photography.
+- Intent: Korean independent-brand / Seoul editorial assembled poster. This is not generic Korean model portrait photography and not the same full-body invisible walking editorial as SK02.
 - Canonical presets: Scene `S02` Dusty Sage; Composition `C04` Dynamic Invisible Outfit; Graphic `G02` Korean Street; Look `L01` Dusty Sage; Aspect ratio `3:4`; Quality `standard`; Product Fidelity `ON`.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
 - Recommended inputs: `hat`, `socks`, `bag`, `glasses`, `accessory01`, `accessory02`, `prop01`, `prop02`.
-- Human presence rule: No visible person and no mannequin for the canonical C04 composition.
-- Composition rule: Complete outfit shaped into the silhouette of an invisible person in motion; dynamic garment articulation; shoes aligned with implied feet.
+- Human presence rule: No visible human face, no visible skin, no real model, and no mannequin. Also avoid a strong continuous full-body invisible-human illusion.
+- Composition rule: Use C04 as a base with a Korean editorial assembled treatment. Prefer deliberate item spacing, partial suspension, slight misalignment between pieces, clean negative space, and editorial object-layout logic. The top or outer may retain wearable form, but the bottom may be slightly offset or separately suspended, shoes may be placed independently, bags may float or sit beside the outfit, and accessories may be separated. Do not make the result look like one complete invisible person wearing every item.
 - Scene rule: Muted dusty sage green seamless studio background, quiet minimal editorial environment, large negative space.
 - Look rule: Soft diffused studio lighting, low saturation, muted sage-green cast, matte soft contrast, fine analog grain.
-- Graphic rule: English-only Korean independent streetwear/Seoul editorial annotations, concise handwritten-style English notes, item numbers, restrained logo placement. No Hangul or Korean-language text.
+- Graphic rule: English-only Korean independent-brand / Seoul editorial annotations, small numbering, restrained handwritten-style notes, product indexing, and modern independent-brand layout. No Hangul, Korean characters, fake Korean text, or large generic fashion-magazine headlines unless already implied by the selected graphic system.
 - Product Fidelity rule: Korean-inspired styling must not introduce unrelated products, change uploaded product identity, or invent accessories.
-- Forbidden elements: Korean model portrait, visible body/skin/face, mannequin, Hangul/Korean text, invented products, missing required products, copied reference-image products.
-- Post-generation QA: Verify dynamic invisible outfit, no visible person/mannequin, English-only annotations, no Korean text, product identity preserved.
+- Forbidden elements: Korean model portrait, visible body/skin/face, mannequin, Hangul/Korean text, invented products, duplicated products, missing required products, copied reference-image products, full SK02-like invisible walking body, seamless shoulder-to-leg invisible person structure.
+- Post-generation QA: Hard fail if a visible human model appears; visible face or skin appears; a full SK02-like invisible walking body dominates; products are invented, duplicated, substituted, or missing; the wrong Skill composition is used; or Hangul/Korean visible text appears. Soft revision if item spacing is too uniform, product separation is too weak, the bag is too tightly attached to the invisible body, annotations are too weak, sage atmosphere is too faint, or the composition feels too similar to SK02.
 - Reference image path: `examples/visual/06-korean-street-editorial.jpg`
