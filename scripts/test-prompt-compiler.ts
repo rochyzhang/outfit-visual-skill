@@ -165,9 +165,17 @@ const sk06Prompt = plan({
 assert.match(section(sk06Prompt, "04 COMPOSITION"), /flat 2D human-silhouette outfit editorial/);
 assert.match(section(sk06Prompt, "04 COMPOSITION"), /Preserve one coherent head-to-toe outfit relationship/);
 assert.match(section(sk06Prompt, "04 COMPOSITION"), /not as a product breakdown/);
+assert.match(section(sk06Prompt, "04 COMPOSITION"), /believable full-outfit human proportions/);
+assert.match(section(sk06Prompt, "04 COMPOSITION"), /complete outfit as the primary composition unit/);
+assert.match(section(sk06Prompt, "04 COMPOSITION"), /small index number/);
+assert.match(section(sk06Prompt, "04 COMPOSITION"), /short 1-3 word English product label/);
+assert.match(section(sk06Prompt, "04 COMPOSITION"), /thin hand-drawn-style leader line/);
+assert.match(section(sk06Prompt, "04 COMPOSITION"), /surrounding negative space/);
 assert.doesNotMatch(section(sk06Prompt, "04 COMPOSITION"), /scattered independent items/);
 assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not create SK02's strong 3D invisible walking-body presentation/);
 assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not scatter garments into independent product tiles, a full product breakdown, or a generic catalog grid/);
+assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not maximize each product independently or distort product scale/);
+assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not use long generated marketing copy/);
 assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /No Hangul, Korean characters, or fake Korean visible text/);
 assert.doesNotMatch(plan({ composition: "C05" }).finalPrompt, /No visible human body/);
 assert.ok(plan({ withProduct: false }).warnings.includes("No products uploaded."));

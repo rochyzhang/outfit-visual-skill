@@ -75,7 +75,7 @@ Examples:
 - Skill ID: `SK06_KOREAN_STREET_EDITORIAL`
 - English name: Korean Street Editorial
 - Chinese description: 韩系 / 首尔街头编辑感穿搭图
-- Canonical visual behavior: Dusty-sage flat 2D human-silhouette Korean editorial with English-only annotations. The garments form one complete head-to-toe Look, but remain visually flat and graphic rather than SK02's volumetric invisible body.
+- Canonical visual behavior: Dusty-sage flat 2D human-silhouette Korean editorial with believable full-outfit proportions and mandatory short English per-product callouts. The garments form one complete head-to-toe Look, but remain visually flat and graphic rather than SK02's volumetric invisible body.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
 - Forbidden elements: visible person, mannequin, Korean text, Hangul, strong 3D SK02-like invisible walking body, independent product breakdown, generic catalog grid, invented products, copied reference-image products, missing required products.
 - Usage example: "用 06 韩系街头编辑感"
