@@ -1,7 +1,7 @@
 {
   "name": "Outfit Visual Skill",
-  "version": "0.1.0",
-  "description": "Generate menswear and genderless outfit visuals from uploaded product references using portable Skill workflows.",
+  "version": "1.2.0",
+  "description": "Generate menswear and genderless outfit visuals from uploaded product references using six strong native visual contracts.",
   "repository": "https://github.com/rochyzhang/outfit-visual-skill",
   "supportedContentTypes": ["men", "genderless"],
   "unsupportedContentTypes": ["couple"],
@@ -39,27 +39,39 @@
   "skills": [
     {
       "id": "SK01_MINIMAL_FLAT_LAY",
-      "name": "Minimal Flat Lay"
+      "name": "Minimal Flat Lay",
+      "code": "01",
+      "referenceImage": "examples/visual/01-minimal-flat-lay.jpg"
     },
     {
       "id": "SK02_INVISIBLE_EDITORIAL",
-      "name": "Invisible Editorial"
+      "name": "Invisible Editorial",
+      "code": "02",
+      "referenceImage": "examples/visual/02-invisible-editorial.jpg"
     },
     {
       "id": "SK03_LOOK_BREAKDOWN",
-      "name": "Look Breakdown"
+      "name": "Look Breakdown",
+      "code": "03",
+      "referenceImage": "examples/visual/03-look-breakdown.jpg"
     },
     {
       "id": "SK04_PROP_STYLING",
-      "name": "Prop Styling"
+      "name": "Prop Styling",
+      "code": "04",
+      "referenceImage": "examples/visual/04-prop-styling.jpg"
     },
     {
       "id": "SK05_JAPANESE_CATALOG",
-      "name": "Japanese Catalog"
+      "name": "Japanese Catalog",
+      "code": "05",
+      "referenceImage": "examples/visual/05-japanese-catalog.png"
     },
     {
       "id": "SK06_KOREAN_STREET_EDITORIAL",
-      "name": "Korean Street Editorial"
+      "name": "Korean Street Editorial",
+      "code": "06",
+      "referenceImage": "examples/visual/06-korean-street-editorial.jpg"
     }
   ],
   "safety": {

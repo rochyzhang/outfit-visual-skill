@@ -22,25 +22,14 @@ Native Agent Mode does not add automatic asset classification.
 
 MCP tool calls use the same safe public input contract as Outfit Visual Studio's Skill API.
 
-## Common Fields
+## MCP Request Fields
 
-```json
-{
-  "skillId": "SK01_MINIMAL_FLAT_LAY",
-  "projectId": "current",
-  "contentType": "men",
-  "assetBindings": {
-    "top": "asset_example_top",
-    "bottom": "asset_example_bottom",
-    "shoes": "asset_example_shoes"
-  },
-  "sceneReferenceAssetId": null,
-  "overrides": {
-    "providerId": "openai",
-    "quality": "standard"
-  }
-}
-```
+- `skillId`: one of the six canonical Skill IDs.
+- `projectId`: `current`.
+- `contentType`: `men` or `genderless`.
+- `assetBindings`: object keyed by supported outfit slot IDs, with values set to real current-project asset IDs.
+- `sceneReferenceAssetId`: optional real current-project scene reference asset ID.
+- `overrides`: optional supported Skill overrides.
 
 ## Asset Binding Rules
 
@@ -48,7 +37,7 @@ MCP tool calls use the same safe public input contract as Outfit Visual Studio's
 - Do not pass local filesystem paths.
 - Do not pass arbitrary public URLs.
 - Do not pass base64 data.
-- Do not fabricate fake asset IDs in real execution.
+- Do not fabricate asset IDs.
 - Missing slots remain empty.
 - Recommended slots are optional.
 - Required slot failures are handled by Skill validation.

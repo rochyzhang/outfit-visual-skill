@@ -1,15 +1,7 @@
 {
-  "toolName": "execute_outfit_skill",
-  "input": {
-    "skillId": "SK05_JAPANESE_CATALOG",
-    "contentType": "men",
-    "assetBindings": {
-      "top": "asset_example_top",
-      "bottom": "asset_example_bottom",
-      "shoes": "asset_example_shoes"
-    },
-    "overrides": {
-      "providerId": "chatgpt_manual"
-    }
-  }
+  "mode": "native_agent",
+  "request": "用 05 日杂目录感",
+  "skillId": "SK05_JAPANESE_CATALOG",
+  "userProvidedRoles": ["top", "bottom", "shoes"],
+  "note": "Attach real user product images for the listed roles. Use English-only visible typography."
 }

@@ -56,6 +56,8 @@ MCP is not mandatory for using the public Skill. Not every Agent supports image 
 
 Native Agent Mode does not add automatic asset classification: use explicit Top, Outer, Bottom, Shoes, and other slot assignments from the user, and ask for clarification when Required garment roles are ambiguous.
 
+The Skill translates simple requests such as `Use 01`, `Use 05`, `Use Japanese Catalog`, `用 05 日杂目录感`, or `用 06 韩系街头编辑感` into the canonical visual contracts. The contract is stronger than the generic meaning of the Skill name.
+
 ## Visual Skill Gallery
 
 Users can refer to a Skill by:
@@ -132,8 +134,8 @@ A local MCP stdio adapter exposes the same four Agent Tools for optional Studio 
 For a fresh local MCP setup:
 
 ```bash
-git clone https://github.com/rochyzhang/fashionstyle-outfit-visual-images-studio.git
-cd fashionstyle-outfit-visual-images-studio
+git clone https://github.com/rochyzhang/outfit-visual-skill.git
+cd outfit-visual-skill
 pnpm install
 cp .env.example .env.local
 pnpm run db:generate

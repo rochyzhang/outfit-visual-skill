@@ -1,16 +1,7 @@
 {
-  "toolName": "execute_outfit_skill",
-  "input": {
-    "skillId": "SK02_INVISIBLE_EDITORIAL",
-    "contentType": "genderless",
-    "assetBindings": {
-      "outer": "asset_example_outer",
-      "bottom": "asset_example_bottom",
-      "shoes": "asset_example_shoes"
-    },
-    "overrides": {
-      "providerId": "openai",
-      "quality": "draft"
-    }
-  }
+  "mode": "native_agent",
+  "request": "Use 02",
+  "skillId": "SK02_INVISIBLE_EDITORIAL",
+  "userProvidedRoles": ["outer", "bottom", "shoes"],
+  "note": "Attach real user product images for the listed roles. Keep the result clothing-only with no visible person."
 }

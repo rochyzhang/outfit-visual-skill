@@ -1,12 +1,7 @@
 {
-  "toolName": "validate_outfit_skill",
-  "input": {
-    "skillId": "SK01_MINIMAL_FLAT_LAY",
-    "contentType": "men",
-    "assetBindings": {
-      "top": "asset_example_top",
-      "bottom": "asset_example_bottom",
-      "shoes": "asset_example_shoes"
-    }
-  }
+  "mode": "native_agent",
+  "request": "Use 01",
+  "skillId": "SK01_MINIMAL_FLAT_LAY",
+  "userProvidedRoles": ["top", "bottom", "shoes"],
+  "note": "Attach real user product images for the listed roles. Do not invent missing products."
 }
