@@ -42,7 +42,7 @@ function buildCompositionInstruction(config: GenerationConfig) {
     : "";
   const skillModifier =
     config.skillOrigin?.id === "SK06_KOREAN_STREET_EDITORIAL"
-      ? " Skill-specific modifier for SK06: use C04 only as a base for a Korean independent-brand assembled editorial poster, not as a complete invisible walking body. Prefer deliberate item spacing, partial suspension, slight misalignment between pieces, clean negative space, and graphic product indexing. The top or outer may retain wearable form, but the bottom, shoes, bag, and accessories should feel styled, suspended, offset, or independently placed rather than all worn by one continuous invisible person."
+      ? " Skill-specific modifier for SK06: use C04 only as a base for a flat 2D human-silhouette outfit editorial, not as SK02's volumetric invisible-body presentation and not as a product breakdown. Preserve one coherent head-to-toe outfit relationship: top or outer above bottom, bottom connected to the leg area, shoes near the implied feet, optional hat or glasses near the head position, bag at the shoulder or body side, and accessories associated with their natural styling positions. Prefer flattened garment presentation, front-facing or mildly angled layout, low depth, low perspective, graphic silhouette, restrained garment volume, clean overall outline, and complete outfit readability."
       : "";
 
   return `${config.promptFragments.composition}.${requirements}${skillModifier}`;
@@ -90,9 +90,10 @@ function buildProhibitedBehavior(config: GenerationConfig) {
   }
 
   if (config.skillOrigin?.id === "SK06_KOREAN_STREET_EDITORIAL") {
-    prohibited.push("Do not create a strong continuous full-body invisible walking silhouette like SK02.");
-    prohibited.push("Do not reconstruct a seamless shoulder-to-leg invisible person.");
-    prohibited.push("Do not make every garment behave as if worn by one invisible model.");
+    prohibited.push("Do not create SK02's strong 3D invisible walking-body presentation.");
+    prohibited.push("Do not use deep torso volume, inflated invisible shoulders, dramatic walking perspective, front/back leg depth, or realistic invisible-body anatomy.");
+    prohibited.push("Do not scatter garments into independent product tiles, a full product breakdown, or a generic catalog grid.");
+    prohibited.push("Do not lose the complete outfit relationship; SK06 must still read as one human-shaped look.");
     prohibited.push("No Hangul, Korean characters, or fake Korean visible text.");
   }
 

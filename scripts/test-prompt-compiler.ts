@@ -153,7 +153,8 @@ const sk02Composition = section(
   "04 COMPOSITION"
 );
 assert.match(sk02Composition, /invisible person in motion/);
-assert.doesNotMatch(sk02Composition, /assembled editorial poster/);
+assert.match(sk02Composition, /dynamic garment articulation/);
+assert.doesNotMatch(sk02Composition, /flat 2D human-silhouette outfit editorial/);
 const sk06Prompt = plan({
   selectedSkillId: "SK06_KOREAN_STREET_EDITORIAL",
   scene: "S02",
@@ -161,9 +162,12 @@ const sk06Prompt = plan({
   graphic: "G02",
   look: "L01"
 }).finalPrompt;
-assert.match(section(sk06Prompt, "04 COMPOSITION"), /Korean independent-brand assembled editorial poster/);
-assert.match(section(sk06Prompt, "04 COMPOSITION"), /not as a complete invisible walking body/);
-assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not create a strong continuous full-body invisible walking silhouette like SK02/);
+assert.match(section(sk06Prompt, "04 COMPOSITION"), /flat 2D human-silhouette outfit editorial/);
+assert.match(section(sk06Prompt, "04 COMPOSITION"), /Preserve one coherent head-to-toe outfit relationship/);
+assert.match(section(sk06Prompt, "04 COMPOSITION"), /not as a product breakdown/);
+assert.doesNotMatch(section(sk06Prompt, "04 COMPOSITION"), /scattered independent items/);
+assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not create SK02's strong 3D invisible walking-body presentation/);
+assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not scatter garments into independent product tiles, a full product breakdown, or a generic catalog grid/);
 assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /No Hangul, Korean characters, or fake Korean visible text/);
 assert.doesNotMatch(plan({ composition: "C05" }).finalPrompt, /No visible human body/);
 assert.ok(plan({ withProduct: false }).warnings.includes("No products uploaded."));

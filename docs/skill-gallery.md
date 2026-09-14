@@ -75,9 +75,9 @@ Examples:
 - Skill ID: `SK06_KOREAN_STREET_EDITORIAL`
 - English name: Korean Street Editorial
 - Chinese description: 韩系 / 首尔街头编辑感穿搭图
-- Canonical visual behavior: Dusty-sage Korean independent-brand assembled editorial poster with English-only annotations, product indexing, separated item spacing, and weaker body illusion than SK02. This is not generic Korean model portrait photography and not a full SK02-style invisible walking body.
+- Canonical visual behavior: Dusty-sage flat 2D human-silhouette Korean editorial with English-only annotations. The garments form one complete head-to-toe Look, but remain visually flat and graphic rather than SK02's volumetric invisible body.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
-- Forbidden elements: visible person, mannequin, Korean text, Hangul, full SK02-like invisible walking body, invented products, copied reference-image products, missing required products.
+- Forbidden elements: visible person, mannequin, Korean text, Hangul, strong 3D SK02-like invisible walking body, independent product breakdown, generic catalog grid, invented products, copied reference-image products, missing required products.
 - Usage example: "用 06 韩系街头编辑感"
 
 ![06 — Korean Street Editorial](../public/skill-examples/06-korean-street-editorial.jpg)

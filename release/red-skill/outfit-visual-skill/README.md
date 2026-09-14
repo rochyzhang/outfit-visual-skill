@@ -36,7 +36,7 @@ In this mode the Agent should inspect uploaded references, use the user's explic
 
 The Skill name is only a human-friendly identifier. The canonical visual contract in `SKILL.md` is authoritative and overrides generic interpretation of names such as Japanese Catalog or Korean Street Editorial.
 
-SK02 remains the dynamic invisible-body editorial contract. SK06 is a Korean independent-brand assembled editorial poster contract with weaker body illusion, separated item spacing, product indexing, and muted sage atmosphere.
+SK02 remains the 3D invisible-body editorial contract. SK06 is a flat 2D human-silhouette Korean editorial contract: one complete head-to-toe Look, visually flat and graphic, not a product breakdown and not a volumetric invisible body.
 
 ## Studio + MCP Mode
 

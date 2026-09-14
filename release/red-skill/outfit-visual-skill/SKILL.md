@@ -67,7 +67,7 @@ The Agent must not reinterpret a Skill using its own general knowledge. For exam
 Concise contrast:
 
 - `SK02_INVISIBLE_EDITORIAL`: dynamic invisible-body editorial.
-- `SK06_KOREAN_STREET_EDITORIAL`: Korean independent-brand assembled editorial poster.
+- `SK06_KOREAN_STREET_EDITORIAL`: flat 2D human-silhouette Korean editorial.
 
 ## Operating Modes
 
@@ -285,16 +285,16 @@ If the host Agent supports using Skill package images as visual references, use 
 - ID: `SK06_KOREAN_STREET_EDITORIAL`
 - Name: Korean Street Editorial
 - Short visual description: 韩系 / 首尔街头编辑感穿搭图
-- Intent: Korean independent-brand / Seoul editorial assembled poster. This is not generic Korean model portrait photography and not the same full-body invisible walking editorial as SK02.
+- Intent: Korean independent-brand / Seoul editorial with a flat 2D human-silhouette outfit composition. The garments form one complete human-shaped Look while remaining visually flat, graphic, and close to a styled flat-lay rather than a volumetric invisible body. This is not generic Korean model portrait photography and not the same 3D invisible-body editorial as SK02.
 - Canonical presets: Scene `S02` Dusty Sage; Composition `C04` Dynamic Invisible Outfit; Graphic `G02` Korean Street; Look `L01` Dusty Sage; Aspect ratio `3:4`; Quality `standard`; Product Fidelity `ON`.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
 - Recommended inputs: `hat`, `socks`, `bag`, `glasses`, `accessory01`, `accessory02`, `prop01`, `prop02`.
-- Human presence rule: No visible human face, no visible skin, no real model, and no mannequin. Also avoid a strong continuous full-body invisible-human illusion.
-- Composition rule: Use C04 as a base with a Korean editorial assembled treatment. Prefer deliberate item spacing, partial suspension, slight misalignment between pieces, clean negative space, and editorial object-layout logic. The top or outer may retain wearable form, but the bottom may be slightly offset or separately suspended, shoes may be placed independently, bags may float or sit beside the outfit, and accessories may be separated. Do not make the result look like one complete invisible person wearing every item.
+- Human presence rule: No visible human face, no visible skin, no real model, and no mannequin. Avoid the strong three-dimensional invisible-human illusion used by SK02.
+- Composition rule: Use C04 as a base for a flat human-silhouette outfit composition. Preserve one coherent head-to-toe outfit relationship: top or outer above bottom, bottom connected to the leg area, shoes near the implied feet, optional hat near the head position, optional glasses near the face/head position, bag at the shoulder/body side or slightly offset, and accessories associated with their natural styling positions. Prefer flattened garment presentation, front-facing or mildly angled layout, low depth, low perspective, graphic silhouette, restrained garment volume, clean overall outline, and complete outfit readability. Controlled small offsets are allowed, but do not scatter garments into independent product tiles or a product breakdown.
 - Scene rule: Muted dusty sage green seamless studio background, quiet minimal editorial environment, large negative space.
 - Look rule: Soft diffused studio lighting, low saturation, muted sage-green cast, matte soft contrast, fine analog grain.
-- Graphic rule: English-only Korean independent-brand / Seoul editorial annotations, small numbering, restrained handwritten-style notes, product indexing, and modern independent-brand layout. No Hangul, Korean characters, fake Korean text, or large generic fashion-magazine headlines unless already implied by the selected graphic system.
+- Graphic rule: English-only Korean independent-brand / Seoul editorial annotations, restrained numbering, short English annotations, handwritten-style editorial notes, clean negative space, and modern independent-brand layout. No Hangul, Korean characters, fake Korean text, or large generic fashion-magazine headlines unless already implied by the selected graphic system.
 - Product Fidelity rule: Korean-inspired styling must not introduce unrelated products, change uploaded product identity, or invent accessories.
-- Forbidden elements: Korean model portrait, visible body/skin/face, mannequin, Hangul/Korean text, invented products, duplicated products, missing required products, copied reference-image products, full SK02-like invisible walking body, seamless shoulder-to-leg invisible person structure.
-- Post-generation QA: Hard fail if a visible human model appears; visible face or skin appears; a full SK02-like invisible walking body dominates; products are invented, duplicated, substituted, or missing; the wrong Skill composition is used; or Hangul/Korean visible text appears. Soft revision if item spacing is too uniform, product separation is too weak, the bag is too tightly attached to the invisible body, annotations are too weak, sage atmosphere is too faint, or the composition feels too similar to SK02.
+- Forbidden elements: Korean model portrait, visible body/skin/face, mannequin, Hangul/Korean text, invented products, duplicated products, missing required products, copied reference-image products, strong 3D invisible walking-body presentation resembling SK02, lost complete outfit relationship, independent product breakdown, generic catalog grid.
+- Post-generation QA: Hard fail if a visible real human appears; visible face or skin appears; required products are invented, substituted, or missing; a strong 3D invisible walking-body presentation resembles SK02; the complete outfit relationship is lost; the output becomes an independent product breakdown or generic catalog grid; or Hangul/Korean visible text appears. Soft revision if the silhouette is slightly too volumetric, outfit pieces are slightly too separated, shoes are too detached from leg position, bag placement weakens the outfit relationship, graphic annotations are weak, sage atmosphere is too faint, or the composition still feels somewhat close to SK02.
 - Reference image path: `examples/visual/06-korean-street-editorial.jpg`
