@@ -152,9 +152,43 @@ const sk02Composition = section(
   plan({ selectedSkillId: "SK02_INVISIBLE_EDITORIAL", composition: "C04", scene: "S05", look: "L03" }).finalPrompt,
   "04 COMPOSITION"
 );
+const sk02Prompt = plan({ selectedSkillId: "SK02_INVISIBLE_EDITORIAL", composition: "C04", scene: "S05", look: "L03" }).finalPrompt;
 assert.match(sk02Composition, /invisible person in motion/);
 assert.match(sk02Composition, /dynamic garment articulation/);
 assert.doesNotMatch(sk02Composition, /flat 2D human-silhouette outfit editorial/);
+assert.match(section(sk02Prompt, "06 SCENE"), /clean minimal studio/);
+assert.match(section(sk02Prompt, "06 SCENE"), /approved 02 visual reference/);
+assert.match(section(sk02Prompt, "06 SCENE"), /very low environmental complexity/);
+assert.match(section(sk02Prompt, "06 SCENE"), /3D invisible-human impression should come from garment volume/);
+assert.doesNotMatch(section(sk02Prompt, "06 SCENE"), /one visually dominant hero prop/);
+assert.match(section(sk02Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not flatten SK02 into SK06's flat 2D human-silhouette presentation/);
+assert.match(section(sk02Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not turn SK02 into a product breakdown, generic flat lay, or prop-styling scene/);
+assert.match(section(sk02Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not add unnecessary furniture/);
+
+const sk04Prompt = plan({ selectedSkillId: "SK04_PROP_STYLING", composition: "C03", scene: "S03", look: "L04" }).finalPrompt;
+assert.match(section(sk04Prompt, "04 COMPOSITION"), /one visually dominant hero prop/);
+assert.match(section(sk04Prompt, "04 COMPOSITION"), /The outfit should interact naturally with that hero prop/);
+assert.match(section(sk04Prompt, "04 COMPOSITION"), /prop should organize the outfit spatially/);
+assert.match(section(sk04Prompt, "06 SCENE"), /clean minimal interior/);
+assert.match(section(sk04Prompt, "06 SCENE"), /approved 04 visual reference/);
+assert.match(section(sk04Prompt, "06 SCENE"), /single chair, stool, bench, pedestal, or simple furniture object/);
+assert.match(section(sk04Prompt, "06 SCENE"), /Avoid multiple competing furniture pieces/);
+assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not remove the meaningful hero prop\/object relationship/);
+assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not add multiple competing furniture pieces/);
+assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /never distort uploaded products just to fit the furniture/);
+
+const unchangedSkillPrompts = [
+  plan({ selectedSkillId: "SK01_MINIMAL_FLAT_LAY", scene: "S01", composition: "C02", look: "L02" }).finalPrompt,
+  plan({ selectedSkillId: "SK03_LOOK_BREAKDOWN", scene: "S01", composition: "C05", graphic: "G01", look: "L02" }).finalPrompt,
+  plan({ selectedSkillId: "SK05_JAPANESE_CATALOG", scene: "S05", composition: "C02", graphic: "G04", look: "L05" }).finalPrompt,
+  plan({ selectedSkillId: "SK06_KOREAN_STREET_EDITORIAL", scene: "S02", composition: "C04", graphic: "G02", look: "L01" }).finalPrompt
+];
+for (const prompt of unchangedSkillPrompts) {
+  assert.doesNotMatch(prompt, /approved 02 visual reference/);
+  assert.doesNotMatch(prompt, /approved 04 visual reference/);
+  assert.doesNotMatch(prompt, /very low environmental complexity/);
+  assert.doesNotMatch(prompt, /one visually dominant hero prop/);
+}
 const sk06Prompt = plan({
   selectedSkillId: "SK06_KOREAN_STREET_EDITORIAL",
   scene: "S02",

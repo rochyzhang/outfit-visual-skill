@@ -27,9 +27,9 @@ Examples:
 - Skill ID: `SK02_INVISIBLE_EDITORIAL`
 - English name: Invisible Editorial
 - Chinese description: 隐形人物感穿搭编辑图，有动态、杂志感
-- Canonical visual behavior: Dynamic invisible-body outfit editorial. Clothing may imply human motion, but no person is visible.
+- Canonical visual behavior: Dynamic invisible-body outfit editorial in a clean minimal studio. Clothing may imply 3D human motion, but no person is visible; the environment stays quiet and secondary.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
-- Forbidden elements: visible face, visible skin, identifiable human model, mannequin, ordinary model photography, invented products, missing required products.
+- Forbidden elements: visible face, visible skin, identifiable human model, mannequin, ordinary model photography, invented products, missing required products, busy interior styling, unnecessary furniture, decorative props, dramatic set design.
 - Usage example: "Use Invisible Editorial"
 
 ![02 — Invisible Editorial](../public/skill-examples/02-invisible-editorial.jpg)
