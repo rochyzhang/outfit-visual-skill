@@ -43,8 +43,10 @@ function buildCompositionInstruction(config: GenerationConfig) {
   const skillModifier =
     config.skillOrigin?.id === "SK01_MINIMAL_FLAT_LAY"
       ? " Skill-specific modifier for SK01: preserve a realistic minimal flat lay close to the approved 01 visual reference. Arrange the outfit as naturally laid out on a floor, with casual but intentional placement, mild overlap, rhythm, visual hierarchy, believable contact, soft-edged grounded shadows, and small arrangement imperfections. Products should feel photographed together in one real still-life scene, not evenly separated, pasted-on, floating, or disconnected."
+      : config.skillOrigin?.id === "SK02_INVISIBLE_EDITORIAL"
+      ? " Skill-specific modifier for SK02: preserve the 3D invisible-person editorial identity, but prefer an invisible outfit lying or naturally sprawled on the floor rather than standing, walking, runway, or floating mannequin-like poses. Shape the clothes into one coherent reclining body arrangement with diagonal or grounded floor-based posture, implied anatomy, garment folds, floor contact, and body weight. The viewer should feel an invisible person is lying or sprawled naturally on the floor while no face, skin, person, or mannequin is visible."
       : config.skillOrigin?.id === "SK04_PROP_STYLING"
-      ? " Skill-specific modifier for SK04: preserve prop-styling identity with one visually dominant hero prop such as a chair, stool, bench, pedestal, or simple furniture object. The outfit should interact naturally with that hero prop: garments may drape over or through the object, trousers may fall from the seat, bags may hang from or rest against it, and shoes should ground beside it. Avoid simply placing independent products around a prop; the prop should organize the outfit spatially without distorting uploaded products."
+      ? " Skill-specific modifier for SK04: preserve prop-styling identity with one visually dominant hero chair or similarly simple hero prop. The outfit should interact naturally with that single anchor: garments may drape over or through the chair, trousers may fall from the seat, bags may hang from or rest against it, and shoes should ground beside it. Avoid simply placing independent products around a prop; the prop should organize the outfit spatially without distorting uploaded products. Do not add secondary furniture or prop clusters."
       : config.skillOrigin?.id === "SK06_KOREAN_STREET_EDITORIAL"
       ? " Skill-specific modifier for SK06: use C04 only as a base for a flat 2D human-silhouette outfit editorial, not as SK02's volumetric invisible-body presentation and not as a product breakdown. Preserve one coherent head-to-toe outfit relationship: top or outer above bottom, bottom connected to the leg area, shoes near the implied feet, optional hat or glasses near the head position, bag at the shoulder or body side, and accessories associated with their natural styling positions. Flatness refers to depth, not incorrect scale: keep believable full-outfit human proportions, with the upper body, waist, bottom length, shoe size, bag scale, and accessories proportional to one fashion-body silhouette. Treat the complete outfit as the primary composition unit before scaling individual products, and maintain useful negative space around the complete look. Add a required callout for every major displayed product: small index number, short 1-3 word English product label derived conservatively from the supplied role or safe category, and a thin hand-drawn-style leader line pointing to the correct item. Place annotations in surrounding negative space; never cover product details. Prefer flattened garment presentation, front-facing or mildly angled layout, low depth, low perspective, graphic silhouette, restrained garment volume, clean overall outline, and complete outfit readability."
       : "";
@@ -54,15 +56,15 @@ function buildCompositionInstruction(config: GenerationConfig) {
 
 function buildSkillSceneModifier(config: GenerationConfig) {
   if (config.skillOrigin?.id === "SK01_MINIMAL_FLAT_LAY") {
-    return " Skill-specific scene fidelity for SK01: use the approved 01 visual reference as the style target: understated neutral-to-cool grey cement or concrete indoor floor, subtle natural floor texture, clean but not empty-white studio backdrop, soft natural daylight, real indoor still-life photography feel, and believable soft-edged contact shadows under products. Avoid pure white cutout canvas, sterile ecommerce background, warm beige floor appearance, yellow cast, hard shadow, dramatic spotlight, side-angle fashion editorial feel, graphic poster layout, floating collage, or disconnected compositing.";
+    return " Skill-specific scene fidelity for SK01: use the approved 01 visual reference as the style target: slightly cooler clean neutral-grey cement or concrete indoor floor, subtle natural floor texture, airy and clean but not empty-white studio backdrop, soft low-saturation natural daylight, real indoor still-life photography feel, and believable soft-edged contact shadows under products. Keep product colors faithful while cooling and cleaning only the environment. Avoid pure white cutout canvas, sterile ecommerce background, warm beige floor appearance, brownish-grey or muddy grey cast, dirty warm cement tone, yellow cast, overly contrasty floor texture, hard shadow, dramatic spotlight, side-angle fashion editorial feel, graphic poster layout, floating collage, or disconnected compositing.";
   }
 
   if (config.skillOrigin?.id === "SK02_INVISIBLE_EDITORIAL") {
-    return " Skill-specific scene fidelity for SK02: keep the environment as a cleaner, lighter minimal studio close to the approved 02 visual reference: clean white, off-white, pale grey, or very light neutral-cool background, visually quiet, high negative space, very low environmental complexity, minimal or no decorative props, and no unnecessary furniture. A subtle floor/background transition and subtle grounding shadows are allowed. The 3D invisible-human impression should come from garment volume, body occupancy, and motion, not from complex 3D environment, busy interior styling, strong architectural storytelling, dramatic set design, heavy warm backdrop, warm beige dominance, obvious yellow wall tone, clutter, or strong colored environmental cast.";
+    return " Skill-specific scene fidelity for SK02: keep the environment as a cleaner, lighter minimal floor-based studio close to the approved 02 visual reference: clean white, off-white, pale grey, or very light neutral-cool floor/background, visually quiet, high negative space, very low environmental complexity, minimal or no decorative props, and no unnecessary furniture. Use a clean grounded surface that supports the reclining or sprawled invisible-body arrangement, with a subtle floor/background transition and subtle grounding shadows allowed. The 3D invisible-human impression should come from garment volume, body occupancy, floor contact, and body weight, not from complex 3D environment, busy interior styling, strong architectural storytelling, dramatic set design, heavy warm backdrop, warm beige dominance, obvious yellow wall tone, clutter, or strong colored environmental cast.";
   }
 
   if (config.skillOrigin?.id === "SK04_PROP_STYLING") {
-    return " Skill-specific scene fidelity for SK04: keep a clean minimal interior close to the approved 04 visual reference with one visually dominant hero prop and a naturally styled outfit. Prefer a cooler neutral architectural indoor space, simple wall/floor relationship, cool grey, stone grey, or neutral concrete-like tones, soft diffused daylight, generous negative space, restrained premium materials, and a single chair, stool, bench, pedestal, or simple furniture object as the spatial anchor. Avoid multiple competing furniture pieces, decorative prop collections, cluttered tabletop styling, excessive lifestyle objects, complex room decoration, busy architecture, warm yellow room tone, orange cast, overly cozy mood, or prop-heavy storytelling.";
+    return " Skill-specific scene fidelity for SK04: keep a clean empty interior close to the approved 04 visual reference with one visually dominant hero chair and a naturally styled outfit. Prefer a plain wall, clean floor, simple wall/floor relationship, cool grey, stone grey, or neutral concrete-like tones, soft diffused daylight, generous negative space, restrained premium materials, and one chair as the spatial anchor. Tiny styling details are acceptable only if they do not read as additional furniture. Avoid shelves, cabinets, side tables, extra pedestals unless absolutely required, multiple competing furniture pieces, decorative prop collections, cluttered tabletop styling, excessive lifestyle objects, complex room decoration, decorative architecture, busy architecture, warm yellow room tone, orange cast, overly cozy mood, or prop-heavy storytelling.";
   }
 
   return "";
@@ -94,7 +96,7 @@ function buildCameraInstruction(config: GenerationConfig) {
 function buildLightingInstruction(config: GenerationConfig) {
   const skillModifier =
     config.skillOrigin?.id === "SK01_MINIMAL_FLAT_LAY"
-      ? " Skill-specific lighting for SK01: soft natural daylight, restrained contrast, soft-edged shadows, no hard spotlight, no yellow cast."
+      ? " Skill-specific lighting for SK01: soft low-saturation natural daylight, restrained contrast, soft-edged shadows, airy clean tone, no hard spotlight, no yellow cast."
       : config.skillOrigin?.id === "SK02_INVISIBLE_EDITORIAL"
       ? " Skill-specific lighting for SK02: soft diffuse studio daylight, subtle shadows, low-to-medium contrast, cleaner and brighter but not overexposed, no hard spotlight, no heavy warm cast, no golden editorial warmth."
       : config.skillOrigin?.id === "SK04_PROP_STYLING"
@@ -107,7 +109,7 @@ function buildLightingInstruction(config: GenerationConfig) {
 function buildColorInstruction(config: GenerationConfig) {
   const skillModifier =
     config.skillOrigin?.id === "SK01_MINIMAL_FLAT_LAY"
-      ? " Skill-specific color for SK01: neutral-to-cool grey concrete/cement environment, natural product color, low yellow warmth, no warm beige floor cast."
+      ? " Skill-specific color for SK01: slightly cooler clean neutral-grey concrete/cement environment, natural product color, low yellow warmth, no warm beige floor cast, no brownish-grey or muddy grey cast."
       : config.skillOrigin?.id === "SK02_INVISIBLE_EDITORIAL"
       ? " Skill-specific color for SK02: soft neutral-to-cool palette, neutral-cool whites, pale grey or restrained soft light greige, low yellow cast, low orange warmth, less creamy warmth, clean premium atmosphere."
       : config.skillOrigin?.id === "SK04_PROP_STYLING"
@@ -158,19 +160,20 @@ function buildProhibitedBehavior(config: GenerationConfig) {
   if (config.skillOrigin?.id === "SK01_MINIMAL_FLAT_LAY") {
     prohibited.push("Do not create a pure white cutout-on-background collage, floating graphic composition, sterile ecommerce white canvas, rigid product grid, pasted-on compositing, or disconnected evenly separated products.");
     prohibited.push("Do not remove the realistic indoor cement/concrete floor feeling, subtle ground texture, natural layered placement, grounded shadows, or editorial still-life photography quality.");
-    prohibited.push("Do not use a warm beige floor appearance, yellow cast, hard shadow, dramatic spotlight, or side-angle fashion editorial feel.");
+    prohibited.push("Do not use a warm beige floor appearance, brownish-grey or muddy grey cast, dirty warm cement tone, yellow cast, hard shadow, overly contrasty floor texture, dramatic spotlight, or side-angle fashion editorial feel.");
   }
 
   if (config.skillOrigin?.id === "SK02_INVISIBLE_EDITORIAL") {
     prohibited.push("Do not flatten SK02 into SK06's flat 2D human-silhouette presentation.");
     prohibited.push("Do not turn SK02 into a product breakdown, generic flat lay, or prop-styling scene.");
+    prohibited.push("Do not use upright standing poses, walking poses, runway stances, or floating standing invisible mannequins; prefer a grounded reclining or naturally sprawled floor pose.");
     prohibited.push("Do not add unnecessary furniture, decorative objects, strongly textured walls, dramatic studio architecture, dominant shadows, strong colored backdrops, elaborate set design, or clutter.");
     prohibited.push("Do not use warm yellow lighting, creamy beige dominance, golden editorial warmth, heavy orange cast, hard spotlight, or overly cozy room tone.");
   }
 
   if (config.skillOrigin?.id === "SK04_PROP_STYLING") {
     prohibited.push("Do not remove the meaningful hero prop/object relationship or convert SK04 into SK01 flat lay, SK03 product breakdown, or a generic product arrangement.");
-    prohibited.push("Do not add multiple competing furniture pieces, decorative prop collections, cluttered tabletop styling, excessive lifestyle objects, complex room decoration, busy architectural backgrounds, or prop-heavy storytelling.");
+    prohibited.push("Do not add shelves, cabinets, side tables, extra pedestals unless absolutely required, multiple competing furniture pieces, decorative prop collections, cluttered tabletop styling, excessive lifestyle objects, complex room decoration, busy architectural backgrounds, decorative architecture, or prop-heavy storytelling.");
     prohibited.push("Do not let prop fidelity override product fidelity; never distort uploaded products just to fit the furniture.");
     prohibited.push("Do not use warm yellow room tone, orange cast, overly cozy mood, vintage warm filter, hard spotlight, or theatrical contrast.");
   }
