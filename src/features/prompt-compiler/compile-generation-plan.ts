@@ -41,7 +41,9 @@ function buildCompositionInstruction(config: GenerationConfig) {
     ? ` Required constraints: ${config.composition.requirements.join("; ")}.`
     : "";
   const skillModifier =
-    config.skillOrigin?.id === "SK04_PROP_STYLING"
+    config.skillOrigin?.id === "SK01_MINIMAL_FLAT_LAY"
+      ? " Skill-specific modifier for SK01: preserve a realistic minimal flat lay close to the approved 01 visual reference. Arrange the outfit as naturally laid out on a floor, with casual but intentional placement, mild overlap, rhythm, visual hierarchy, believable contact, grounded shadows, and small arrangement imperfections. Products should feel photographed together in one real still-life scene, not evenly separated, pasted-on, floating, or disconnected."
+      : config.skillOrigin?.id === "SK04_PROP_STYLING"
       ? " Skill-specific modifier for SK04: preserve prop-styling identity with one visually dominant hero prop such as a chair, stool, bench, pedestal, or simple furniture object. The outfit should interact naturally with that hero prop: garments may drape over or through the object, trousers may fall from the seat, bags may hang from or rest against it, and shoes should ground beside it. Avoid simply placing independent products around a prop; the prop should organize the outfit spatially without distorting uploaded products."
       : config.skillOrigin?.id === "SK06_KOREAN_STREET_EDITORIAL"
       ? " Skill-specific modifier for SK06: use C04 only as a base for a flat 2D human-silhouette outfit editorial, not as SK02's volumetric invisible-body presentation and not as a product breakdown. Preserve one coherent head-to-toe outfit relationship: top or outer above bottom, bottom connected to the leg area, shoes near the implied feet, optional hat or glasses near the head position, bag at the shoulder or body side, and accessories associated with their natural styling positions. Flatness refers to depth, not incorrect scale: keep believable full-outfit human proportions, with the upper body, waist, bottom length, shoe size, bag scale, and accessories proportional to one fashion-body silhouette. Treat the complete outfit as the primary composition unit before scaling individual products, and maintain useful negative space around the complete look. Add a required callout for every major displayed product: small index number, short 1-3 word English product label derived conservatively from the supplied role or safe category, and a thin hand-drawn-style leader line pointing to the correct item. Place annotations in surrounding negative space; never cover product details. Prefer flattened garment presentation, front-facing or mildly angled layout, low depth, low perspective, graphic silhouette, restrained garment volume, clean overall outline, and complete outfit readability."
@@ -51,6 +53,10 @@ function buildCompositionInstruction(config: GenerationConfig) {
 }
 
 function buildSkillSceneModifier(config: GenerationConfig) {
+  if (config.skillOrigin?.id === "SK01_MINIMAL_FLAT_LAY") {
+    return " Skill-specific scene fidelity for SK01: use the approved 01 visual reference as the style target: understated grey cement or concrete indoor floor, subtle ground texture, clean but not empty-white studio backdrop, soft natural indoor light, real still-life photography feel, and believable contact shadows under products. Avoid pure white cutout canvas, sterile ecommerce background, graphic poster layout, floating collage, or disconnected compositing.";
+  }
+
   if (config.skillOrigin?.id === "SK02_INVISIBLE_EDITORIAL") {
     return " Skill-specific scene fidelity for SK02: keep the environment as a clean minimal studio close to the approved 02 visual reference: white, off-white, or very light neutral background, visually quiet, high negative space, very low environmental complexity, minimal or no decorative props, and no unnecessary furniture. A subtle floor/background transition and subtle grounding shadows are allowed. The 3D invisible-human impression should come from garment volume, body occupancy, and motion, not from complex 3D environment, busy interior styling, strong architectural storytelling, dramatic set design, heavy warm backdrop, clutter, or strong colored environmental cast.";
   }
@@ -112,6 +118,11 @@ function buildProhibitedBehavior(config: GenerationConfig) {
     prohibited.push("Do not maximize each product independently or distort product scale; shoes, bag, accessories, upper body, and bottom must remain believable relative to the full outfit silhouette.");
     prohibited.push("Do not use long generated marketing copy, invented brand names, speculative product details, or annotation text that covers product details.");
     prohibited.push("No Hangul, Korean characters, or fake Korean visible text.");
+  }
+
+  if (config.skillOrigin?.id === "SK01_MINIMAL_FLAT_LAY") {
+    prohibited.push("Do not create a pure white cutout-on-background collage, floating graphic composition, sterile ecommerce white canvas, rigid product grid, pasted-on compositing, or disconnected evenly separated products.");
+    prohibited.push("Do not remove the realistic indoor cement/concrete floor feeling, subtle ground texture, natural layered placement, grounded shadows, or editorial still-life photography quality.");
   }
 
   if (config.skillOrigin?.id === "SK02_INVISIBLE_EDITORIAL") {

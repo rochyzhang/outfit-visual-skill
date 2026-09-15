@@ -190,18 +190,18 @@ If the host Agent supports using Skill package images as visual references, use 
 - ID: `SK01_MINIMAL_FLAT_LAY`
 - Name: Minimal Flat Lay
 - Short visual description: 干净平铺穿搭图，适合整套搭配展示
-- Intent: Clean, controlled single-outfit product presentation. The uploaded outfit is the primary subject.
+- Intent: Realistic minimal flat-lay / laid-out outfit still life. The uploaded outfit is the primary subject, photographed as one believable casual arrangement rather than a cutout collage.
 - Canonical presets: Scene `S01` White Studio; Composition `C02` Full Outfit Flat Lay; Graphic `None`; Look `L02` Clean White; Aspect ratio `3:4`; Quality `standard`; Product Fidelity `ON`.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
 - Recommended inputs: `hat`, `socks`, `bag`, `glasses`, `accessory01`, `accessory02`, `prop01`, `prop02`.
 - Human presence rule: No human model, no portrait, no visible body.
-- Composition rule: Top-down or near top-down flat lay; complete outfit visible; top above bottom; shoes positioned naturally near lower body area; accessories casually distributed if uploaded.
-- Scene rule: Clean warm-white seamless studio, minimal continuous surface, large negative space, no distracting architecture.
-- Look rule: High-key diffused studio lighting, neutral white balance, accurate garment colors, clean low-to-medium contrast.
+- Composition rule: Top-down or near top-down realistic flat lay; complete outfit visible; top above bottom; shoes positioned naturally near lower body area; accessories casually distributed if uploaded. Placement should feel casually but intentionally arranged, with mild overlap, rhythm, visual hierarchy, believable contact with the floor, grounded shadows, and small arrangement imperfections. Products should not look too evenly separated, pasted on, floating, or disconnected.
+- Scene rule: Natural indoor cement/concrete floor feeling close to the approved `01-minimal-flat-lay.jpg` presentation reference: understated grey concrete or cement floor, subtle ground texture, clean but not empty-white studio backdrop, and no distracting architecture.
+- Look rule: Soft natural indoor light, neutral white balance, accurate garment colors, clean low-to-medium contrast, real editorial still-life photography feel.
 - Graphic rule: No graphic overlay by default.
 - Product Fidelity rule: Preserve actual garment silhouettes, proportions, material, graphics, hardware, trims, and colors.
-- Forbidden elements: portrait photography, fashion model photography, lifestyle street photography, unrelated room photography, ecommerce grid rigidity, missing required products, invented products.
-- Post-generation QA: Verify full outfit flat lay, required products present, no model/body, product identity preserved, no unrequested graphic text.
+- Forbidden elements: portrait photography, fashion model photography, lifestyle street photography, unrelated room photography, pure white cutout canvas, floating graphic composition, sterile ecommerce background, rigid product grid, pasted-on compositing, disconnected evenly separated products, missing required products, invented products.
+- Post-generation QA: Verify realistic minimal flat lay, natural indoor cement/concrete floor feeling, casual layered placement, believable floor contact and grounded shadows, required products present, no model/body, product identity preserved, and no unrequested graphic text. Soft revision if the surface feels too pure white, too sterile, too graphic, too evenly separated, insufficiently grounded, or missing subtle concrete/cement texture.
 - Reference image path: `examples/visual/01-minimal-flat-lay.jpg`
 
 ### 02 — Invisible Editorial

@@ -148,6 +148,19 @@ assert.match(plan({ graphic: "G04" }).finalPrompt, /English editorial fashion ca
 assert.match(plan({ composition: "C02" }).finalPrompt, /top-down fashion flat lay/);
 assert.match(plan({ composition: "C03" }).finalPrompt, /chair or object/);
 assert.match(plan({ composition: "C04" }).finalPrompt, /invisible person in motion/);
+const sk01Prompt = plan({ selectedSkillId: "SK01_MINIMAL_FLAT_LAY", scene: "S01", composition: "C02", look: "L02" }).finalPrompt;
+assert.match(section(sk01Prompt, "04 COMPOSITION"), /realistic minimal flat lay/);
+assert.match(section(sk01Prompt, "04 COMPOSITION"), /casual but intentional placement/);
+assert.match(section(sk01Prompt, "04 COMPOSITION"), /mild overlap, rhythm, visual hierarchy/);
+assert.match(section(sk01Prompt, "04 COMPOSITION"), /not evenly separated, pasted-on, floating, or disconnected/);
+assert.match(section(sk01Prompt, "06 SCENE"), /approved 01 visual reference/);
+assert.match(section(sk01Prompt, "06 SCENE"), /understated grey cement or concrete indoor floor/);
+assert.match(section(sk01Prompt, "06 SCENE"), /subtle ground texture/);
+assert.match(section(sk01Prompt, "06 SCENE"), /clean but not empty-white studio backdrop/);
+assert.match(section(sk01Prompt, "06 SCENE"), /real still-life photography feel/);
+assert.match(section(sk01Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /pure white cutout-on-background collage/);
+assert.match(section(sk01Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /sterile ecommerce white canvas/);
+assert.match(section(sk01Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /realistic indoor cement\/concrete floor feeling/);
 const sk02Composition = section(
   plan({ selectedSkillId: "SK02_INVISIBLE_EDITORIAL", composition: "C04", scene: "S05", look: "L03" }).finalPrompt,
   "04 COMPOSITION"
@@ -177,8 +190,20 @@ assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not r
 assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not add multiple competing furniture pieces/);
 assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /never distort uploaded products just to fit the furniture/);
 
+const nonSk01Prompts = [
+  sk02Prompt,
+  plan({ selectedSkillId: "SK03_LOOK_BREAKDOWN", scene: "S01", composition: "C05", graphic: "G01", look: "L02" }).finalPrompt,
+  sk04Prompt,
+  plan({ selectedSkillId: "SK05_JAPANESE_CATALOG", scene: "S05", composition: "C02", graphic: "G04", look: "L05" }).finalPrompt,
+  plan({ selectedSkillId: "SK06_KOREAN_STREET_EDITORIAL", scene: "S02", composition: "C04", graphic: "G02", look: "L01" }).finalPrompt
+];
+for (const prompt of nonSk01Prompts) {
+  assert.doesNotMatch(prompt, /approved 01 visual reference/);
+  assert.doesNotMatch(prompt, /understated grey cement or concrete indoor floor/);
+  assert.doesNotMatch(prompt, /pure white cutout-on-background collage/);
+}
+
 const unchangedSkillPrompts = [
-  plan({ selectedSkillId: "SK01_MINIMAL_FLAT_LAY", scene: "S01", composition: "C02", look: "L02" }).finalPrompt,
   plan({ selectedSkillId: "SK03_LOOK_BREAKDOWN", scene: "S01", composition: "C05", graphic: "G01", look: "L02" }).finalPrompt,
   plan({ selectedSkillId: "SK05_JAPANESE_CATALOG", scene: "S05", composition: "C02", graphic: "G04", look: "L05" }).finalPrompt,
   plan({ selectedSkillId: "SK06_KOREAN_STREET_EDITORIAL", scene: "S02", composition: "C04", graphic: "G02", look: "L01" }).finalPrompt

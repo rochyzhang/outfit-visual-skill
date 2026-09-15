@@ -15,9 +15,9 @@ Examples:
 - Skill ID: `SK01_MINIMAL_FLAT_LAY`
 - English name: Minimal Flat Lay
 - Chinese description: 干净平铺穿搭图，适合整套搭配展示
-- Canonical visual behavior: Clean top-down or near top-down full outfit flat lay in a warm-white studio. The uploaded outfit is the primary subject.
+- Canonical visual behavior: Realistic minimal top-down or near top-down flat lay on an understated indoor cement/concrete floor. The uploaded outfit is casually layered with grounded shadows and a real still-life photography feel.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
-- Forbidden elements: human model, portrait photography, lifestyle street photography, invented products, substituted products, missing required products.
+- Forbidden elements: human model, portrait photography, lifestyle street photography, pure white cutout collage, floating graphic composition, sterile ecommerce grid, invented products, substituted products, missing required products.
 - Usage example: "Use 01"
 
 ![01 — Minimal Flat Lay](../public/skill-examples/01-minimal-flat-lay.jpg)
