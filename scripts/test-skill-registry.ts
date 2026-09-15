@@ -89,7 +89,14 @@ assertStandardSingleOutfitRule("SK01_MINIMAL_FLAT_LAY");
 assertStandardSingleOutfitRule("SK02_INVISIBLE_EDITORIAL");
 assert.deepEqual(requiredRule("SK03_LOOK_BREAKDOWN"), { minValidProductReferences: 3 });
 
+const sk02 = getWorkflowSkill("SK02_INVISIBLE_EDITORIAL");
+assert.equal(sk02.name, "Relaxed Editorial Floor Lay");
+assert.equal(sk02.defaults.compositionPresetId, "C02");
+assert.match(sk02.description, /Relaxed human-absent editorial floor-lay/);
+
 const sk04 = getWorkflowSkill("SK04_PROP_STYLING");
+assert.equal(sk04.defaults.scenePresetId, "S01");
+assert.equal(sk04.defaults.lookPresetId, "L02");
 assert.ok(!flatRequiredSlots(sk04).includes("prop01"));
 assert.ok(!flatRequiredSlots(sk04).includes("prop02"));
 assert.ok(sk04.recommendedSlots.includes("prop01"));

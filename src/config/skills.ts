@@ -153,15 +153,15 @@ export const workflowSkills = [
   },
   {
     id: "SK02_INVISIBLE_EDITORIAL",
-    name: "Invisible Editorial",
-    description: "Editorial invisible-model outfit visual with stronger fashion mood.",
+    name: "Relaxed Editorial Floor Lay",
+    description: "Relaxed human-absent editorial floor-lay outfit visual with natural still-life placement.",
     supportedContentTypes: ["men", "genderless"],
     category: "editorial",
     requiredInputRule: standardSingleOutfitRule,
     recommendedSlots: standardRecommendedSlots,
     defaults: {
       scenePresetId: "S05",
-      compositionPresetId: "C04",
+      compositionPresetId: "C02",
       graphicPresetId: "None",
       lookPresetId: "L03",
       aspectRatio: "3:4",
@@ -173,7 +173,7 @@ export const workflowSkills = [
     safeguards: preserveUploadedProductsSafeguard,
     agent: {
       callable: true,
-      summary: "Use for a dynamic invisible-outfit editorial with a stronger fashion mood."
+      summary: "Use for a relaxed editorial floor-lay with product fidelity preserved and no human body implied."
     }
   },
   {
@@ -215,10 +215,10 @@ export const workflowSkills = [
     },
     recommendedSlots: ["shoes", ...standardRecommendedSlots],
     defaults: {
-      scenePresetId: "S03",
+      scenePresetId: "S01",
       compositionPresetId: "C03",
       graphicPresetId: "None",
-      lookPresetId: "L04",
+      lookPresetId: "L02",
       aspectRatio: "3:4",
       quality: "standard",
       mode: "single",

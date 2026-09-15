@@ -34,7 +34,7 @@ The Skill system is an orchestration layer above the existing workflow engine. I
 V1 includes six callable Skills:
 
 - `SK01_MINIMAL_FLAT_LAY` - Minimal Flat Lay
-- `SK02_INVISIBLE_EDITORIAL` - Invisible Editorial
+- `SK02_INVISIBLE_EDITORIAL` - Relaxed Editorial Floor Lay
 - `SK03_LOOK_BREAKDOWN` - Look Breakdown
 - `SK04_PROP_STYLING` - Prop Styling
 - `SK05_JAPANESE_CATALOG` - Japanese Catalog
@@ -56,7 +56,7 @@ MCP is not mandatory for using the public Skill. Not every Agent supports image 
 
 Native Agent Mode does not add automatic asset classification: use explicit Top, Outer, Bottom, Shoes, and other slot assignments from the user, and ask for clarification when Required garment roles are ambiguous.
 
-The Skill translates simple requests such as `Use 01`, `Use 05`, `Use Japanese Catalog`, `用 05 日杂目录感`, or `用 06 韩系街头编辑感` into the canonical visual contracts. The contract is stronger than the generic meaning of the Skill name.
+The Skill translates simple requests such as `Use 01`, `Use 02`, `Use Relaxed Editorial Floor Lay`, `Use Japanese Catalog`, `Use 05 Japanese catalog`, or `Use 06 Korean street editorial` into the canonical visual contracts. The contract is stronger than the generic meaning of the Skill name.
 
 ## Visual Skill Gallery
 
@@ -69,44 +69,44 @@ Users can refer to a Skill by:
 Examples:
 
 - "Use 02"
-- "Use Invisible Editorial"
-- "用 05 日杂目录感"
+- "Use Relaxed Editorial Floor Lay"
+- "Use 05 Japanese catalog"
 
-### 01 — Minimal Flat Lay
+### 01 - Minimal Flat Lay
 
-干净平铺穿搭图，适合整套搭配展示
+Clean minimal flat-lay outfit image for complete outfit presentation.
 
-![01 — Minimal Flat Lay](public/skill-examples/01-minimal-flat-lay.jpg)
+![01 - Minimal Flat Lay](public/skill-examples/01-minimal-flat-lay.jpg)
 
-### 02 — Invisible Editorial
+### 02 - Relaxed Editorial Floor Lay
 
-隐形人物感穿搭编辑图，有动态、杂志感
+Relaxed natural editorial floor-lay outfit still life with no body-shaped outfit illusion.
 
-![02 — Invisible Editorial](public/skill-examples/02-invisible-editorial.jpg)
+![02 - Relaxed Editorial Floor Lay](public/skill-examples/02-invisible-editorial.jpg)
 
-### 03 — Look Breakdown
+### 03 - Look Breakdown
 
-整套 Look + 单品拆解说明
+Complete look plus individual product breakdown.
 
-![03 — Look Breakdown](public/skill-examples/03-look-breakdown.jpg)
+![03 - Look Breakdown](public/skill-examples/03-look-breakdown.jpg)
 
-### 04 — Prop Styling
+### 04 - Prop Styling
 
-衣服与椅子、家具或小物一起陈列
+Outfit styled with one hero chair or simple prop in a clean grey-white studio.
 
-![04 — Prop Styling](public/skill-examples/04-prop-styling.jpg)
+![04 - Prop Styling](public/skill-examples/04-prop-styling.jpg)
 
-### 05 — Japanese Catalog
+### 05 - Japanese Catalog
 
-日杂 / 日系目录感穿搭视觉
+Japanese magazine/catalog-inspired outfit visual.
 
-![05 — Japanese Catalog](public/skill-examples/05-japanese-catalog.png)
+![05 - Japanese Catalog](public/skill-examples/05-japanese-catalog.png)
 
-### 06 — Korean Street Editorial
+### 06 - Korean Street Editorial
 
-韩系 / 首尔街头编辑感穿搭图
+Korean / Seoul street editorial outfit visual.
 
-![06 — Korean Street Editorial](public/skill-examples/06-korean-street-editorial.jpg)
+![06 - Korean Street Editorial](public/skill-examples/06-korean-street-editorial.jpg)
 
 ## Agent Tools
 

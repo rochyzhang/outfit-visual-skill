@@ -2,6 +2,6 @@
   "mode": "native_agent",
   "request": "Use 02",
   "skillId": "SK02_INVISIBLE_EDITORIAL",
-  "userProvidedRoles": ["outer", "bottom", "shoes"],
-  "note": "Attach real user product images for the listed roles. Keep the result clothing-only with no visible person."
+  "userProvidedRoles": ["top", "bottom", "shoes"],
+  "note": "Attach real user product images for the listed roles. Create a relaxed human-absent editorial floor-lay still life with no body-shaped outfit illusion or mannequin-like structure."
 }
