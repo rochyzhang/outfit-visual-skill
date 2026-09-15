@@ -154,13 +154,20 @@ assert.match(section(sk01Prompt, "04 COMPOSITION"), /casual but intentional plac
 assert.match(section(sk01Prompt, "04 COMPOSITION"), /mild overlap, rhythm, visual hierarchy/);
 assert.match(section(sk01Prompt, "04 COMPOSITION"), /not evenly separated, pasted-on, floating, or disconnected/);
 assert.match(section(sk01Prompt, "06 SCENE"), /approved 01 visual reference/);
-assert.match(section(sk01Prompt, "06 SCENE"), /understated grey cement or concrete indoor floor/);
-assert.match(section(sk01Prompt, "06 SCENE"), /subtle ground texture/);
+assert.match(section(sk01Prompt, "06 SCENE"), /understated neutral-to-cool grey cement or concrete indoor floor/);
+assert.match(section(sk01Prompt, "06 SCENE"), /subtle natural floor texture/);
 assert.match(section(sk01Prompt, "06 SCENE"), /clean but not empty-white studio backdrop/);
-assert.match(section(sk01Prompt, "06 SCENE"), /real still-life photography feel/);
+assert.match(section(sk01Prompt, "06 SCENE"), /real indoor still-life photography feel/);
+assert.match(section(sk01Prompt, "07 CAMERA"), /true overhead \/ top-down photography/);
+assert.match(section(sk01Prompt, "07 CAMERA"), /85-90 degree downward camera angle/);
+assert.match(section(sk01Prompt, "08 LIGHTING"), /soft natural daylight/);
+assert.match(section(sk01Prompt, "08 LIGHTING"), /soft-edged shadows/);
+assert.match(section(sk01Prompt, "09 COLOR"), /neutral-to-cool grey concrete\/cement environment/);
+assert.match(section(sk01Prompt, "09 COLOR"), /low yellow warmth/);
 assert.match(section(sk01Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /pure white cutout-on-background collage/);
 assert.match(section(sk01Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /sterile ecommerce white canvas/);
 assert.match(section(sk01Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /realistic indoor cement\/concrete floor feeling/);
+assert.match(section(sk01Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /warm beige floor appearance, yellow cast, hard shadow/);
 const sk02Composition = section(
   plan({ selectedSkillId: "SK02_INVISIBLE_EDITORIAL", composition: "C04", scene: "S05", look: "L03" }).finalPrompt,
   "04 COMPOSITION"
@@ -169,14 +176,20 @@ const sk02Prompt = plan({ selectedSkillId: "SK02_INVISIBLE_EDITORIAL", compositi
 assert.match(sk02Composition, /invisible person in motion/);
 assert.match(sk02Composition, /dynamic garment articulation/);
 assert.doesNotMatch(sk02Composition, /flat 2D human-silhouette outfit editorial/);
-assert.match(section(sk02Prompt, "06 SCENE"), /clean minimal studio/);
+assert.match(section(sk02Prompt, "06 SCENE"), /cleaner, lighter minimal studio/);
 assert.match(section(sk02Prompt, "06 SCENE"), /approved 02 visual reference/);
+assert.match(section(sk02Prompt, "06 SCENE"), /very light neutral-cool background/);
 assert.match(section(sk02Prompt, "06 SCENE"), /very low environmental complexity/);
 assert.match(section(sk02Prompt, "06 SCENE"), /3D invisible-human impression should come from garment volume/);
 assert.doesNotMatch(section(sk02Prompt, "06 SCENE"), /one visually dominant hero prop/);
+assert.match(section(sk02Prompt, "08 LIGHTING"), /soft diffuse studio daylight/);
+assert.match(section(sk02Prompt, "08 LIGHTING"), /cleaner and brighter but not overexposed/);
+assert.match(section(sk02Prompt, "09 COLOR"), /soft neutral-to-cool palette/);
+assert.match(section(sk02Prompt, "09 COLOR"), /low yellow cast, low orange warmth/);
 assert.match(section(sk02Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not flatten SK02 into SK06's flat 2D human-silhouette presentation/);
 assert.match(section(sk02Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not turn SK02 into a product breakdown, generic flat lay, or prop-styling scene/);
 assert.match(section(sk02Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not add unnecessary furniture/);
+assert.match(section(sk02Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /warm yellow lighting, creamy beige dominance/);
 
 const sk04Prompt = plan({ selectedSkillId: "SK04_PROP_STYLING", composition: "C03", scene: "S03", look: "L04" }).finalPrompt;
 assert.match(section(sk04Prompt, "04 COMPOSITION"), /one visually dominant hero prop/);
@@ -184,11 +197,18 @@ assert.match(section(sk04Prompt, "04 COMPOSITION"), /The outfit should interact 
 assert.match(section(sk04Prompt, "04 COMPOSITION"), /prop should organize the outfit spatially/);
 assert.match(section(sk04Prompt, "06 SCENE"), /clean minimal interior/);
 assert.match(section(sk04Prompt, "06 SCENE"), /approved 04 visual reference/);
+assert.match(section(sk04Prompt, "06 SCENE"), /cooler neutral architectural indoor space/);
+assert.match(section(sk04Prompt, "06 SCENE"), /cool grey, stone grey, or neutral concrete-like tones/);
 assert.match(section(sk04Prompt, "06 SCENE"), /single chair, stool, bench, pedestal, or simple furniture object/);
 assert.match(section(sk04Prompt, "06 SCENE"), /Avoid multiple competing furniture pieces/);
+assert.match(section(sk04Prompt, "08 LIGHTING"), /soft diffused daylight/);
+assert.match(section(sk04Prompt, "08 LIGHTING"), /gentle grounded shadows/);
+assert.match(section(sk04Prompt, "09 COLOR"), /cooler neutral interior palette/);
+assert.match(section(sk04Prompt, "09 COLOR"), /no warm yellow room tone/);
 assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not remove the meaningful hero prop\/object relationship/);
 assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not add multiple competing furniture pieces/);
 assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /never distort uploaded products just to fit the furniture/);
+assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /warm yellow room tone, orange cast/);
 
 const nonSk01Prompts = [
   sk02Prompt,
@@ -199,8 +219,10 @@ const nonSk01Prompts = [
 ];
 for (const prompt of nonSk01Prompts) {
   assert.doesNotMatch(prompt, /approved 01 visual reference/);
-  assert.doesNotMatch(prompt, /understated grey cement or concrete indoor floor/);
+  assert.doesNotMatch(prompt, /understated neutral-to-cool grey cement or concrete indoor floor/);
   assert.doesNotMatch(prompt, /pure white cutout-on-background collage/);
+  assert.doesNotMatch(prompt, /true overhead \/ top-down photography/);
+  assert.doesNotMatch(prompt, /warm beige floor appearance/);
 }
 
 const unchangedSkillPrompts = [
@@ -213,6 +235,9 @@ for (const prompt of unchangedSkillPrompts) {
   assert.doesNotMatch(prompt, /approved 04 visual reference/);
   assert.doesNotMatch(prompt, /very low environmental complexity/);
   assert.doesNotMatch(prompt, /one visually dominant hero prop/);
+  assert.doesNotMatch(prompt, /soft diffuse studio daylight/);
+  assert.doesNotMatch(prompt, /cooler neutral architectural indoor space/);
+  assert.doesNotMatch(prompt, /warm yellow lighting, creamy beige dominance/);
 }
 const sk06Prompt = plan({
   selectedSkillId: "SK06_KOREAN_STREET_EDITORIAL",
