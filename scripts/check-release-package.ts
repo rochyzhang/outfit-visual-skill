@@ -15,7 +15,7 @@ const requiredPackageFiles = [
   "README.md",
   "skill-manifest.json",
   "examples/minimal-flat-lay.json",
-  "examples/invisible-editorial.json",
+  "examples/relaxed-editorial-floor-lay.json",
   "examples/japanese-catalog.json",
   "docs/INPUTS.md",
   "docs/WORKFLOW.md",
