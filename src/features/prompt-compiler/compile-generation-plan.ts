@@ -44,11 +44,11 @@ function buildCompositionInstruction(config: GenerationConfig) {
     config.skillOrigin?.id === "SK01_MINIMAL_FLAT_LAY"
       ? " Skill-specific modifier for SK01: preserve a realistic minimal flat lay close to the approved 01 visual reference. Arrange the outfit as naturally laid out on a floor, with casual but intentional placement, mild overlap, rhythm, visual hierarchy, believable contact, soft-edged grounded shadows, and small arrangement imperfections. Products should feel photographed together in one real still-life scene, not evenly separated, pasted-on, floating, or disconnected."
       : config.skillOrigin?.id === "SK02_INVISIBLE_EDITORIAL"
-      ? " Skill-specific modifier for SK02: use a relaxed editorial floor-lay outfit presentation. Arrange the uploaded products casually and naturally on the floor with believable spacing, mild overlap, grounded contact shadows, real photographed still-life texture, and a more lifestyle-like editorial rhythm than SK01. Keep it human-absent and clothing-only, but do not imply a 3D human-body illusion, mannequin, anatomy, body occupancy, walking pose, standing pose, or reclining body form."
+      ? " Skill-specific modifier for SK02: use a clean editorial flat-lay outfit presentation. Arrange the uploaded products on a light neutral studio surface with clear product separation, restrained spacing, simple hierarchy, subtle contact shadows, and polished editorial negative space. Preserve one complete outfit relationship: top or outer as the upper visual anchor, trousers as the dominant lower-body item, shoes grouped naturally near the lower area, and bag placed nearby but not overlapping excessively. Keep it human-absent and clothing-only, with no invisible-body structure, mannequin, anatomy, body occupancy, human silhouette, walking pose, standing pose, or reclining body form."
       : config.skillOrigin?.id === "SK04_PROP_STYLING"
       ? " Skill-specific modifier for SK04: preserve prop-styling identity with one visually dominant hero chair or similarly simple hero prop. The outfit should interact naturally with that single anchor: garments may drape over or through the chair, trousers may fall from the seat, bags may hang from or rest against it, and shoes should ground beside it. Avoid simply placing independent products around a prop; the prop should organize the outfit spatially without distorting uploaded products. Do not add secondary furniture or prop clusters."
       : config.skillOrigin?.id === "SK06_KOREAN_STREET_EDITORIAL"
-      ? " Skill-specific modifier for SK06: use C04 only as a base for a flat 2D human-silhouette outfit editorial, not as SK02's relaxed floor-lay still life and not as a product breakdown. Preserve one coherent head-to-toe outfit relationship: top or outer above bottom, bottom connected to the leg area, shoes near the implied feet, optional hat or glasses near the head position, bag at the shoulder or body side, and accessories associated with their natural styling positions. Flatness refers to depth, not incorrect scale: keep believable full-outfit human proportions, with the upper body, waist, bottom length, shoe size, bag scale, and accessories proportional to one fashion-body silhouette. Treat the complete outfit as the primary composition unit before scaling individual products, and maintain useful negative space around the complete look. Add a required callout for every major displayed product: small index number, short 1-3 word English product label derived conservatively from the supplied role or safe category, and a thin hand-drawn-style leader line pointing to the correct item. Place annotations in surrounding negative space; never cover product details. Prefer flattened garment presentation, front-facing or mildly angled layout, low depth, low perspective, graphic silhouette, restrained garment volume, clean overall outline, and complete outfit readability."
+      ? " Skill-specific modifier for SK06: use C04 only as a base for a flat 2D human-silhouette outfit editorial, not as SK02's clean separated studio flat lay and not as a product breakdown. Preserve one coherent head-to-toe outfit relationship: top or outer above bottom, bottom connected to the leg area, shoes near the implied feet, optional hat or glasses near the head position, bag at the shoulder or body side, and accessories associated with their natural styling positions. Flatness refers to depth, not incorrect scale: keep believable full-outfit human proportions, with the upper body, waist, bottom length, shoe size, bag scale, and accessories proportional to one fashion-body silhouette. Treat the complete outfit as the primary composition unit before scaling individual products, and maintain useful negative space around the complete look. Add a required callout for every major displayed product: small index number, short 1-3 word English product label derived conservatively from the supplied role or safe category, and a thin hand-drawn-style leader line pointing to the correct item. Place annotations in surrounding negative space; never cover product details. Prefer flattened garment presentation, front-facing or mildly angled layout, low depth, low perspective, graphic silhouette, restrained garment volume, clean overall outline, and complete outfit readability."
       : "";
 
   return `${config.promptFragments.composition}.${requirements}${skillModifier}`;
@@ -60,7 +60,7 @@ function buildSkillSceneModifier(config: GenerationConfig) {
   }
 
   if (config.skillOrigin?.id === "SK02_INVISIBLE_EDITORIAL") {
-    return " Skill-specific scene fidelity for SK02: use a relaxed editorial floor-lay setting inspired by the previous-round 01 result direction: natural floor-based styling, real photographed still-life feel, casual believable arrangement, and a surface that is not too white, sterile, warm, or icy. Prefer a clean neutral floor or soft studio floor with subtle texture, lightly soft neutral tone, realistic floor contact, and minimal visual distraction. Avoid pure white cutout canvas, sterile ecommerce background, body-illusion staging, mannequin-like body structure, busy interiors, extra furniture, heavy warm backdrop, icy blue cast, clutter, or strong colored environmental cast.";
+    return " Skill-specific scene fidelity for SK02: use a clean editorial flat-lay studio setting inspired by the early approved 01 flat-lay result but translated to a lighter, more controlled studio surface. Prefer a clean white, soft grey, or very pale neutral studio floor/background with smooth or very light texture, polished editorial spacing, generous negative space, subtle contact shadows, and minimal visual distraction. Keep SK02 cleaner and more product-separated than SK01. Avoid cement-floor realism, strong concrete texture, warm beige cast, furniture, room architecture, lifestyle clutter, prop styling, catalog graphics, Korean callouts, pure white cutout canvas, sterile ecommerce grid, body-illusion staging, mannequin-like body structure, busy interiors, heavy warm backdrop, icy blue cast, clutter, or strong colored environmental cast.";
   }
 
   if (config.skillOrigin?.id === "SK04_PROP_STYLING") {
@@ -98,7 +98,7 @@ function buildLightingInstruction(config: GenerationConfig) {
     config.skillOrigin?.id === "SK01_MINIMAL_FLAT_LAY"
       ? " Skill-specific lighting for SK01: soft low-saturation natural daylight, restrained contrast, soft-edged shadows, airy clean tone, no hard spotlight, no yellow cast."
       : config.skillOrigin?.id === "SK02_INVISIBLE_EDITORIAL"
-      ? " Skill-specific lighting for SK02: soft natural editorial daylight, subtle grounded shadows, low-to-medium contrast, relaxed photographed still-life mood, no hard spotlight, no heavy warm cast, no icy sterile cast."
+      ? " Skill-specific lighting for SK02: soft clean studio daylight, subtle contact shadows, low-to-medium contrast, polished editorial still-life mood, no hard spotlight, no heavy warm cast, no icy sterile cast."
       : config.skillOrigin?.id === "SK04_PROP_STYLING"
       ? " Skill-specific lighting for SK04: soft diffused daylight, gentle grounded shadows, restrained premium mood, no hard spotlight, no theatrical contrast."
       : "";
@@ -111,7 +111,7 @@ function buildColorInstruction(config: GenerationConfig) {
     config.skillOrigin?.id === "SK01_MINIMAL_FLAT_LAY"
       ? " Skill-specific color for SK01: slightly cooler clean neutral-grey concrete/cement environment, natural product color, low yellow warmth, no warm beige floor cast, no brownish-grey or muddy grey cast."
       : config.skillOrigin?.id === "SK02_INVISIBLE_EDITORIAL"
-      ? " Skill-specific color for SK02: clean neutral floor-lay palette, lightly soft neutral tone, accurate product color, not too warm, not too icy, not too white or sterile."
+      ? " Skill-specific color for SK02: clean pale neutral studio palette, white to soft grey surface, accurate product color, restrained warmth, not beige, not concrete-grey, not too icy, and not ecommerce-sterile."
       : config.skillOrigin?.id === "SK04_PROP_STYLING"
       ? " Skill-specific color for SK04: grey-white studio wall/floor palette, light neutral backdrop, clean cool-neutral interior tone, low saturation, no cement/concrete-room dominance, no warm yellow room tone, no orange cast, no vintage warm filter."
       : "";
@@ -165,12 +165,12 @@ function buildProhibitedBehavior(config: GenerationConfig) {
 
   if (config.skillOrigin?.id === "SK02_INVISIBLE_EDITORIAL") {
     prohibited.push("No visible human body, face, skin, person, or mannequin.");
-    prohibited.push("Do not create a body-shaped outfit illusion, 3D human-body structure, mannequin-like outfit body, implied anatomy, body occupancy, walking pose, standing pose, or reclining body form.");
+    prohibited.push("Do not create an invisible-body structure, body-shaped outfit arrangement, 3D human-body structure, mannequin-like outfit body, implied anatomy, body occupancy, human silhouette, walking pose, standing pose, or reclining body form.");
     prohibited.push("Do not flatten SK02 into SK06's flat 2D human-silhouette presentation.");
-    prohibited.push("Do not turn SK02 into a product breakdown, generic flat lay, or prop-styling scene.");
-    prohibited.push("Do not make the arrangement too strict, sterile, cutout-like, rigidly separated, or ecommerce-grid-like; SK02 should feel relaxed, casual, and naturally photographed.");
-    prohibited.push("Do not add unnecessary furniture, decorative objects, strongly textured walls, dramatic studio architecture, dominant shadows, strong colored backdrops, elaborate set design, or clutter.");
-    prohibited.push("Do not use warm yellow lighting, creamy beige dominance, golden editorial warmth, heavy orange cast, icy blue cast, hard spotlight, or overly cozy room tone.");
+    prohibited.push("Do not turn SK02 into SK04 prop styling, SK05 catalog graphics, SK06 Korean callout editorial, a product breakdown, or a rigid ecommerce grid.");
+    prohibited.push("Do not make the arrangement excessively overlapping, randomly scattered, floating too far apart, or body-shaped; SK02 should feel clean, separated, controlled, and editorial without becoming a strict grid.");
+    prohibited.push("Do not add furniture, chair props, decorative objects, strongly textured walls, room architecture, lifestyle clutter, dominant shadows, strong colored backdrops, elaborate set design, or clutter.");
+    prohibited.push("Do not use cement-floor realism, strong concrete texture, warm beige dominance, warm yellow lighting, golden editorial warmth, heavy orange cast, icy blue cast, hard spotlight, or overly cozy room tone.");
   }
 
   if (config.skillOrigin?.id === "SK04_PROP_STYLING") {

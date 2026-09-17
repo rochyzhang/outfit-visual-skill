@@ -1,4 +1,4 @@
----
+﻿---
 name: Outfit Visual Skill
 description: Create outfit visuals using six reusable presentation styles. Users may request a style by 01-06 code, English Skill name, or short visual description.
 ---
@@ -20,23 +20,20 @@ If the host Agent cannot generate or edit images, clearly state that the current
 
 Use this exact mapping:
 
-01 = `SK01_MINIMAL_FLAT_LAY` — Minimal Flat Lay
-干净平铺穿搭图，适合整套搭配展示
+01 = `SK01_MINIMAL_FLAT_LAY` 鈥?Minimal Flat Lay
+骞插噣骞抽摵绌挎惌鍥撅紝閫傚悎鏁村鎼厤灞曠ず
 
-02 = `SK02_INVISIBLE_EDITORIAL` — Relaxed Editorial Floor Lay
-轻松自然的编辑感地面穿搭陈列图
+02 = `SK02_INVISIBLE_EDITORIAL` — Clean Editorial Flat Lay
+干净棚拍平铺穿搭图，单品关系清晰、留白克制。
+03 = `SK03_LOOK_BREAKDOWN` 鈥?Look Breakdown
+鏁村 Look + 鍗曞搧鎷嗚В璇存槑
 
-03 = `SK03_LOOK_BREAKDOWN` — Look Breakdown
-整套 Look + 单品拆解说明
-
-04 = `SK04_PROP_STYLING` — Prop Styling
-衣服与椅子、家具或小物一起陈列
-
-05 = `SK05_JAPANESE_CATALOG` — Japanese Catalog
-日杂 / 日系目录感穿搭视觉
-
-06 = `SK06_KOREAN_STREET_EDITORIAL` — Korean Street Editorial
-韩系 / 首尔街头编辑感穿搭图
+04 = `SK04_PROP_STYLING` 鈥?Prop Styling
+琛ｆ湇涓庢瀛愩€佸鍏锋垨灏忕墿涓€璧烽檲鍒?
+05 = `SK05_JAPANESE_CATALOG` 鈥?Japanese Catalog
+鏃ユ潅 / 鏃ョ郴鐩綍鎰熺┛鎼瑙?
+06 = `SK06_KOREAN_STREET_EDITORIAL` 鈥?Korean Street Editorial
+闊╃郴 / 棣栧皵琛楀ご缂栬緫鎰熺┛鎼浘
 
 Users may refer to a visual style by:
 
@@ -49,9 +46,9 @@ Examples:
 - "Use 01"
 - "Use 02"
 - "Use Minimal Flat Lay"
-- "Use Relaxed Editorial Floor Lay"
-- "用 05 日杂目录感"
-- "用 06 韩系街头编辑感"
+- "Use Clean Editorial Flat Lay"
+- "鐢?05 鏃ユ潅鐩綍鎰?
+- "鐢?06 闊╃郴琛楀ご缂栬緫鎰?
 
 Do not add complex auto-routing rules. Resolve simple user language to the fixed contract above.
 
@@ -66,7 +63,7 @@ The Agent must not reinterpret a Skill using its own general knowledge. For exam
 
 Concise contrast:
 
-- `SK02_INVISIBLE_EDITORIAL`: relaxed editorial floor-lay, human-absent and clothing-only, with no 3D body-shaped outfit structure.
+- `SK02_INVISIBLE_EDITORIAL`: clean editorial flat lay, human-absent and clothing-only, with clear product separation and no invisible-body or mannequin structure.
 - `SK06_KOREAN_STREET_EDITORIAL`: flat 2D human-silhouette Korean editorial.
 
 ## Operating Modes
@@ -185,11 +182,11 @@ If the host Agent supports using Skill package images as visual references, use 
 
 ## Visual Contracts
 
-### 01 — Minimal Flat Lay
+### 01 鈥?Minimal Flat Lay
 
 - ID: `SK01_MINIMAL_FLAT_LAY`
 - Name: Minimal Flat Lay
-- Short visual description: 干净平铺穿搭图，适合整套搭配展示
+- Short visual description: 骞插噣骞抽摵绌挎惌鍥撅紝閫傚悎鏁村鎼厤灞曠ず
 - Intent: Realistic minimal flat-lay / laid-out outfit still life. The uploaded outfit is the primary subject, photographed as one believable casual arrangement rather than a cutout collage.
 - Canonical presets: Scene `S01` White Studio; Composition `C02` Full Outfit Flat Lay; Graphic `None`; Look `L02` Clean White; Aspect ratio `3:4`; Quality `standard`; Product Fidelity `ON`.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
@@ -204,50 +201,32 @@ If the host Agent supports using Skill package images as visual references, use 
 - Post-generation QA: Verify realistic minimal flat lay, true overhead/top-down camera feel, slightly cooler clean neutral-grey indoor cement/concrete floor, casual layered placement, believable floor contact and soft-edged grounded shadows, required products present, no model/body, product identity preserved, and no unrequested graphic text. Soft revision if the floor reads too white instead of natural concrete, floor reads too warm/beige, floor reads brownish-grey/muddy, cement tone feels dirty-warm, lighting is too hard, image is too yellow, floor texture is overly contrasty, camera is not top-down enough, surface feels too sterile or graphic, placement is too evenly separated, or flat lay feels pasted rather than photographed.
 - Reference image path: `examples/visual/01-minimal-flat-lay.jpg`
 
-### 02 — Relaxed Editorial Floor Lay
+### 02 — Clean Editorial Flat Lay
 
 - ID: `SK02_INVISIBLE_EDITORIAL`
-- Name: Relaxed Editorial Floor Lay
-- Short visual description: 轻松自然的编辑感地面穿搭陈列图
-- Intent: Relaxed editorial floor-lay outfit presentation. The uploaded outfit is arranged as a casual, believable, human-absent still life on the floor rather than as an invisible person or body.
-- Canonical presets: Scene `S05` Warm Off-white; Composition `C02` Full Outfit Flat Lay; Graphic `None`; Look `L03` Burgundy Editorial; Aspect ratio `3:4`; Quality `standard`; Product Fidelity `ON`.
+- Name: Clean Editorial Flat Lay
+- Short visual description: 干净棚拍平铺穿搭图，单品关系清晰、留白克制。
+- Intent: Clean editorial flat-lay outfit presentation. The uploaded outfit is arranged as a polished, human-absent product still life on a pale neutral studio surface with clear product separation and restrained editorial spacing.
+- Canonical presets: Scene `S01` White Studio; Composition `C02` Full Outfit Flat Lay; Graphic `None`; Look `L02` Clean White; Aspect ratio `3:4`; Quality `standard`; Product Fidelity `ON`.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
 - Recommended inputs: `hat`, `socks`, `bag`, `glasses`, `accessory01`, `accessory02`, `prop01`, `prop02`.
-- Human presence rule: No visible human face, no visible human skin, no visible identifiable human model, no mannequin, and no implied 3D human-body structure.
-- Composition rule: Relaxed editorial floor-lay outfit arrangement. Place uploaded products casually and naturally on the floor with believable spacing, mild overlap, grounded contact shadows, real photographed still-life texture, and a more lifestyle-like editorial rhythm than SK01. Keep it human-absent and clothing-only. Do not imply a 3D human-body illusion, anatomy, body occupancy, walking pose, standing pose, or reclining mannequin-like outfit body.
-- Scene rule: Relaxed floor-based editorial still life inspired by the previous-round 01 result direction: natural placement, casual believable arrangement, real photographed still-life feel, not overly cooled down, not too white/sterile, and not cutout-like. Prefer a clean neutral floor or soft studio floor with subtle texture, lightly soft neutral tone, realistic floor contact, and minimal visual distraction.
-- Look rule: Soft natural editorial daylight, subtle grounded shadows, low-to-medium contrast, clean neutral floor-lay palette, lightly soft neutral tone, accurate product color, not too warm, not too icy, and not too white or sterile.
+- Human presence rule: No visible human face, no visible human skin, no visible identifiable human model, no mannequin, no human silhouette, and no implied invisible-body structure.
+- Composition rule: Clean editorial flat-lay outfit arrangement. Place uploaded products on a light neutral studio surface with clear product separation, restrained spacing, simple hierarchy, subtle contact shadows, and polished negative space. Preserve one complete outfit relationship: top or outer as the upper visual anchor, trousers as the dominant lower-body item, shoes grouped naturally near the lower area, and bag placed nearby but not overlapping excessively. Products may remain visibly separated, but should not float too far apart or become a rigid ecommerce grid.
+- Scene rule: Clean white, soft grey, or very pale neutral studio floor/background with smooth or very light texture, simple editorial studio feel, generous negative space, and minimal visual distraction. SK02 should be cleaner and more controlled than SK01, without SK01's cement-floor realism or strong concrete texture. Avoid furniture, room architecture, lifestyle clutter, prop styling, catalog graphics, Korean callouts, warm beige cast, and strong colored environmental cast.
+- Look rule: Soft clean studio daylight, subtle contact shadows, low-to-medium contrast, pale neutral studio palette, accurate product color, restrained warmth, and polished premium editorial still-life mood. Avoid hard spotlight, heavy warm cast, icy sterile cast, concrete-grey dominance, and ecommerce cutout flatness.
 - Graphic rule: No graphic overlay by default.
-- Product Fidelity rule: Floor-lay styling must not redesign, replace, simplify, recolor, or invent uploaded products.
-- Forbidden elements: ordinary model photography, visible skin, visible face, mannequin, body-shaped outfit illusion, 3D human-body structure, implied anatomy, body occupancy, walking pose, standing pose, reclining mannequin-like outfit body, missing required products, invented products, distorted shoes, SK06-like flat 2D silhouette, product breakdown, prop-styling scene, unnecessary furniture, decorative objects, strongly textured walls, dramatic studio architecture, visually dominant shadows, strong colored backdrop, elaborate editorial set, clutter, pure white cutout canvas, sterile ecommerce background, rigid separated product grid, warm yellow lighting, creamy beige dominance, golden editorial warmth, heavy orange cast, icy blue cast, hard spotlight, overly cozy room tone.
-- Post-generation QA: Verify relaxed editorial floor-lay presentation, no visible human, no body-shaped/mannequin structure, required products present, natural casual arrangement, mild overlap, believable spacing, realistic contact shadows, product identity preserved, and lightly soft neutral floor/studio scene fidelity. Hard fail if a human appears, the result implies a 3D human-body/mannequin structure, required products are invented or missing, or Product Fidelity is violated. Soft revision if the arrangement is too strict/sterile, too cutout-like, too rigidly separated, too warm, too icy, too white, too cluttered, or too close to SK01's stricter minimal product styling.
-- Reference image path: `examples/visual/02-invisible-editorial.jpg`
-
-### 03 — Look Breakdown
-
-- ID: `SK03_LOOK_BREAKDOWN`
-- Name: Look Breakdown
-- Short visual description: 整套 Look + 单品拆解说明
-- Intent: Editorial layout showing a complete Look plus individual product/component breakdown.
-- Canonical presets: Scene `S01` White Studio; Composition `C05` Model + Item Breakdown; Graphic `G01` Minimal Label; Look `L02` Clean White; Aspect ratio `3:4`; Quality `standard`; Product Fidelity `ON`.
-- Required inputs: at least 3 valid user-provided product/outfit references.
-- Recommended inputs: `hat`, `socks`, `bag`, `glasses`, `accessory01`, `accessory02`, `prop01`, `prop02`.
-- Human presence rule: A primary visual may be model-based or outfit-based; do not force a human model.
-- Composition rule: One primary styled look with separate clothing pieces and accessories displayed around or beside it; clear hierarchy, generous negative space.
-- Scene rule: Clean warm-white seamless studio with minimal continuous surface.
-- Look rule: High-key diffused studio lighting, neutral white balance, clean catalog clarity.
-- Graphic rule: Minimal English editorial typography, small item numbers, thin restrained sans-serif labels, subtle product annotations.
-- Product Fidelity rule: Do not copy products from the Skill reference image; use only user-provided products and preserve them.
-- Forbidden elements: copied reference-image products, invented missing products, non-English generated labels, cluttered poster layout, wrong Skill/output type.
+- Product Fidelity rule: Clean editorial flat-lay styling must not redesign, replace, simplify, recolor, duplicate, or invent uploaded products.
+- Forbidden elements: ordinary model photography, visible skin, visible face, identifiable human model, mannequin, invisible-body structure, body-shaped outfit arrangement, 3D human-body structure, implied anatomy, body occupancy, human silhouette, walking pose, standing pose, reclining body form, missing required products, invented products, duplicated products, substituted products, distorted shoes, SK06-like flat 2D human-silhouette presentation, product breakdown, SK04 prop-styling scene, SK05 catalog graphics, Korean callout editorial, furniture, decorative props, room architecture, lifestyle clutter, cement-floor realism, strong concrete texture, warm beige cast, strong colored backdrop, elaborate set design, clutter, pure white cutout canvas, sterile ecommerce grid, excessive overlap, products floating too far apart, hard spotlight, overly warm/yellow lighting, icy blue cast, overly cozy room tone.
+- Post-generation QA: Verify clean editorial flat-lay presentation, no visible human, no invisible-body/mannequin structure, required products present, clear product separation, restrained spacing, simple hierarchy, subtle contact shadows, pale neutral studio surface, product identity preserved, and no unrequested graphic text. Hard fail if a human appears, an invisible-body/mannequin/body-shaped arrangement appears, required products are invented/missing/substituted/duplicated, furniture or prop styling dominates, the output becomes SK04/SK05/SK06, or Product Fidelity is violated. Soft revision if the background is too warm, overlap is excessive, products are too far apart, arrangement is too rigid, scene is too textured or concrete-like, negative space is insufficient, shadows are too hard, or the result looks too similar to SK01.
+- Reference image path: `examples/visual/02-clean-editorial-flat-lay.png`
 - Post-generation QA: Verify at least 3 user products, primary look plus item breakdown, English-only visible text, product identity preserved.
 - Reference image path: `examples/visual/03-look-breakdown.jpg`
 
-### 04 — Prop Styling
+### 04 鈥?Prop Styling
 
 - ID: `SK04_PROP_STYLING`
 - Name: Prop Styling
-- Short visual description: 衣服与椅子、家具或小物一起陈列
-- Intent: Product-first still life where outfit pieces are styled with supporting props or physical context.
+- Short visual description: 琛ｆ湇涓庢瀛愩€佸鍏锋垨灏忕墿涓€璧烽檲鍒?- Intent: Product-first still life where outfit pieces are styled with supporting props or physical context.
 - Canonical presets: Scene `S01` White Studio; Composition `C03` Chair / Object Styling; Graphic `None`; Look `L02` Clean White; Aspect ratio `3:4`; Quality `standard`; Product Fidelity `ON`.
 - Required inputs: `bottom` and at least one of `top` or `outer`.
 - Recommended inputs: `shoes`, `hat`, `socks`, `bag`, `glasses`, `accessory01`, `accessory02`, `prop01`, `prop02`.
@@ -261,12 +240,11 @@ If the host Agent supports using Skill package images as visual references, use 
 - Post-generation QA: Verify required products present, product remains primary, one hero chair/prop is clearly dominant, the outfit/prop spatial relationship is natural, props support composition, product identity preserved, and clean grey-white studio wall/floor scene fidelity. Hard fail if there is no meaningful prop/object relationship; the output becomes a generic flat lay, product breakdown, or catalog grid; the scene dominates so strongly that outfit styling becomes secondary; or Product Fidelity is violated. Soft revision if the background reads as cement wall/concrete room, additional cabinet/shelf/table appears, background has unnecessary furniture, the scene becomes too architectural, negative space is reduced by extra objects, background is too warm, interior feels too cozy/yellow, lighting is too hard, result lacks the clean light neutral studio tone of reference 04, there are too many props, multiple furniture pieces compete, the room is too decorative, the hero prop is not clearly dominant, the outfit/prop relationship is weak, or unnecessary lifestyle clutter appears.
 - Reference image path: `examples/visual/04-prop-styling.jpg`
 
-### 05 — Japanese Catalog
+### 05 鈥?Japanese Catalog
 
 - ID: `SK05_JAPANESE_CATALOG`
 - Name: Japanese Catalog
-- Short visual description: 日杂 / 日系目录感穿搭视觉
-- Intent: Japanese magazine/catalog-inspired clothing presentation with precise catalog layout and English-only typography. This is not generic Japanese model photography.
+- Short visual description: 鏃ユ潅 / 鏃ョ郴鐩綍鎰熺┛鎼瑙?- Intent: Japanese magazine/catalog-inspired clothing presentation with precise catalog layout and English-only typography. This is not generic Japanese model photography.
 - Canonical presets: Scene `S05` Warm Off-white; Composition `C02` Full Outfit Flat Lay; Graphic `G04` Japanese Catalog; Look `L05` Warm Vintage; Aspect ratio `3:4`; Quality `standard`; Product Fidelity `ON`.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
 - Recommended inputs: `hat`, `socks`, `bag`, `glasses`, `accessory01`, `accessory02`, `prop01`, `prop02`.
@@ -280,12 +258,12 @@ If the host Agent supports using Skill package images as visual references, use 
 - Post-generation QA: Verify full outfit flat lay/catalog composition, English-only visible text, no Japanese characters, product identity preserved.
 - Reference image path: `examples/visual/05-japanese-catalog.png`
 
-### 06 — Korean Street Editorial
+### 06 鈥?Korean Street Editorial
 
 - ID: `SK06_KOREAN_STREET_EDITORIAL`
 - Name: Korean Street Editorial
-- Short visual description: 韩系 / 首尔街头编辑感穿搭图
-- Intent: Korean independent-brand / Seoul editorial with a flat 2D human-silhouette outfit composition. The garments form one complete human-shaped Look while remaining visually flat, graphic, and close to a styled flat-lay rather than SK02's relaxed editorial floor-lay still life. This is not generic Korean model portrait photography.
+- Short visual description: 闊╃郴 / 棣栧皵琛楀ご缂栬緫鎰熺┛鎼浘
+- Intent: Korean independent-brand / Seoul editorial with a flat 2D human-silhouette outfit composition. The garments form one complete human-shaped Look while remaining visually flat, graphic, and distinct from SK02's clean separated studio flat lay. This is not generic Korean model portrait photography.
 - Canonical presets: Scene `S02` Dusty Sage; Composition `C04` Dynamic Invisible Outfit; Graphic `G02` Korean Street; Look `L01` Dusty Sage; Aspect ratio `3:4`; Quality `standard`; Product Fidelity `ON`.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
 - Recommended inputs: `hat`, `socks`, `bag`, `glasses`, `accessory01`, `accessory02`, `prop01`, `prop02`.
@@ -295,6 +273,6 @@ If the host Agent supports using Skill package images as visual references, use 
 - Look rule: Soft diffused studio lighting, low saturation, muted sage-green cast, matte soft contrast, fine analog grain.
 - Graphic rule: English-only Korean independent-brand / Seoul editorial annotations are required for every major displayed product. Each major product should receive a small index number, a short 1-3 word English product label, and a thin hand-drawn-style leader line pointing to the correct item. Derive labels conservatively from the supplied role or safe category, such as TOP, TROUSERS, SNEAKERS, BAG, KNIT POLO, WIDE TROUSERS, RUNNER SNEAKERS, HOBO BAG, DENIM JACKET, or LEATHER TOTE. Place annotations in surrounding negative space; never cover product details; do not place all labels in one unrelated text block. No Hangul, Korean characters, fake Korean text, long marketing copy, invented brand names, or speculative product details.
 - Product Fidelity rule: Korean-inspired styling and annotations must not introduce unrelated products, change uploaded product identity, distort product scale, or invent accessories. Product Fidelity remains higher priority than graphic/text perfection.
-- Forbidden elements: Korean model portrait, visible body/skin/face, mannequin, Hangul/Korean text, invented products, duplicated products, missing required products, copied reference-image products, severe product scale distortion, strong 3D walking-body presentation, relaxed floor-lay still life, lost complete outfit relationship, independent product breakdown, generic catalog grid, long generated marketing copy.
-- Post-generation QA: Hard fail if a visible real human appears; visible face or skin appears; required products are invented, substituted, or missing; severe product scale distortion occurs; a strong 3D walking-body presentation appears; the complete outfit relationship is lost; the output becomes a relaxed floor-lay still life, independent product breakdown, or generic catalog grid; or Hangul/Korean visible text appears. Soft revision if the top appears disproportionately large; trousers are disproportionately long or short; shoes are oversized or detached from the leg relationship; bag scale is too large or too small; the overall body ratio feels unnatural; a major product lacks its annotation; an annotation lacks a leader line; an annotation points to the wrong product; a product label is unnecessarily long; English typography is corrupted; annotations cover product details; sage atmosphere is too faint; or the composition still feels too close to a relaxed floor-lay still life.
+- Forbidden elements: Korean model portrait, visible body/skin/face, mannequin, Hangul/Korean text, invented products, duplicated products, missing required products, copied reference-image products, severe product scale distortion, strong 3D walking-body presentation, clean separated studio flat lay, lost complete outfit relationship, independent product breakdown, generic catalog grid, long generated marketing copy.
+- Post-generation QA: Hard fail if a visible real human appears; visible face or skin appears; required products are invented, substituted, or missing; severe product scale distortion occurs; a strong 3D walking-body presentation appears; the complete outfit relationship is lost; the output becomes a clean separated studio flat lay, independent product breakdown, or generic catalog grid; or Hangul/Korean visible text appears. Soft revision if the top appears disproportionately large; trousers are disproportionately long or short; shoes are oversized or detached from the leg relationship; bag scale is too large or too small; the overall body ratio feels unnatural; a major product lacks its annotation; an annotation lacks a leader line; an annotation points to the wrong product; a product label is unnecessarily long; English typography is corrupted; annotations cover product details; sage atmosphere is too faint; or the composition still feels too close to a clean separated studio flat lay.
 - Reference image path: `examples/visual/06-korean-street-editorial.jpg`

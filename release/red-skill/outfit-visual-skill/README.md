@@ -12,7 +12,7 @@ This package describes the public Outfit Visual Skill for agents. It contains si
 
 MCP is not required for the public Skill. Do not promise that every Agent supports image generation; if an Agent has neither native image generation/editing nor MCP execution, it should explain that generation cannot be completed in that environment.
 
-Users do not need to speak in technical workflow terms. Simple requests such as `Use 01`, `Use 02`, `Use Relaxed Editorial Floor Lay`, `Use Japanese Catalog`, `Use 05 Japanese catalog`, or `Use 06 Korean street editorial` should resolve to the canonical contract in `SKILL.md`.
+Users do not need to speak in technical workflow terms. Simple requests such as `Use 01`, `Use 02`, `Use Clean Editorial Flat Lay`, `Use Japanese Catalog`, `Use 05 Japanese catalog`, or `Use 06 Korean street editorial` should resolve to the canonical contract in `SKILL.md`.
 
 It is a source/config package only. It does not include:
 
@@ -34,9 +34,9 @@ Use Native Agent Mode when the four MCP tools are not available:
 
 In this mode the Agent should inspect uploaded references, use the user's explicit garment-role assignments, ask when Required roles are ambiguous, enforce required inputs, preserve Product Fidelity, apply the selected Skill definition from `SKILL.md`, and use its own image-generation/editing capability.
 
-The Skill name is only a human-friendly identifier. The canonical visual contract in `SKILL.md` is authoritative and overrides generic interpretation of names such as Minimal Flat Lay, Relaxed Editorial Floor Lay, Japanese Catalog, or Korean Street Editorial.
+The Skill name is only a human-friendly identifier. The canonical visual contract in `SKILL.md` is authoritative and overrides generic interpretation of names such as Minimal Flat Lay, Clean Editorial Flat Lay, Japanese Catalog, or Korean Street Editorial.
 
-SK01 remains the realistic minimal flat-lay contract: a naturally laid-out outfit on a slightly cooler, cleaner neutral-grey indoor cement/concrete floor with casual layered placement, soft low-saturation daylight, soft-edged grounded shadows, and real still-life photography feel rather than a pure white cutout collage. SK02 is now a relaxed editorial floor-lay contract: human-absent, clothing-only, casually arranged on the floor with mild overlap, believable spacing, real photographed still-life texture, and no body-shaped outfit illusion, mannequin, or 3D human-body structure. SK04 remains the prop-styling contract with one hero chair or simple prop organizing the outfit, but the scene is now a cleaner, lighter grey-white indoor studio wall/floor rather than a cement/concrete room. SK06 is a flat 2D human-silhouette Korean editorial contract: one complete head-to-toe Look, visually flat and graphic, proportionally believable, not a product breakdown and not a volumetric invisible body. SK06 also requires short English per-product callouts with index numbers and hand-drawn leader lines.
+SK01 remains the realistic minimal flat-lay contract: a naturally laid-out outfit on a slightly cooler, cleaner neutral-grey indoor cement/concrete floor with casual layered placement, soft low-saturation daylight, soft-edged grounded shadows, and real still-life photography feel rather than a pure white cutout collage. SK02 is now a clean editorial flat-lay contract: human-absent, clothing-only, arranged on a pale neutral studio surface with clear product separation, restrained spacing, simple hierarchy, subtle contact shadows, and polished negative space. SK04 remains the prop-styling contract with one hero chair or simple prop organizing the outfit, but the scene is now a cleaner, lighter grey-white indoor studio wall/floor rather than a cement/concrete room. SK06 is a flat 2D human-silhouette Korean editorial contract: one complete head-to-toe Look, visually flat and graphic, proportionally believable, not a product breakdown and not a volumetric invisible body. SK06 also requires short English per-product callouts with index numbers and hand-drawn leader lines.
 
 ## Studio + MCP Mode
 

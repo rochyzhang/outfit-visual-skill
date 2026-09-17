@@ -45,9 +45,9 @@
     },
     {
       "id": "SK02_INVISIBLE_EDITORIAL",
-      "name": "Relaxed Editorial Floor Lay",
+      "name": "Clean Editorial Flat Lay",
       "code": "02",
-      "referenceImage": "examples/visual/02-invisible-editorial.jpg"
+      "referenceImage": "examples/visual/02-clean-editorial-flat-lay.png"
     },
     {
       "id": "SK03_LOOK_BREAKDOWN",

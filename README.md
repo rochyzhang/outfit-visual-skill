@@ -34,7 +34,7 @@ The Skill system is an orchestration layer above the existing workflow engine. I
 V1 includes six callable Skills:
 
 - `SK01_MINIMAL_FLAT_LAY` - Minimal Flat Lay
-- `SK02_INVISIBLE_EDITORIAL` - Relaxed Editorial Floor Lay
+- `SK02_INVISIBLE_EDITORIAL` - Clean Editorial Flat Lay
 - `SK03_LOOK_BREAKDOWN` - Look Breakdown
 - `SK04_PROP_STYLING` - Prop Styling
 - `SK05_JAPANESE_CATALOG` - Japanese Catalog
@@ -56,7 +56,7 @@ MCP is not mandatory for using the public Skill. Not every Agent supports image 
 
 Native Agent Mode does not add automatic asset classification: use explicit Top, Outer, Bottom, Shoes, and other slot assignments from the user, and ask for clarification when Required garment roles are ambiguous.
 
-The Skill translates simple requests such as `Use 01`, `Use 02`, `Use Relaxed Editorial Floor Lay`, `Use Japanese Catalog`, `Use 05 Japanese catalog`, or `Use 06 Korean street editorial` into the canonical visual contracts. The contract is stronger than the generic meaning of the Skill name.
+The Skill translates simple requests such as `Use 01`, `Use 02`, `Use Clean Editorial Flat Lay`, `Use Japanese Catalog`, `Use 05 Japanese catalog`, or `Use 06 Korean street editorial` into the canonical visual contracts. The contract is stronger than the generic meaning of the Skill name.
 
 ## Visual Skill Gallery
 
@@ -69,7 +69,7 @@ Users can refer to a Skill by:
 Examples:
 
 - "Use 02"
-- "Use Relaxed Editorial Floor Lay"
+- "Use Clean Editorial Flat Lay"
 - "Use 05 Japanese catalog"
 
 ### 01 - Minimal Flat Lay
@@ -78,11 +78,11 @@ Clean minimal flat-lay outfit image for complete outfit presentation.
 
 ![01 - Minimal Flat Lay](public/skill-examples/01-minimal-flat-lay.jpg)
 
-### 02 - Relaxed Editorial Floor Lay
+### 02 - Clean Editorial Flat Lay
 
-Relaxed natural editorial floor-lay outfit still life with no body-shaped outfit illusion.
+Clean studio flat-lay outfit image with clear product separation and restrained editorial spacing.
 
-![02 - Relaxed Editorial Floor Lay](public/skill-examples/02-invisible-editorial.jpg)
+![02 - Clean Editorial Flat Lay](public/skill-examples/02-clean-editorial-flat-lay.png)
 
 ### 03 - Look Breakdown
 

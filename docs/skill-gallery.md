@@ -7,7 +7,7 @@ Users can refer to a Skill by number, English name, or short visual description.
 Examples:
 
 - "Use 02"
-- "Use Relaxed Editorial Floor Lay"
+- "Use Clean Editorial Flat Lay"
 - "Use 05 Japanese catalog"
 
 ## 01 - Minimal Flat Lay
@@ -22,17 +22,17 @@ Examples:
 
 ![01 - Minimal Flat Lay](../public/skill-examples/01-minimal-flat-lay.jpg)
 
-## 02 - Relaxed Editorial Floor Lay
+## 02 - Clean Editorial Flat Lay
 
 - Skill ID: `SK02_INVISIBLE_EDITORIAL`
-- English name: Relaxed Editorial Floor Lay
-- Chinese description: 轻松自然的编辑感地面穿搭陈列图
-- Canonical visual behavior: Relaxed human-absent editorial floor-lay outfit still life. The uploaded products are arranged casually and naturally on the floor with mild overlap, believable spacing, realistic contact shadows, lightly soft neutral tone, and a real photographed feel. It is not a body-shaped outfit illusion or mannequin presentation.
+- English name: Clean Editorial Flat Lay
+- Chinese description: 干净棚拍平铺穿搭图，单品关系清晰、留白克制。
+- Canonical visual behavior: Clean human-absent editorial flat lay on a pale neutral studio surface. Uploaded products are intentionally arranged with clear product separation, restrained spacing, simple hierarchy, subtle contact shadows, and polished negative space. It is not an invisible-body, mannequin, prop styling, catalog graphic, or Korean callout presentation.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
-- Forbidden elements: visible face, visible skin, identifiable human model, mannequin, body-shaped outfit illusion, 3D human-body structure, implied anatomy, walking/standing/reclining mannequin-like outfit body, invented products, missing required products, busy interior styling, unnecessary furniture, decorative props, dramatic set design, pure white cutout canvas, sterile ecommerce grid, overly warm/yellow or icy cast, hard spotlight.
-- Usage example: "Use Relaxed Editorial Floor Lay"
+- Forbidden elements: visible face, visible skin, identifiable human model, mannequin, invisible-body structure, body-shaped outfit arrangement, human silhouette, invented products, missing required products, furniture, decorative props, room architecture, lifestyle clutter, cement-floor realism, strong concrete texture, warm beige cast, catalog graphics, Korean callouts, rigid ecommerce grid, hard spotlight.
+- Usage example: "Use Clean Editorial Flat Lay"
 
-![02 - Relaxed Editorial Floor Lay](../public/skill-examples/02-invisible-editorial.jpg)
+![02 - Clean Editorial Flat Lay](../public/skill-examples/02-clean-editorial-flat-lay.png)
 
 ## 03 - Look Breakdown
 
@@ -75,7 +75,7 @@ Examples:
 - Skill ID: `SK06_KOREAN_STREET_EDITORIAL`
 - English name: Korean Street Editorial
 - Chinese description: 韩系 / 首尔街头编辑感穿搭图
-- Canonical visual behavior: Dusty-sage flat 2D human-silhouette Korean editorial with believable full-outfit proportions and mandatory short English per-product callouts. The garments form one complete head-to-toe Look, but remain visually flat and graphic rather than SK02's relaxed floor-lay still life.
+- Canonical visual behavior: Dusty-sage flat 2D human-silhouette Korean editorial with believable full-outfit proportions and mandatory short English per-product callouts. The garments form one complete head-to-toe Look, but remain visually flat and graphic rather than SK02's clean separated studio flat lay.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
 - Forbidden elements: visible person, mannequin, Korean text, Hangul, independent product breakdown, generic catalog grid, invented products, copied reference-image products, missing required products.
 - Usage example: "Use 06 Korean street editorial"

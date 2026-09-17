@@ -90,9 +90,11 @@ assertStandardSingleOutfitRule("SK02_INVISIBLE_EDITORIAL");
 assert.deepEqual(requiredRule("SK03_LOOK_BREAKDOWN"), { minValidProductReferences: 3 });
 
 const sk02 = getWorkflowSkill("SK02_INVISIBLE_EDITORIAL");
-assert.equal(sk02.name, "Relaxed Editorial Floor Lay");
+assert.equal(sk02.name, "Clean Editorial Flat Lay");
+assert.equal(sk02.defaults.scenePresetId, "S01");
 assert.equal(sk02.defaults.compositionPresetId, "C02");
-assert.match(sk02.description, /Relaxed human-absent editorial floor-lay/);
+assert.equal(sk02.defaults.lookPresetId, "L02");
+assert.match(sk02.description, /Clean human-absent editorial flat lay/);
 
 const sk04 = getWorkflowSkill("SK04_PROP_STYLING");
 assert.equal(sk04.defaults.scenePresetId, "S01");

@@ -153,17 +153,17 @@ export const workflowSkills = [
   },
   {
     id: "SK02_INVISIBLE_EDITORIAL",
-    name: "Relaxed Editorial Floor Lay",
-    description: "Relaxed human-absent editorial floor-lay outfit visual with natural still-life placement.",
+    name: "Clean Editorial Flat Lay",
+    description: "Clean human-absent editorial flat lay with pale studio surface, clear product separation, and restrained spacing.",
     supportedContentTypes: ["men", "genderless"],
     category: "editorial",
     requiredInputRule: standardSingleOutfitRule,
     recommendedSlots: standardRecommendedSlots,
     defaults: {
-      scenePresetId: "S05",
+      scenePresetId: "S01",
       compositionPresetId: "C02",
       graphicPresetId: "None",
-      lookPresetId: "L03",
+      lookPresetId: "L02",
       aspectRatio: "3:4",
       quality: "standard",
       mode: "single",
@@ -173,7 +173,7 @@ export const workflowSkills = [
     safeguards: preserveUploadedProductsSafeguard,
     agent: {
       callable: true,
-      summary: "Use for a relaxed editorial floor-lay with product fidelity preserved and no human body implied."
+      summary: "Use for a clean editorial flat lay with product fidelity preserved, clear spacing, and no human body implied."
     }
   },
   {
