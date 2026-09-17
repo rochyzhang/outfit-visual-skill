@@ -178,7 +178,20 @@ Soft revision issues may be corrected with targeted revision when available.
 
 The six package images in `examples/visual/` are presentation-style references only. They are not product references and must never be treated as garments, shoes, bags, accessories, props, or user assets.
 
-If the host Agent supports using Skill package images as visual references, use them only to understand presentation style. The user's uploaded product images always have priority.
+When a Skill is selected, only that Skill's own Reference image path may be used as a visual presentation reference. All other packaged visual examples are for gallery browsing, user selection, and documentation only; they must not influence composition, scene, look, color, camera, or graphic treatment for the selected Skill.
+
+Strict reference mapping:
+
+- 01 may use only `examples/visual/01-minimal-flat-lay.jpg`
+- 02 may use only `examples/visual/02-clean-editorial-flat-lay.png`
+- 03 may use only `examples/visual/03-look-breakdown.jpg`
+- 04 may use only `examples/visual/04-prop-styling.jpg`
+- 05 may use only `examples/visual/05-japanese-catalog.png`
+- 06 may use only `examples/visual/06-korean-street-editorial.jpg`
+
+For Use 01, explicitly ignore `02-clean-editorial-flat-lay.png` and every other packaged Skill reference. For Use 02, explicitly ignore `01-minimal-flat-lay.jpg` and every other packaged Skill reference. Apply the same one-to-one isolation to 03, 04, 05, and 06.
+
+If the host Agent supports using Skill package images as visual references, use only the selected Skill's mapped reference image to understand presentation style. The user's uploaded product images always have priority.
 
 ## Visual Contracts
 
@@ -211,14 +224,31 @@ If the host Agent supports using Skill package images as visual references, use 
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
 - Recommended inputs: `hat`, `socks`, `bag`, `glasses`, `accessory01`, `accessory02`, `prop01`, `prop02`.
 - Human presence rule: No visible human face, no visible human skin, no visible identifiable human model, no mannequin, no human silhouette, and no implied invisible-body structure.
-- Composition rule: Clean editorial flat-lay outfit arrangement. Place uploaded products on a light neutral studio surface with clear product separation, restrained spacing, simple hierarchy, subtle contact shadows, and polished negative space. Preserve one complete outfit relationship: top or outer as the upper visual anchor, trousers as the dominant lower-body item, shoes grouped naturally near the lower area, and bag placed nearby but not overlapping excessively. Products may remain visibly separated, but should not float too far apart or become a rigid ecommerce grid.
-- Scene rule: Clean white, soft grey, or very pale neutral studio floor/background with smooth or very light texture, simple editorial studio feel, generous negative space, and minimal visual distraction. SK02 should be cleaner and more controlled than SK01, without SK01's cement-floor realism or strong concrete texture. Avoid furniture, room architecture, lifestyle clutter, prop styling, catalog graphics, Korean callouts, warm beige cast, and strong colored environmental cast.
+- Composition rule: Clean editorial flat-lay outfit arrangement. Place uploaded products on a light neutral studio surface with cleaner, tidier, more orderly, and more controlled placement than SK01. Each major product should read clearly as its own item, with clear product separation, deliberate spacing, neat alignment, simple hierarchy, subtle contact shadows, and polished negative space. Preserve one complete outfit relationship: top or outer as the upper visual anchor, trousers as the dominant lower-body item, shoes grouped naturally near the lower area, and bag placed nearby with minimal and deliberate overlap only when it improves hierarchy. Keep the layout shallow, flat, curated, and editorial rather than casually dropped, loosely scattered, naturally messy, or overly relaxed.
+- Scene rule: Clean white, soft grey, or very pale neutral studio floor/background with smooth or very light texture, simple editorial studio feel, generous negative space, and minimal visual distraction. SK02 should be cleaner, tidier, more controlled, and more product-separated than SK01, without SK01's cement-floor realism, strong concrete texture, or casual concrete-floor arrangement language. Avoid furniture, room architecture, lifestyle clutter, prop styling, catalog graphics, Korean callouts, warm beige cast, and strong colored environmental cast.
 - Look rule: Soft clean studio daylight, subtle contact shadows, low-to-medium contrast, pale neutral studio palette, accurate product color, restrained warmth, and polished premium editorial still-life mood. Avoid hard spotlight, heavy warm cast, icy sterile cast, concrete-grey dominance, and ecommerce cutout flatness.
 - Graphic rule: No graphic overlay by default.
 - Product Fidelity rule: Clean editorial flat-lay styling must not redesign, replace, simplify, recolor, duplicate, or invent uploaded products.
-- Forbidden elements: ordinary model photography, visible skin, visible face, identifiable human model, mannequin, invisible-body structure, body-shaped outfit arrangement, 3D human-body structure, implied anatomy, body occupancy, human silhouette, walking pose, standing pose, reclining body form, missing required products, invented products, duplicated products, substituted products, distorted shoes, SK06-like flat 2D human-silhouette presentation, product breakdown, SK04 prop-styling scene, SK05 catalog graphics, Korean callout editorial, furniture, decorative props, room architecture, lifestyle clutter, cement-floor realism, strong concrete texture, warm beige cast, strong colored backdrop, elaborate set design, clutter, pure white cutout canvas, sterile ecommerce grid, excessive overlap, products floating too far apart, hard spotlight, overly warm/yellow lighting, icy blue cast, overly cozy room tone.
-- Post-generation QA: Verify clean editorial flat-lay presentation, no visible human, no invisible-body/mannequin structure, required products present, clear product separation, restrained spacing, simple hierarchy, subtle contact shadows, pale neutral studio surface, product identity preserved, and no unrequested graphic text. Hard fail if a human appears, an invisible-body/mannequin/body-shaped arrangement appears, required products are invented/missing/substituted/duplicated, furniture or prop styling dominates, the output becomes SK04/SK05/SK06, or Product Fidelity is violated. Soft revision if the background is too warm, overlap is excessive, products are too far apart, arrangement is too rigid, scene is too textured or concrete-like, negative space is insufficient, shadows are too hard, or the result looks too similar to SK01.
+- Forbidden elements: ordinary model photography, visible skin, visible face, identifiable human model, mannequin, invisible-body structure, body-shaped outfit arrangement, 3D human-body structure, implied anatomy, body occupancy, human silhouette, walking pose, standing pose, reclining body form, missing required products, invented products, duplicated products, substituted products, distorted shoes, SK06-like flat 2D human-silhouette presentation, product breakdown, SK04 prop-styling scene, SK05 catalog graphics, Korean callout editorial, furniture, decorative props, room architecture, lifestyle clutter, cement-floor realism, strong concrete texture, warm beige cast, strong colored backdrop, elaborate set design, clutter, pure white cutout canvas, sterile ecommerce grid, casual layered still-life feeling, natural relaxed scattering, thrown-down styling, excessive overlap, products floating too far apart, hard spotlight, overly warm/yellow lighting, icy blue cast, overly cozy room tone.
+- Post-generation QA: Verify clean editorial flat-lay presentation, no visible human, no invisible-body/mannequin structure, required products present, each major product reads clearly, product separation is clearer than SK01, spacing is deliberate, overlap is minimal, hierarchy is simple, subtle contact shadows are controlled, pale neutral studio surface is preserved, product identity is preserved, and no unrequested graphic text appears. Hard fail if a human appears, an invisible-body/mannequin/body-shaped arrangement appears, required products are invented/missing/substituted/duplicated, furniture or prop styling dominates, the output becomes SK04/SK05/SK06, or Product Fidelity is violated. Soft revision if the background is too warm, overlap is excessive, products are too far apart, arrangement is too rigid or too casually scattered, scene is too textured or concrete-like, negative space is insufficient, shadows are too hard, or the result looks too similar to SK01.
 - Reference image path: `examples/visual/02-clean-editorial-flat-lay.png`
+
+### 03 — Look Breakdown
+
+- ID: `SK03_LOOK_BREAKDOWN`
+- Name: Look Breakdown
+- Short visual description: 整套 Look + 单品拆解说明
+- Intent: Editorial layout showing a complete Look plus individual product/component breakdown.
+- Canonical presets: Scene `S01` White Studio; Composition `C05` Model + Item Breakdown; Graphic `G01` Minimal Label; Look `L02` Clean White; Aspect ratio `3:4`; Quality `standard`; Product Fidelity `ON`.
+- Required inputs: at least 3 valid user-provided product/outfit references.
+- Recommended inputs: `hat`, `socks`, `bag`, `glasses`, `accessory01`, `accessory02`, `prop01`, `prop02`.
+- Human presence rule: A primary visual may be model-based or outfit-based; do not force a human model.
+- Composition rule: One primary styled look with separate clothing pieces and accessories displayed around or beside it; clear hierarchy, generous negative space.
+- Scene rule: Clean warm-white seamless studio with minimal continuous surface.
+- Look rule: High-key diffused studio lighting, neutral white balance, clean catalog clarity.
+- Graphic rule: Minimal English editorial typography, small item numbers, thin restrained sans-serif labels, subtle product annotations.
+- Product Fidelity rule: Do not copy products from the Skill reference image; use only user-provided products and preserve them.
+- Forbidden elements: copied reference-image products, invented missing products, non-English generated labels, cluttered poster layout, wrong Skill/output type.
 - Post-generation QA: Verify at least 3 user products, primary look plus item breakdown, English-only visible text, product identity preserved.
 - Reference image path: `examples/visual/03-look-breakdown.jpg`
 

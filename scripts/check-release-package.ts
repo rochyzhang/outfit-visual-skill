@@ -22,6 +22,15 @@ const requiredPackageFiles = [
   "mcp/config.example.json"
 ];
 
+const skillReferenceMapping = [
+  ["01", "examples/visual/01-minimal-flat-lay.jpg"],
+  ["02", "examples/visual/02-clean-editorial-flat-lay.png"],
+  ["03", "examples/visual/03-look-breakdown.jpg"],
+  ["04", "examples/visual/04-prop-styling.jpg"],
+  ["05", "examples/visual/05-japanese-catalog.png"],
+  ["06", "examples/visual/06-korean-street-editorial.jpg"]
+] as const;
+
 const requiredIgnorePatterns = [
   ".env",
   ".env.local",
@@ -95,6 +104,21 @@ for (const pattern of requiredIgnorePatterns) {
 const envExample = safeRead(path.join(root, ".env.example"));
 assert.doesNotMatch(envExample, /sk-[A-Za-z0-9_-]{20,}/);
 assert.doesNotMatch(envExample, /OPENAI_API_KEY[ \t]*=[ \t]*[^\r\n\s]+/);
+
+const skillReadme = safeRead(path.join(packageDir, "SKILL.md"));
+assert.match(skillReadme, /only that Skill's own Reference image path may be used/i);
+assert.match(skillReadme, /All other packaged visual examples are for gallery browsing, user selection, and documentation only/i);
+assert.match(skillReadme, /For Use 01, explicitly ignore `02-clean-editorial-flat-lay\.png`/);
+assert.match(skillReadme, /For Use 02, explicitly ignore `01-minimal-flat-lay\.jpg`/);
+for (const [code, referencePath] of skillReferenceMapping) {
+  assert.match(skillReadme, new RegExp(`${code} may use only \`${referencePath.replaceAll("/", "\\/")}\``));
+  assert.ok(existsSync(path.join(packageDir, referencePath)), `Missing mapped visual reference: ${referencePath}`);
+}
+assert.doesNotMatch(
+  skillReadme,
+  /SK02[\s\S]{0,800}(casual layered placement|mild overlap, rhythm|natural relaxed scattering|tactile concrete-floor still-life)/,
+  "SK02 must not borrow SK01 casual concrete flat-lay language"
+);
 
 const packageFiles = walkFiles(packageDir);
 let totalBytes = 0;

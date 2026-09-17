@@ -4,6 +4,8 @@ These images are presentation-style references only. They are not product assets
 
 Users can refer to a Skill by number, English name, or short visual description.
 
+Packaged gallery images are isolated per selected Skill. Use only the selected Skill's own image path as its visual reference; other packaged examples are for browsing and documentation only.
+
 Examples:
 
 - "Use 02"
@@ -27,9 +29,9 @@ Examples:
 - Skill ID: `SK02_INVISIBLE_EDITORIAL`
 - English name: Clean Editorial Flat Lay
 - Chinese description: 干净棚拍平铺穿搭图，单品关系清晰、留白克制。
-- Canonical visual behavior: Clean human-absent editorial flat lay on a pale neutral studio surface. Uploaded products are intentionally arranged with clear product separation, restrained spacing, simple hierarchy, subtle contact shadows, and polished negative space. It is not an invisible-body, mannequin, prop styling, catalog graphic, or Korean callout presentation.
+- Canonical visual behavior: Clean human-absent editorial flat lay on a pale neutral studio surface. Uploaded products are intentionally arranged in a cleaner, tidier, more controlled studio composition than SK01, with clear product separation, deliberate spacing, neat alignment, simple hierarchy, subtle contact shadows, polished negative space, and minimal deliberate overlap. It is not an invisible-body, mannequin, prop styling, catalog graphic, Korean callout, or SK01-like casual concrete-floor presentation.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
-- Forbidden elements: visible face, visible skin, identifiable human model, mannequin, invisible-body structure, body-shaped outfit arrangement, human silhouette, invented products, missing required products, furniture, decorative props, room architecture, lifestyle clutter, cement-floor realism, strong concrete texture, warm beige cast, catalog graphics, Korean callouts, rigid ecommerce grid, hard spotlight.
+- Forbidden elements: visible face, visible skin, identifiable human model, mannequin, invisible-body structure, body-shaped outfit arrangement, human silhouette, invented products, missing required products, furniture, decorative props, room architecture, lifestyle clutter, cement-floor realism, strong concrete texture, warm beige cast, casual layered still-life feeling, natural relaxed scattering, thrown-down styling, excessive overlap, catalog graphics, Korean callouts, rigid ecommerce grid, hard spotlight.
 - Usage example: "Use Clean Editorial Flat Lay"
 
 ![02 - Clean Editorial Flat Lay](../public/skill-examples/02-clean-editorial-flat-lay.png)

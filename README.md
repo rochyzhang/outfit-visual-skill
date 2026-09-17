@@ -58,6 +58,8 @@ Native Agent Mode does not add automatic asset classification: use explicit Top,
 
 The Skill translates simple requests such as `Use 01`, `Use 02`, `Use Clean Editorial Flat Lay`, `Use Japanese Catalog`, `Use 05 Japanese catalog`, or `Use 06 Korean street editorial` into the canonical visual contracts. The contract is stronger than the generic meaning of the Skill name.
 
+In Native Agent Mode, packaged gallery images are isolated per selected Skill. `Use 01` may consult only `01-minimal-flat-lay.jpg`; `Use 02` may consult only `02-clean-editorial-flat-lay.png`; the other packaged examples are gallery/documentation references only and must not influence the selected Skill.
+
 ## Visual Skill Gallery
 
 Users can refer to a Skill by:
@@ -80,7 +82,7 @@ Clean minimal flat-lay outfit image for complete outfit presentation.
 
 ### 02 - Clean Editorial Flat Lay
 
-Clean studio flat-lay outfit image with clear product separation and restrained editorial spacing.
+Clean, tidy studio flat-lay outfit image with clear product separation, deliberate spacing, polished negative space, and less overlap than 01.
 
 ![02 - Clean Editorial Flat Lay](public/skill-examples/02-clean-editorial-flat-lay.png)
 
