@@ -53,9 +53,9 @@ Examples:
 - Skill ID: `SK04_PROP_STYLING`
 - English name: Prop Styling
 - Chinese description: 衣服与椅子、家具或小物一起陈列
-- Canonical visual behavior: Product-first still life with clothing styled around one hero chair or simple hero prop in a clean premium grey-white studio wall/floor environment with a simple neutral backdrop, no extra furniture clutter, one small English top information row, and a chair-supported human-shaped arrangement by placement only. Garments may suggest shoulders, torso, and seated legs through placement, but must not contain invisible-body volume.
+- Canonical visual behavior: Product-first still life with clothing styled around one hero chair or simple hero prop in a clean premium cool grey-white studio wall/floor environment with a simple neutral backdrop, soft even ambient studio light, no visible sunbeam/window-light streak, no extra furniture clutter, one small English top information row, and a chair-supported human-shaped arrangement by placement only. Garments may suggest shoulders, torso, and seated legs through placement, but must remain empty and must not contain invisible-body volume.
 - Required inputs: `bottom` and at least one of `top` or `outer`.
-- Forbidden elements: prop as main subject, rough cement room, industrial concrete-wall dominance, cement-wall or concrete-room atmosphere, shelf/cabinet/table clutter, multiple competing furniture pieces, decorative architecture, warm yellow/orange room tone, overly cozy grading, hard spotlight, invented fashion products, copied reference-image products, impossible fabric contact, missing required products, real human, face, skin, full mannequin, hidden mannequin, invisible body volume inside garments, strong 3D invisible-person body, large poster headline.
+- Forbidden elements: prop as main subject, rough cement room, industrial concrete-wall dominance, cement-wall or concrete-room atmosphere, visible sunbeam, window-light streak, diagonal light patch, dramatic floor shadow, warm sunlight, shelf/cabinet/table clutter, multiple competing furniture pieces, decorative architecture, warm yellow/orange room tone, overly cozy grading, hard spotlight, invented fashion products, copied reference-image products, impossible fabric contact, missing required products, real human, face, skin, full mannequin, hidden mannequin, invisible body volume inside garments, strong 3D invisible-person body, large poster headline.
 - Usage example: "Use Prop Styling"
 
 ![04 - Prop Styling](../public/skill-examples/04-prop-styling.jpg)
@@ -77,9 +77,9 @@ Examples:
 - Skill ID: `SK06_KOREAN_STREET_EDITORIAL`
 - English name: Korean Street Editorial
 - Chinese description: 韩系 / 首尔街头编辑感穿搭图
-- Canonical visual behavior: Dusty-sage flat arranged human-shape Korean editorial with mandatory white hand-drawn English per-product callouts. The garments form one complete laid-out Look through placement and silhouette only; they remain flat and graphic, not worn by an invisible person.
+- Canonical visual behavior: Dusty-sage flat staged Korean editorial with mandatory white hand-drawn English per-product callouts. The garments form one complete laid-out Look with a clearer standing human-pose silhouette through flat product placement only, including shoulder/torso/hip/leg gesture, controlled asymmetry, and coordinated shoe direction. It remains flat and graphic, not worn by an invisible person.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
-- Forbidden elements: visible person, mannequin, Korean text, Hangul, standing invisible-person styling, worn-body presentation, shoes posed like invisible feet, random opposing shoe directions, independent product breakdown, generic catalog grid, invented products, copied reference-image products, missing required products.
+- Forbidden elements: visible person, mannequin, Korean text, Hangul, standing invisible-person styling, worn-body presentation, shoes posed like invisible feet, random opposing shoe directions, shoes detached from the implied pose, rigid straight-line flat lay with no pose, independent product breakdown, generic catalog grid, invented products, copied reference-image products, missing required products.
 - Usage example: "Use 06 Korean street editorial"
 
 ![06 - Korean Street Editorial](../public/skill-examples/06-korean-street-editorial.jpg)
