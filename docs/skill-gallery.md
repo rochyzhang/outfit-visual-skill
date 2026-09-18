@@ -41,7 +41,7 @@ Examples:
 - Skill ID: `SK03_LOOK_BREAKDOWN`
 - English name: Look Breakdown
 - Chinese description: 整套 Look + 单品拆解说明
-- Canonical visual behavior: Main look plus numbered fashion item breakdown. The main look may be model-based but should avoid a clear face or recognizable facial features, using crop-below-chin, head-out-of-frame, or back/side-back framing while keeping short English item titles and a clean look-guide / gift-guide hierarchy.
+- Canonical visual behavior: Main look plus numbered fashion item breakdown anchored only to the approved SK03 reference. The main look may be model-based but should avoid a clear face or recognizable facial features, using crop-below-chin, head-out-of-frame, or back/side-back framing while keeping short English item titles and a clean look-guide / gift-guide hierarchy.
 - Required inputs: at least 3 valid user-provided product/outfit references.
 - Forbidden elements: copied products from the reference image, invented products, visible recognizable face, portrait-focused model, non-English labels, long catalog paragraphs, poster-style branding layout, SK05 catalog page, SK06 Korean poster, wrong output type.
 - Usage example: "Use 03"
@@ -65,9 +65,9 @@ Examples:
 - Skill ID: `SK05_JAPANESE_CATALOG`
 - English name: Japanese Catalog
 - Chinese description: 日杂 / 日系目录感穿搭视觉
-- Canonical visual behavior: Quiet Japanese lifestyle catalog feeling with warm off-white paper-like calm, soft editorial layout, gentle whitespace, and English-only typography. This is not Japanese text generation, a poster, or a breakdown board.
+- Canonical visual behavior: Quiet Japanese lifestyle catalog feeling anchored only to the approved SK05 reference, with warm off-white paper-like calm, soft editorial layout, gentle whitespace, product-led catalog composition, simple labels, short supporting copy, and English-only typography. This is not Japanese text generation, a SK03 breakdown board, or a SK06 poster.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
-- Forbidden elements: Japanese text, fake Japanese glyphs, kana, kanji, Hangul, Korean text, poster-style branding, SK03 numbered breakdown board, generic model portrait, invented products, copied reference-image products, missing required products.
+- Forbidden elements: Japanese text, fake Japanese glyphs, kana, kanji, Hangul, Korean text, poster-style branding, SK03 as style anchor, SK03 numbered breakdown board, generic heavy model portrait, invented products, copied reference-image products, missing required products.
 - Usage example: "Use 05 Japanese catalog"
 
 ![05 - Japanese Catalog](../public/skill-examples/05-japanese-catalog.png)
@@ -77,9 +77,9 @@ Examples:
 - Skill ID: `SK06_KOREAN_STREET_EDITORIAL`
 - English name: Korean Street Editorial
 - Chinese description: 韩系 / 首尔街头编辑感穿搭图
-- Canonical visual behavior: Korean independent-brand poster with a dusty-sage flat 2D human-silhouette outfit, generic fictional title, setup/look title, white hand-drawn product callouts, and a very short poster tagline. The garments form one complete clothing-only head-to-toe Look without real human, face, skin, mannequin, or strong 3D invisible body.
+- Canonical visual behavior: Korean independent-brand poster anchored only to the approved SK06 reference, with a dusty-sage flat 2D human-silhouette outfit, generic fictional title, setup/look title, white hand-drawn product callouts, and a very short poster tagline. The garments form one complete clothing-only head-to-toe Look without real human, face, skin, street-photo model, mannequin, or strong 3D invisible body.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
-- Forbidden elements: visible person, face, skin, mannequin, strong 3D invisible body, Korean text, Hangul, Japanese text, SK03 item breakdown board, SK05 catalog page, generic catalog grid, invented products, copied reference-image products, missing required products.
+- Forbidden elements: visible person, face, skin, street-photo model, mannequin, strong 3D invisible body, Korean text, Hangul, Japanese text, SK03 as style anchor, SK03 item breakdown board, SK05 catalog page, generic catalog grid, invented products, copied reference-image products, missing required products.
 - Usage example: "Use 06 Korean street editorial"
 
 ![06 - Korean Street Editorial](../public/skill-examples/06-korean-street-editorial.jpg)

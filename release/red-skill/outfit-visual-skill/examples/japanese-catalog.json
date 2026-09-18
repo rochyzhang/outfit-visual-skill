@@ -1,7 +1,7 @@
 {
   "mode": "native_agent",
-  "request": "Use 05. Create a Japanese catalog-feeling outfit visual from my uploaded product references.",
+  "request": "Use 05. Create a Japanese catalog-feeling outfit visual from my uploaded product references using the approved 05 visual direction.",
   "skillId": "SK05_JAPANESE_CATALOG",
   "userProvidedRoles": ["top", "bottom", "shoes"],
-  "note": "Attach real user product images for the listed roles. Keep the catalog feeling quiet and soft, and use English-only visible typography with no Japanese characters or fake Japanese text."
+  "note": "Attach real user product images for the listed roles. Use only the SK05 Japanese Catalog presentation reference. Keep the catalog feeling quiet, soft, warm-neutral, paper-like, and product-led, and use English-only visible typography with no Japanese characters or fake Japanese text."
 }

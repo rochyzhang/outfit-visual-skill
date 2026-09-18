@@ -1,7 +1,7 @@
 {
   "mode": "native_agent",
-  "request": "Use 06. Create a Korean independent-brand street editorial poster from my uploaded product references.",
+  "request": "Use 06. Create a Korean independent-brand street editorial poster from my uploaded product references using the approved 06 visual direction.",
   "skillId": "SK06_KOREAN_STREET_EDITORIAL",
   "userProvidedRoles": ["top", "bottom", "shoes", "bag"],
-  "note": "Attach real user product images for the listed roles. Use a flat 2D human-silhouette outfit poster with English-only title, setup text, white hand-drawn callouts, and a short tagline."
+  "note": "Attach real user product images for the listed roles. Use only the SK06 Korean Street Editorial presentation reference. Use a muted sage flat 2D human-silhouette outfit poster with English-only title, setup text, white hand-drawn callouts, and a short tagline; no real person, face, skin, or street-photo model."
 }
