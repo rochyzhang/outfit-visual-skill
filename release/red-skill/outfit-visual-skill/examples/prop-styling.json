@@ -1,0 +1,7 @@
+{
+  "mode": "native_agent",
+  "request": "Use 04",
+  "skillId": "SK04_PROP_STYLING",
+  "userProvidedRoles": ["top", "bottom", "shoes"],
+  "note": "Attach real user product images for the listed roles. Create a clean grey-white studio prop-styling image with one hero chair or simple prop, a small English top information row, and a chair-supported garment arrangement that suggests a wearable human outline without showing a real person, skin, face, full mannequin, or strong 3D invisible-person body."
+}

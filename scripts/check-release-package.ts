@@ -16,6 +16,7 @@ const requiredPackageFiles = [
   "skill-manifest.json",
   "examples/minimal-flat-lay.json",
   "examples/clean-editorial-flat-lay.json",
+  "examples/prop-styling.json",
   "examples/japanese-catalog.json",
   "docs/INPUTS.md",
   "docs/WORKFLOW.md",
@@ -114,11 +115,23 @@ for (const [code, referencePath] of skillReferenceMapping) {
   assert.match(skillReadme, new RegExp(`${code} may use only \`${referencePath.replaceAll("/", "\\/")}\``));
   assert.ok(existsSync(path.join(packageDir, referencePath)), `Missing mapped visual reference: ${referencePath}`);
 }
+const sk02Contract = skillReadme.match(/### 02[\s\S]*?(?=### 03)/)?.[0] ?? "";
+const sk02PositiveContract = sk02Contract
+  .split(/\n/)
+  .filter((line) => /^- (Composition|Scene|Look|Graphic) rule:/.test(line))
+  .join("\n");
+const sk01Contract = skillReadme.match(/### 01[\s\S]*?(?=### 02)/)?.[0] ?? "";
+const sk04Contract = skillReadme.match(/### 04[\s\S]*?(?=### 05)/)?.[0] ?? "";
 assert.doesNotMatch(
-  skillReadme,
-  /SK02[\s\S]{0,800}(casual layered placement|mild overlap, rhythm|natural relaxed scattering|tactile concrete-floor still-life)/,
+  sk02PositiveContract,
+  /casual layered placement|mild overlap, rhythm|tactile concrete-floor still-life/,
   "SK02 must not borrow SK01 casual concrete flat-lay language"
 );
+assert.match(sk01Contract, /thin arrows or leader lines plus short 1-3 word English labels/);
+assert.match(sk02Contract, /restrained top title such as `OUTFIT NOTES`, `EDITED LOOK`, or `MONTHLY OUTFIT`/);
+assert.match(sk02Contract, /do not copy reference-image brand names, website addresses, logos, months, or slogans/);
+assert.match(sk04Contract, /form a subtle human-presence display/);
+assert.match(sk04Contract, /one small top information row/);
 
 const packageFiles = walkFiles(packageDir);
 let totalBytes = 0;

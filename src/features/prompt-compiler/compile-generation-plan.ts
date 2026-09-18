@@ -46,7 +46,7 @@ function buildCompositionInstruction(config: GenerationConfig) {
       : config.skillOrigin?.id === "SK02_INVISIBLE_EDITORIAL"
       ? " Skill-specific modifier for SK02: use a clean editorial flat-lay outfit presentation with a tidier, more orderly, more controlled arrangement than SK01. Arrange the uploaded products on a light neutral studio surface so each major item reads clearly as its own product, with clear product separation, deliberate spacing, neat alignment, simple hierarchy, subtle contact shadows, and polished editorial negative space. Preserve one complete outfit relationship: top or outer as the upper visual anchor, trousers as the dominant lower-body item, shoes grouped naturally near the lower area, and bag placed nearby with minimal and deliberate overlap only when it improves hierarchy. Keep the layout shallow, flat, curated, and editorial rather than casually dropped, loosely scattered, or naturally messy. Keep it human-absent and clothing-only, with no invisible-body structure, mannequin, anatomy, body occupancy, human silhouette, walking pose, standing pose, or reclining body form."
       : config.skillOrigin?.id === "SK04_PROP_STYLING"
-      ? " Skill-specific modifier for SK04: preserve prop-styling identity with one visually dominant hero chair or similarly simple hero prop. The outfit should interact naturally with that single anchor: garments may drape over or through the chair, trousers may fall from the seat, bags may hang from or rest against it, and shoes should ground beside it. Avoid simply placing independent products around a prop; the prop should organize the outfit spatially without distorting uploaded products. Do not add secondary furniture or prop clusters."
+      ? " Skill-specific modifier for SK04: preserve prop-styling identity with one visually dominant hero chair or similarly simple hero prop. The outfit should interact naturally with that single anchor and form a subtle human-presence display: garments may be supported, draped, or positioned so the outfit suggests a wearable human outline through the chair and product relationships, while remaining product-first. Trousers may fall from the seat, tops may imply an upper torso shape through drape and support, bags may hang from or rest against the anchor, and shoes should ground the implied stance. Avoid simply placing independent products around a prop; the prop should organize the outfit spatially without distorting uploaded products. Do not add secondary furniture or prop clusters, visible body parts, face, skin, a full mannequin, or a strong 3D invisible-person effect."
       : config.skillOrigin?.id === "SK06_KOREAN_STREET_EDITORIAL"
       ? " Skill-specific modifier for SK06: use C04 only as a base for a flat 2D human-silhouette outfit editorial, not as SK02's clean separated studio flat lay and not as a product breakdown. Preserve one coherent head-to-toe outfit relationship: top or outer above bottom, bottom connected to the leg area, shoes near the implied feet, optional hat or glasses near the head position, bag at the shoulder or body side, and accessories associated with their natural styling positions. Flatness refers to depth, not incorrect scale: keep believable full-outfit human proportions, with the upper body, waist, bottom length, shoe size, bag scale, and accessories proportional to one fashion-body silhouette. Treat the complete outfit as the primary composition unit before scaling individual products, and maintain useful negative space around the complete look. Add a required callout for every major displayed product: small index number, short 1-3 word English product label derived conservatively from the supplied role or safe category, and a thin hand-drawn-style leader line pointing to the correct item. Place annotations in surrounding negative space; never cover product details. Prefer flattened garment presentation, front-facing or mildly angled layout, low depth, low perspective, graphic silhouette, restrained garment volume, clean overall outline, and complete outfit readability."
       : "";
@@ -119,14 +119,31 @@ function buildColorInstruction(config: GenerationConfig) {
   return `${config.promptFragments.color}${skillModifier}`;
 }
 
+function buildSkillGraphicModifier(config: GenerationConfig) {
+  if (config.skillOrigin?.id === "SK01_MINIMAL_FLAT_LAY") {
+    return "Skill-specific graphic for SK01: add lightweight product information annotations using thin arrows or leader lines plus short 1-3 word English labels. The annotation style should feel direct, casual, and lifestyle still-life explanatory, while the image remains realistic flat-lay photography rather than an information poster. Place labels in negative space, point each arrow to the correct product, and never cover product-defining details. Do not add a large poster headline, complex typography hierarchy, brand logos, URLs, prices, marketing copy, or non-English text.";
+  }
+
+  if (config.skillOrigin?.id === "SK02_INVISIBLE_EDITORIAL") {
+    return "Skill-specific graphic for SK02: add a clean editorial outfit information layout. A restrained top title such as OUTFIT NOTES, EDITED LOOK, or MONTHLY OUTFIT may appear, with systematic product information labels around the items. Use a clearer text hierarchy than SK01: category or neutral product name as the primary line, optional short description as the secondary line, and simple thin leader lines pointing to the correct products. Keep all visible text in English, concise, and generic; do not copy reference-image brand names, website addresses, logos, months, or slogans. The information layer should be polished and controlled, but SK02 must not become SK03 product breakdown, SK05 catalog layout, or SK06 Korean callout editorial.";
+  }
+
+  if (config.skillOrigin?.id === "SK04_PROP_STYLING") {
+    return "Skill-specific graphic for SK04: add one small top information row made of concise English product notes, optionally grouped by item. The top row is supplemental and must not overpower the prop-styling image. Use restrained editorial typography with no large poster headline, no URLs, no brand logos, no prices, no marketing slogan, and no non-English text. Product notes must remain accurate to the uploaded items and must not cover the outfit or hero prop.";
+  }
+
+  return "";
+}
+
 function buildGraphicInstruction(config: GenerationConfig) {
   const fragment = clean(config.promptFragments.graphic);
+  const skillModifier = buildSkillGraphicModifier(config);
 
-  if (!fragment) {
+  if (!fragment && !skillModifier) {
     return null;
   }
 
-  return `${fragment}. ${graphicSafeguardInstruction}`;
+  return [fragment ? `${fragment}.` : "", skillModifier, graphicSafeguardInstruction].filter(Boolean).join(" ");
 }
 
 function buildOutputInstruction(config: GenerationConfig) {
@@ -161,6 +178,7 @@ function buildProhibitedBehavior(config: GenerationConfig) {
     prohibited.push("Do not create a pure white cutout-on-background collage, floating graphic composition, sterile ecommerce white canvas, rigid product grid, pasted-on compositing, or disconnected evenly separated products.");
     prohibited.push("Do not remove the realistic indoor cement/concrete floor feeling, subtle ground texture, natural layered placement, grounded shadows, or editorial still-life photography quality.");
     prohibited.push("Do not use a warm beige floor appearance, brownish-grey or muddy grey cast, dirty warm cement tone, yellow cast, hard shadow, overly contrasty floor texture, dramatic spotlight, or side-angle fashion editorial feel.");
+    prohibited.push("Do not turn SK01 annotations into a poster title, dense information layout, SK02-style systematic editorial label grid, SK03 breakdown poster, or SK04 chair/prop scene.");
   }
 
   if (config.skillOrigin?.id === "SK02_INVISIBLE_EDITORIAL") {
@@ -171,6 +189,7 @@ function buildProhibitedBehavior(config: GenerationConfig) {
     prohibited.push("Do not make the arrangement casually layered, naturally messy, loosely scattered, excessively overlapping, thrown down, floating too far apart, or body-shaped; SK02 should feel clean, tidy, separated, controlled, and editorial without becoming a strict grid.");
     prohibited.push("Do not add furniture, chair props, decorative objects, strongly textured walls, room architecture, lifestyle clutter, dominant shadows, strong colored backdrops, elaborate set design, or clutter.");
     prohibited.push("Do not use cement-floor realism, strong concrete texture, warm beige dominance, warm yellow lighting, golden editorial warmth, heavy orange cast, icy blue cast, hard spotlight, or overly cozy room tone.");
+    prohibited.push("Do not copy brand names, website URLs, logos, months, or slogans from reference images; use only generic English product labels and concise neutral descriptions. Do not turn SK02 into SK03 product breakdown, SK05 catalog typography, or SK06 Korean callout editorial.");
   }
 
   if (config.skillOrigin?.id === "SK04_PROP_STYLING") {
@@ -179,6 +198,7 @@ function buildProhibitedBehavior(config: GenerationConfig) {
     prohibited.push("Do not add shelves, cabinets, side tables, extra pedestals unless absolutely required, multiple competing furniture pieces, decorative prop collections, cluttered tabletop styling, excessive lifestyle objects, complex room decoration, busy architectural backgrounds, decorative architecture, or prop-heavy storytelling.");
     prohibited.push("Do not let prop fidelity override product fidelity; never distort uploaded products just to fit the furniture.");
     prohibited.push("Do not use warm yellow room tone, orange cast, overly cozy mood, vintage warm filter, hard spotlight, or theatrical contrast.");
+    prohibited.push("Do not show a real human, face, skin, full mannequin, or strong 3D invisible-person body; SK04 may suggest a wearable human outline through chair-supported garment placement only. Do not let the top information row become a large poster headline or cover the products.");
   }
 
   if (config.composition.id === "C01") {

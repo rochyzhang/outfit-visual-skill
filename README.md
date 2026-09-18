@@ -76,13 +76,13 @@ Examples:
 
 ### 01 - Minimal Flat Lay
 
-Clean minimal flat-lay outfit image for complete outfit presentation.
+Realistic cool-grey concrete flat-lay outfit image with lightweight English arrow labels.
 
 ![01 - Minimal Flat Lay](public/skill-examples/01-minimal-flat-lay.jpg)
 
 ### 02 - Clean Editorial Flat Lay
 
-Clean, tidy studio flat-lay outfit image with clear product separation, deliberate spacing, polished negative space, and less overlap than 01.
+Clean, tidy studio flat-lay outfit information layout with a restrained English title, product labels, clear separation, deliberate spacing, and less overlap than 01.
 
 ![02 - Clean Editorial Flat Lay](public/skill-examples/02-clean-editorial-flat-lay.png)
 
@@ -94,7 +94,7 @@ Complete look plus individual product breakdown.
 
 ### 04 - Prop Styling
 
-Outfit styled with one hero chair or simple prop in a clean grey-white studio.
+Outfit styled with one hero chair or simple prop in a clean grey-white studio, with a small top information row and chair-supported human-presence arrangement.
 
 ![04 - Prop Styling](public/skill-examples/04-prop-styling.jpg)
 

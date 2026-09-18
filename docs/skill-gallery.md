@@ -17,9 +17,9 @@ Examples:
 - Skill ID: `SK01_MINIMAL_FLAT_LAY`
 - English name: Minimal Flat Lay
 - Chinese description: 干净平铺穿搭图，适合整套搭配展示
-- Canonical visual behavior: Realistic minimal true overhead or near top-down flat lay on a slightly cooler, cleaner neutral-grey indoor cement/concrete floor. The uploaded outfit is casually layered with soft low-saturation daylight, soft-edged grounded shadows, faithful product color, and a real still-life photography feel.
+- Canonical visual behavior: Realistic minimal true overhead or near top-down flat lay on a slightly cooler, cleaner neutral-grey indoor cement/concrete floor. The uploaded outfit is casually layered with soft low-saturation daylight, soft-edged grounded shadows, faithful product color, real still-life photography feel, and lightweight English arrow/leader-line product annotations placed in negative space.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
-- Forbidden elements: human model, portrait photography, lifestyle street photography, pure white cutout collage, warm beige/yellow floor cast, brownish or muddy grey cast, overly contrasty floor texture, hard spotlight, floating graphic composition, sterile ecommerce grid, invented products, substituted products, missing required products.
+- Forbidden elements: human model, portrait photography, lifestyle street photography, pure white cutout collage, warm beige/yellow floor cast, brownish or muddy grey cast, overly contrasty floor texture, hard spotlight, floating graphic composition, sterile ecommerce grid, poster title, dense information layout, SK02-style systematic label grid, invented products, substituted products, missing required products.
 - Usage example: "Use 01"
 
 ![01 - Minimal Flat Lay](../public/skill-examples/01-minimal-flat-lay.jpg)
@@ -29,9 +29,9 @@ Examples:
 - Skill ID: `SK02_INVISIBLE_EDITORIAL`
 - English name: Clean Editorial Flat Lay
 - Chinese description: 干净棚拍平铺穿搭图，单品关系清晰、留白克制。
-- Canonical visual behavior: Clean human-absent editorial flat lay on a pale neutral studio surface. Uploaded products are intentionally arranged in a cleaner, tidier, more controlled studio composition than SK01, with clear product separation, deliberate spacing, neat alignment, simple hierarchy, subtle contact shadows, polished negative space, and minimal deliberate overlap. It is not an invisible-body, mannequin, prop styling, catalog graphic, Korean callout, or SK01-like casual concrete-floor presentation.
+- Canonical visual behavior: Clean human-absent editorial flat lay on a pale neutral studio surface. Uploaded products are intentionally arranged in a cleaner, tidier, more controlled studio composition than SK01, with clear product separation, deliberate spacing, neat alignment, simple hierarchy, subtle contact shadows, polished negative space, minimal deliberate overlap, a restrained English top title, and systematic product information labels with thin leader lines. It is not an invisible-body, mannequin, prop styling, SK03 product breakdown, SK05 catalog graphic, Korean callout, or SK01-like casual concrete-floor presentation.
 - Required inputs: `bottom`, `shoes`, and at least one of `top` or `outer`.
-- Forbidden elements: visible face, visible skin, identifiable human model, mannequin, invisible-body structure, body-shaped outfit arrangement, human silhouette, invented products, missing required products, furniture, decorative props, room architecture, lifestyle clutter, cement-floor realism, strong concrete texture, warm beige cast, casual layered still-life feeling, natural relaxed scattering, thrown-down styling, excessive overlap, catalog graphics, Korean callouts, rigid ecommerce grid, hard spotlight.
+- Forbidden elements: visible face, visible skin, identifiable human model, mannequin, invisible-body structure, body-shaped outfit arrangement, human silhouette, invented products, missing required products, copied brand names, URLs, logos, months, slogans, non-English text, furniture, decorative props, room architecture, lifestyle clutter, cement-floor realism, strong concrete texture, warm beige cast, casual layered still-life feeling, natural relaxed scattering, thrown-down styling, excessive overlap, catalog graphics, Korean callouts, rigid ecommerce grid, hard spotlight.
 - Usage example: "Use Clean Editorial Flat Lay"
 
 ![02 - Clean Editorial Flat Lay](../public/skill-examples/02-clean-editorial-flat-lay.png)
@@ -53,9 +53,9 @@ Examples:
 - Skill ID: `SK04_PROP_STYLING`
 - English name: Prop Styling
 - Chinese description: 衣服与椅子、家具或小物一起陈列
-- Canonical visual behavior: Product-first still life with clothing styled around one hero chair or simple hero prop in a clean, lighter grey-white studio wall/floor environment with a simple neutral backdrop and no extra furniture clutter.
+- Canonical visual behavior: Product-first still life with clothing styled around one hero chair or simple hero prop in a clean, lighter grey-white studio wall/floor environment with a simple neutral backdrop, no extra furniture clutter, one small English top information row, and a chair-supported garment arrangement that suggests a wearable human outline without showing a person.
 - Required inputs: `bottom` and at least one of `top` or `outer`.
-- Forbidden elements: prop as main subject, cement-wall or concrete-room atmosphere, shelf/cabinet/table clutter, multiple competing furniture pieces, decorative architecture, warm yellow/orange room tone, overly cozy grading, hard spotlight, invented fashion products, copied reference-image products, impossible fabric contact, missing required products.
+- Forbidden elements: prop as main subject, cement-wall or concrete-room atmosphere, shelf/cabinet/table clutter, multiple competing furniture pieces, decorative architecture, warm yellow/orange room tone, overly cozy grading, hard spotlight, invented fashion products, copied reference-image products, impossible fabric contact, missing required products, real human, face, skin, full mannequin, strong 3D invisible-person body, large poster headline.
 - Usage example: "Use Prop Styling"
 
 ![04 - Prop Styling](../public/skill-examples/04-prop-styling.jpg)
