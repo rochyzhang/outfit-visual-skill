@@ -234,7 +234,7 @@ export const workflowSkills = [
   {
     id: "SK05_JAPANESE_CATALOG",
     name: "Japanese Catalog",
-    description: "Japanese magazine/catalog-inspired styling with English-only catalog typography.",
+    description: "Japanese magazine/catalog-inspired styling with English catalog information and limited Japanese editorial accent text.",
     supportedContentTypes: ["men", "genderless"],
     category: "catalog",
     requiredInputRule: standardSingleOutfitRule,
@@ -250,10 +250,10 @@ export const workflowSkills = [
       productFidelity: true
     },
     supportedOverrides: v1WorkflowSkillSupportedOverrides,
-    safeguards: englishVisibleTextSafeguard,
+    safeguards: preserveUploadedProductsSafeguard,
     agent: {
       callable: true,
-      summary: "Use for Japanese catalog-inspired single-outfit styling with English-only visible typography."
+      summary: "Use for Japanese catalog-inspired single-outfit styling with English product information and limited Japanese editorial accent text."
     }
   },
   {

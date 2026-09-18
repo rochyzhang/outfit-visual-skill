@@ -38,7 +38,7 @@ export const graphicPresets = [
     name: "Japanese Catalog",
     shortDescription: "Precise catalog labeling.",
     promptFragment:
-      "English editorial fashion catalog typography inspired by Japanese magazine layout, small English technical product labels, precise alignment, minimal black typography, generous white space, quiet editorial layout",
+      "Japanese magazine/catalog typography with English as the primary product-information language, limited short Japanese editorial accent text when appropriate, precise alignment, minimal black typography, generous white space, quiet editorial layout, no product zoom/detail-box column",
     tags: ["japanese", "catalog", "technical"]
   }
 ] satisfies GraphicPreset[];

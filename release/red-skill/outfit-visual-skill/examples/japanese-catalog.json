@@ -1,7 +1,7 @@
 {
   "mode": "native_agent",
-  "request": "用 05 日杂目录感",
+  "request": "Use 05 Japanese catalog",
   "skillId": "SK05_JAPANESE_CATALOG",
   "userProvidedRoles": ["top", "bottom", "shoes"],
-  "note": "Attach real user product images for the listed roles. Use English-only visible typography."
+  "note": "Attach real user product images for the listed roles. Create a Japanese magazine/catalog page with the main outfit dominant, English product information, limited short Japanese editorial accent text, and no product zoom/detail-box column."
 }

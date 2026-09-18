@@ -107,8 +107,9 @@ assert.ok(sk04.recommendedSlots.includes("shoes"));
 
 const sk05 = getWorkflowSkill("SK05_JAPANESE_CATALOG");
 assert.equal(sk05.defaults.graphicPresetId, "G04");
-assert.equal(sk05.safeguards.englishVisibleTextOnly, true);
+assert.equal(sk05.safeguards.englishVisibleTextOnly, false);
 assert.match(sk05.description, /Japanese magazine\/catalog-inspired/);
+assert.match(sk05.description, /limited Japanese editorial accent text/);
 
 const sk06 = getWorkflowSkill("SK06_KOREAN_STREET_EDITORIAL");
 assert.equal(sk06.defaults.graphicPresetId, "G02");

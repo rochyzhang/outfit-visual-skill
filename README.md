@@ -76,7 +76,7 @@ Examples:
 
 ### 01 - Minimal Flat Lay
 
-Realistic cool-grey concrete flat-lay outfit image with lightweight English arrow labels.
+Realistic cool-grey concrete flat-lay outfit image with richer lightweight Title Case English arrow labels and short descriptors.
 
 ![01 - Minimal Flat Lay](public/skill-examples/01-minimal-flat-lay.jpg)
 
@@ -94,19 +94,19 @@ Complete look plus individual product breakdown.
 
 ### 04 - Prop Styling
 
-Outfit styled with one hero chair or simple prop in a clean grey-white studio, with a small top information row and chair-supported human-presence arrangement.
+Outfit styled with one hero chair or simple prop in a clean premium grey-white studio, with a small top information row and a human-shaped arrangement by placement only.
 
 ![04 - Prop Styling](public/skill-examples/04-prop-styling.jpg)
 
 ### 05 - Japanese Catalog
 
-Japanese magazine/catalog-inspired outfit visual.
+Japanese magazine/catalog-inspired outfit visual with English product information and limited short Japanese editorial accent text.
 
 ![05 - Japanese Catalog](public/skill-examples/05-japanese-catalog.png)
 
 ### 06 - Korean Street Editorial
 
-Korean / Seoul street editorial outfit visual.
+Korean / Seoul flat arranged outfit visual with white hand-drawn callouts.
 
 ![06 - Korean Street Editorial](public/skill-examples/06-korean-street-editorial.jpg)
 

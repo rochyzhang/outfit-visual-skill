@@ -79,6 +79,8 @@
     "allowsNativeReferenceInspection": true,
     "noAssetDiscoveryInMcpMode": true,
     "missingAssetsRemainEmpty": true,
-    "englishGeneratedVisibleTextOnlyForCatalogGraphics": true
+    "englishGeneratedVisibleTextOnlyForCatalogGraphics": false,
+    "sk05AllowsLimitedJapaneseEditorialAccentText": true,
+    "sk06RequiresEnglishHandDrawnCalloutsOnly": true
   }
 }

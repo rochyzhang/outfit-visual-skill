@@ -1,0 +1,7 @@
+{
+  "mode": "native_agent",
+  "request": "Use 06 Korean street editorial",
+  "skillId": "SK06_KOREAN_STREET_EDITORIAL",
+  "userProvidedRoles": ["top", "bottom", "shoes"],
+  "note": "Attach real user product images for the listed roles. Create a muted sage Korean street editorial with a flat arranged human-shape outfit, white hand-drawn English callouts, consistent shoe-toe direction, and no standing invisible-person or worn-body presentation."
+}

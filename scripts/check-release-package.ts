@@ -18,6 +18,7 @@ const requiredPackageFiles = [
   "examples/clean-editorial-flat-lay.json",
   "examples/prop-styling.json",
   "examples/japanese-catalog.json",
+  "examples/korean-street-editorial.json",
   "docs/INPUTS.md",
   "docs/WORKFLOW.md",
   "mcp/config.example.json"
@@ -127,11 +128,20 @@ assert.doesNotMatch(
   /casual layered placement|mild overlap, rhythm|tactile concrete-floor still-life/,
   "SK02 must not borrow SK01 casual concrete flat-lay language"
 );
-assert.match(sk01Contract, /thin arrows or leader lines plus short 1-3 word English labels/);
+assert.match(sk01Contract, /thin arrows or leader lines plus short English labels in Title Case/);
+assert.match(sk01Contract, /Do not use all-caps for every product name/);
 assert.match(sk02Contract, /restrained top title such as `OUTFIT NOTES`, `EDITED LOOK`, or `MONTHLY OUTFIT`/);
 assert.match(sk02Contract, /do not copy reference-image brand names, website addresses, logos, months, or slogans/);
-assert.match(sk04Contract, /form a subtle human-presence display/);
+assert.match(sk04Contract, /form a human-shaped styling composition by placement only/);
+assert.match(sk04Contract, /garments must not contain an invisible body/);
 assert.match(sk04Contract, /one small top information row/);
+const sk05Contract = skillReadme.match(/### 05[\s\S]*?(?=### 06)/)?.[0] ?? "";
+const sk06Contract = skillReadme.match(/### 06[\s\S]*$/)?.[0] ?? "";
+assert.match(sk05Contract, /limited short Japanese editorial accent text allowed/);
+assert.match(sk05Contract, /Do not create a vertical column of multiple product zoom\/detail boxes/);
+assert.match(sk06Contract, /flat arranged human-shape outfit composition/);
+assert.match(sk06Contract, /both shoe toes pointing in the same general direction/);
+assert.match(sk06Contract, /standing invisible-person or worn-body presentation/);
 
 const packageFiles = walkFiles(packageDir);
 let totalBytes = 0;

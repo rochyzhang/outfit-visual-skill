@@ -144,7 +144,8 @@ assert.match(koreanStreetPrompt, /Korean independent streetwear and Seoul editor
 assert.match(koreanStreetPrompt, /English-only editorial annotations and labels/);
 assert.match(koreanStreetPrompt, /All visible text, labels, annotations, captions, and handwritten notes in the generated image must be in English only/);
 assert.doesNotMatch(koreanStreetPrompt, /Korean handwritten|Hangul text|Korean-language output/i);
-assert.match(plan({ graphic: "G04" }).finalPrompt, /English editorial fashion catalog typography inspired by Japanese magazine layout/);
+assert.match(plan({ graphic: "G04" }).finalPrompt, /Japanese magazine\/catalog typography with English as the primary product-information language/);
+assert.match(plan({ graphic: "G04" }).finalPrompt, /limited short Japanese editorial accent text/);
 assert.match(plan({ composition: "C02" }).finalPrompt, /top-down fashion flat lay/);
 assert.match(plan({ composition: "C03" }).finalPrompt, /chair or object/);
 assert.match(plan({ composition: "C04" }).finalPrompt, /invisible person in motion/);
@@ -169,10 +170,12 @@ assert.match(section(sk01Prompt, "09 COLOR"), /slightly cooler clean neutral-gre
 assert.match(section(sk01Prompt, "09 COLOR"), /low yellow warmth/);
 assert.match(section(sk01Prompt, "09 COLOR"), /no brownish-grey or muddy grey cast/);
 assert.match(section(sk01Prompt, "13 GRAPHIC OVERLAY"), /lightweight product information annotations/);
-assert.match(section(sk01Prompt, "13 GRAPHIC OVERLAY"), /thin arrows or leader lines plus short 1-3 word English labels/);
-assert.match(section(sk01Prompt, "13 GRAPHIC OVERLAY"), /lifestyle still-life explanatory/);
+assert.match(section(sk01Prompt, "13 GRAPHIC OVERLAY"), /thin arrows or leader lines plus short English labels in Title Case/);
+assert.match(section(sk01Prompt, "13 GRAPHIC OVERLAY"), /Knit Polo \/ Soft Textured Knit/);
+assert.match(section(sk01Prompt, "13 GRAPHIC OVERLAY"), /lively, and lifestyle still-life explanatory/);
 assert.match(section(sk01Prompt, "13 GRAPHIC OVERLAY"), /realistic flat-lay photography rather than an information poster/);
 assert.match(section(sk01Prompt, "13 GRAPHIC OVERLAY"), /point each arrow to the correct product/);
+assert.match(section(sk01Prompt, "13 GRAPHIC OVERLAY"), /Do not use all-caps for every product name/);
 assert.doesNotMatch(section(sk01Prompt, "13 GRAPHIC OVERLAY"), /restrained top title/);
 assert.doesNotMatch(section(sk01Prompt, "13 GRAPHIC OVERLAY"), /systematic product information labels/);
 assert.doesNotMatch(section(sk01Prompt, "13 GRAPHIC OVERLAY"), /hero chair/);
@@ -183,6 +186,7 @@ assert.match(section(sk01Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /warm bei
 assert.match(section(sk01Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /dirty warm cement tone/);
 assert.match(section(sk01Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /overly contrasty floor texture/);
 assert.match(section(sk01Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not turn SK01 annotations into a poster title/);
+assert.match(section(sk01Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /prefer Title Case labels/);
 const sk02Composition = section(
   plan({ selectedSkillId: "SK02_INVISIBLE_EDITORIAL", composition: "C02", scene: "S01", look: "L02" }).finalPrompt,
   "04 COMPOSITION"
@@ -251,18 +255,21 @@ assert.doesNotMatch(sk02Prompt, /relaxed editorial floor-lay/);
 const sk04Prompt = plan({ selectedSkillId: "SK04_PROP_STYLING", composition: "C03", scene: "S01", look: "L02" }).finalPrompt;
 assert.match(section(sk04Prompt, "04 COMPOSITION"), /one visually dominant hero chair/);
 assert.match(section(sk04Prompt, "04 COMPOSITION"), /The outfit should interact naturally with that single anchor/);
-assert.match(section(sk04Prompt, "04 COMPOSITION"), /form a subtle human-presence display/);
-assert.match(section(sk04Prompt, "04 COMPOSITION"), /suggests a wearable human outline through the chair and product relationships/);
-assert.match(section(sk04Prompt, "04 COMPOSITION"), /tops may imply an upper torso shape/);
-assert.match(section(sk04Prompt, "04 COMPOSITION"), /shoes should ground the implied stance/);
+assert.match(section(sk04Prompt, "04 COMPOSITION"), /form a human-shaped styling composition by placement only/);
+assert.match(section(sk04Prompt, "04 COMPOSITION"), /suggests shoulders, torso, and seated legs through the chair and product relationships/);
+assert.match(section(sk04Prompt, "04 COMPOSITION"), /tops may rest or drape against the chair/);
+assert.match(section(sk04Prompt, "04 COMPOSITION"), /ground the implied seated arrangement/);
+assert.match(section(sk04Prompt, "04 COMPOSITION"), /The chair supports the garments; the garments must not contain an invisible body/);
 assert.match(section(sk04Prompt, "04 COMPOSITION"), /prop should organize the outfit spatially/);
-assert.match(section(sk04Prompt, "04 COMPOSITION"), /Do not add secondary furniture or prop clusters, visible body parts, face, skin, a full mannequin, or a strong 3D invisible-person effect/);
-assert.match(section(sk04Prompt, "06 SCENE"), /cleaner, lighter grey-white indoor studio wall\/floor/);
+assert.match(section(sk04Prompt, "04 COMPOSITION"), /hidden mannequin, chest cavity, waist volume, thigh volume, knee volume, calf volume/);
+assert.match(section(sk04Prompt, "04 COMPOSITION"), /body-inflated garment tension/);
+assert.match(section(sk04Prompt, "06 SCENE"), /approved clean premium grey-white studio wall\/floor/);
 assert.match(section(sk04Prompt, "06 SCENE"), /clean grey-white wall and floor/);
 assert.match(section(sk04Prompt, "06 SCENE"), /simple light neutral backdrop/);
 assert.match(section(sk04Prompt, "06 SCENE"), /one chair as the spatial anchor/);
 assert.match(section(sk04Prompt, "06 SCENE"), /Tiny styling details are acceptable only if they do not read as additional furniture/);
-assert.match(section(sk04Prompt, "06 SCENE"), /Avoid cement-wall or concrete-room feeling/);
+assert.match(section(sk04Prompt, "06 SCENE"), /Avoid rough cement room feeling/);
+assert.match(section(sk04Prompt, "06 SCENE"), /industrial concrete-wall dominance/);
 assert.match(section(sk04Prompt, "06 SCENE"), /shelves, cabinets, side tables/);
 assert.match(section(sk04Prompt, "08 LIGHTING"), /soft diffused daylight/);
 assert.match(section(sk04Prompt, "08 LIGHTING"), /gentle grounded shadows/);
@@ -279,8 +286,9 @@ assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not a
 assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /decorative architecture/);
 assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /never distort uploaded products just to fit the furniture/);
 assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /warm yellow room tone, orange cast/);
-assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not show a real human, face, skin, full mannequin, or strong 3D invisible-person body/);
-assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /chair-supported garment placement only/);
+assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not show a real human, face, skin, full mannequin, hidden mannequin, or strong 3D invisible-person body/);
+assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /human-shaped styling composition through chair-supported garment placement only/);
+assert.match(section(sk04Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not inflate garments with invisible chest, waist, thigh, knee, or calf volume/);
 assert.doesNotMatch(section(sk04Prompt, "06 SCENE"), /light grey concrete studio interior/);
 assert.doesNotMatch(section(sk04Prompt, "06 SCENE"), /minimal industrial environment/);
 assert.doesNotMatch(section(sk04Prompt, "12 MOOD"), /industrial/i);
@@ -303,7 +311,6 @@ for (const prompt of nonSk01Prompts) {
 
 const unchangedSkillPrompts = [
   plan({ selectedSkillId: "SK03_LOOK_BREAKDOWN", scene: "S01", composition: "C05", graphic: "G01", look: "L02" }).finalPrompt,
-  plan({ selectedSkillId: "SK05_JAPANESE_CATALOG", scene: "S05", composition: "C02", graphic: "G04", look: "L05" }).finalPrompt,
   plan({ selectedSkillId: "SK06_KOREAN_STREET_EDITORIAL", scene: "S02", composition: "C04", graphic: "G02", look: "L01" }).finalPrompt
 ];
 for (const prompt of unchangedSkillPrompts) {
@@ -322,6 +329,21 @@ for (const prompt of unchangedSkillPrompts) {
   assert.doesNotMatch(prompt, /one small top information row/);
   assert.doesNotMatch(prompt, /subtle human-presence display/);
 }
+const sk05Prompt = plan({ selectedSkillId: "SK05_JAPANESE_CATALOG", scene: "S05", composition: "C02", graphic: "G04", look: "L05" }).finalPrompt;
+assert.match(section(sk05Prompt, "04 COMPOSITION"), /Japanese lifestyle magazine\/catalog page language/);
+assert.match(section(sk05Prompt, "04 COMPOSITION"), /main outfit composition dominant/);
+assert.match(section(sk05Prompt, "04 COMPOSITION"), /English should carry the primary product information/);
+assert.match(section(sk05Prompt, "04 COMPOSITION"), /small restrained Japanese editorial accent text allowed/);
+assert.match(section(sk05Prompt, "04 COMPOSITION"), /Do not create a vertical column of multiple product zoom\/detail boxes/);
+assert.match(section(sk05Prompt, "06 SCENE"), /warm off-white, soft paper-like Japanese magazine\/catalog page environment/);
+assert.match(section(sk05Prompt, "06 SCENE"), /Avoid technical product-detail boards/);
+assert.match(section(sk05Prompt, "13 GRAPHIC OVERLAY"), /Japanese lifestyle magazine\/catalog page layout/);
+assert.match(section(sk05Prompt, "13 GRAPHIC OVERLAY"), /English should be the primary informational language/);
+assert.match(section(sk05Prompt, "13 GRAPHIC OVERLAY"), /small amount of short Japanese editorial accent text is allowed/);
+assert.match(section(sk05Prompt, "13 GRAPHIC OVERLAY"), /Do not create large blocks of Japanese/);
+assert.match(section(sk05Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not add a vertical column of multiple product zoom\/detail boxes/);
+assert.match(section(sk05Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /technical product-detail pages/);
+assert.doesNotMatch(section(sk05Prompt, "13 GRAPHIC OVERLAY"), /English-only visible typography/);
 const sk06Prompt = plan({
   selectedSkillId: "SK06_KOREAN_STREET_EDITORIAL",
   scene: "S02",
@@ -329,19 +351,23 @@ const sk06Prompt = plan({
   graphic: "G02",
   look: "L01"
 }).finalPrompt;
-assert.match(section(sk06Prompt, "04 COMPOSITION"), /flat 2D human-silhouette outfit editorial/);
-assert.match(section(sk06Prompt, "04 COMPOSITION"), /Preserve one coherent head-to-toe outfit relationship/);
+assert.match(section(sk06Prompt, "04 COMPOSITION"), /flat arranged human-shape outfit editorial/);
+assert.match(section(sk06Prompt, "04 COMPOSITION"), /Preserve one coherent flat laid-out Look relationship/);
 assert.match(section(sk06Prompt, "04 COMPOSITION"), /not as SK02's clean separated studio flat lay/);
 assert.match(section(sk06Prompt, "04 COMPOSITION"), /not as a product breakdown/);
-assert.match(section(sk06Prompt, "04 COMPOSITION"), /believable full-outfit human proportions/);
+assert.match(section(sk06Prompt, "04 COMPOSITION"), /both toes pointing in the same general direction/);
+assert.match(section(sk06Prompt, "04 COMPOSITION"), /Human-shape feeling comes from flat placement and silhouette only/);
+assert.match(section(sk06Prompt, "04 COMPOSITION"), /must not look like a standing invisible model/);
 assert.match(section(sk06Prompt, "04 COMPOSITION"), /complete outfit as the primary composition unit/);
 assert.match(section(sk06Prompt, "04 COMPOSITION"), /small index number/);
 assert.match(section(sk06Prompt, "04 COMPOSITION"), /short 1-3 word English product label/);
-assert.match(section(sk06Prompt, "04 COMPOSITION"), /thin hand-drawn-style leader line/);
+assert.match(section(sk06Prompt, "04 COMPOSITION"), /white hand-drawn-style leader line/);
 assert.match(section(sk06Prompt, "04 COMPOSITION"), /surrounding negative space/);
 assert.doesNotMatch(section(sk06Prompt, "04 COMPOSITION"), /scattered independent items/);
-assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not create a strong 3D invisible walking-body presentation/);
+assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not create a standing invisible-person, worn-body, or strong 3D invisible walking-body presentation/);
+assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not make garments look worn by invisible feet, legs, torso, shoulders, or body/);
 assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not scatter garments into independent product tiles, a full product breakdown, or a generic catalog grid/);
+assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /shoe toes should point in the same general direction/);
 assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not maximize each product independently or distort product scale/);
 assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /Do not use long generated marketing copy/);
 assert.match(section(sk06Prompt, "15 NEGATIVE / PROHIBITED BEHAVIOR"), /No Hangul, Korean characters, or fake Korean visible text/);
