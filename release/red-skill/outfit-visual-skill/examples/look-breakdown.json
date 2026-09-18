@@ -1,7 +1,0 @@
-{
-  "mode": "native_agent",
-  "request": "Use 03. Create a look breakdown from my uploaded product references using the approved 03 visual direction.",
-  "skillId": "SK03_LOOK_BREAKDOWN",
-  "userProvidedRoles": ["top", "bottom", "shoes", "bag"],
-  "note": "Attach real user product images for the listed roles. Use only the SK03 presentation reference. Use a main look with no clear visible face plus a numbered item breakdown with short English labels."
-}
