@@ -45,10 +45,14 @@ function buildCompositionInstruction(config: GenerationConfig) {
       ? " Skill-specific modifier for SK01: preserve a realistic minimal flat lay close to the approved 01 visual reference. Arrange the outfit as naturally laid out on a floor, with casual but intentional placement, mild overlap, rhythm, visual hierarchy, believable contact, soft-edged grounded shadows, and small arrangement imperfections. Products should feel photographed together in one real still-life scene, not evenly separated, pasted-on, floating, or disconnected."
       : config.skillOrigin?.id === "SK02_INVISIBLE_EDITORIAL"
       ? " Skill-specific modifier for SK02: use a clean editorial flat-lay outfit presentation with a tidier, more orderly, more controlled arrangement than SK01. Arrange the uploaded products on a light neutral studio surface so each major item reads clearly as its own product, with clear product separation, deliberate spacing, neat alignment, simple hierarchy, subtle contact shadows, and polished editorial negative space. Preserve one complete outfit relationship: top or outer as the upper visual anchor, trousers as the dominant lower-body item, shoes grouped naturally near the lower area, and bag placed nearby with minimal and deliberate overlap only when it improves hierarchy. Keep the layout shallow, flat, curated, and editorial rather than casually dropped, loosely scattered, or naturally messy. Keep it human-absent and clothing-only, with no invisible-body structure, mannequin, anatomy, body occupancy, human silhouette, walking pose, standing pose, or reclining body form."
+      : config.skillOrigin?.id === "SK03_LOOK_BREAKDOWN"
+      ? " Skill-specific modifier for SK03: preserve a main look plus separated item breakdown structure. The main look may be model-based, but it must avoid a clear visible face and recognizable facial features; prefer crop below chin, head out of frame, or turned/back/side-back composition without a clear side face so the outfit, bag, trousers, and shoes remain the focus. Keep the main look present but not dominant over the item board. Build a direct fashion item breakdown / look guide / gift guide hierarchy with separated product zones, numbered items such as 01 / 02 / 03 / 04, short English product titles, and at most one very short descriptor line per item. Keep the information hierarchy clean and scannable; do not use long catalog paragraphs, poster-style branding, SK05 catalog page pacing, or SK06 Korean street poster language."
       : config.skillOrigin?.id === "SK04_PROP_STYLING"
       ? " Skill-specific modifier for SK04: preserve prop-styling identity with one visually dominant hero chair or similarly simple hero prop. The outfit should interact naturally with that single anchor and form a subtle human-presence display: garments may be supported, draped, or positioned so the outfit suggests a wearable human outline through the chair and product relationships, while remaining product-first. Trousers may fall from the seat, tops may imply an upper torso shape through drape and support, bags may hang from or rest against the anchor, and shoes should ground the implied stance. Avoid simply placing independent products around a prop; the prop should organize the outfit spatially without distorting uploaded products. Do not add secondary furniture or prop clusters, visible body parts, face, skin, a full mannequin, or a strong 3D invisible-person effect."
+      : config.skillOrigin?.id === "SK05_JAPANESE_CATALOG"
+      ? " Skill-specific modifier for SK05: preserve a calm Japanese lifestyle catalog feeling with soft editorial flat-lay or near-flat outfit presentation, gentle white space, quiet product rhythm, light paper-like pacing, and small catalog notes. It may keep a flat or near-flat outfit relationship, but must not become SK03's numbered breakdown board or SK06's Korean independent-brand poster. Keep the page quiet, soft, clean, and catalog-like rather than street, campaign-poster, or gift-guide oriented."
       : config.skillOrigin?.id === "SK06_KOREAN_STREET_EDITORIAL"
-      ? " Skill-specific modifier for SK06: use C04 only as a base for a flat 2D human-silhouette outfit editorial, not as SK02's clean separated studio flat lay and not as a product breakdown. Preserve one coherent head-to-toe outfit relationship: top or outer above bottom, bottom connected to the leg area, shoes near the implied feet, optional hat or glasses near the head position, bag at the shoulder or body side, and accessories associated with their natural styling positions. Flatness refers to depth, not incorrect scale: keep believable full-outfit human proportions, with the upper body, waist, bottom length, shoe size, bag scale, and accessories proportional to one fashion-body silhouette. Treat the complete outfit as the primary composition unit before scaling individual products, and maintain useful negative space around the complete look. Add a required callout for every major displayed product: small index number, short 1-3 word English product label derived conservatively from the supplied role or safe category, and a thin hand-drawn-style leader line pointing to the correct item. Place annotations in surrounding negative space; never cover product details. Prefer flattened garment presentation, front-facing or mildly angled layout, low depth, low perspective, graphic silhouette, restrained garment volume, clean overall outline, and complete outfit readability."
+      ? " Skill-specific modifier for SK06: use C04 only as a base for a flat 2D human-silhouette Korean independent-brand poster, not as SK02's clean separated studio flat lay, SK03's breakdown board, or SK05's calm catalog page. Preserve one coherent head-to-toe outfit relationship: top or outer above bottom, bottom connected to the leg area, shoes near the implied feet, optional hat near the head position, optional glasses near the face/head position, bag at the shoulder/body side, and accessories associated with their natural styling positions. Flatness refers to depth, not incorrect scale: keep believable full-outfit human proportions, with the upper body, waist, bottom length, shoe size, bag scale, and accessories proportional to one fashion-body silhouette. Treat the complete outfit as the primary poster subject before scaling individual products. Add white hand-drawn-style callouts for every major displayed product: small index number, short 1-3 word English product label derived conservatively from the supplied role or safe category, and a thin leader line pointing to the correct item. Allow a few minor supporting props only if they strengthen the independent-brand poster setup and remain secondary. Prefer flattened garment presentation, low depth, low perspective, graphic silhouette, restrained garment volume, clean overall outline, complete outfit readability, and stronger poster setup than a generic flat lay."
       : "";
 
   return `${config.promptFragments.composition}.${requirements}${skillModifier}`;
@@ -65,6 +69,14 @@ function buildSkillSceneModifier(config: GenerationConfig) {
 
   if (config.skillOrigin?.id === "SK04_PROP_STYLING") {
     return " Skill-specific scene fidelity for SK04: keep prop-styling identity with one visually dominant hero chair or simple prop, but move the environment to a cleaner, lighter grey-white indoor studio wall/floor. Prefer a simple light neutral backdrop, clean grey-white wall and floor, plain studio interior, soft diffused daylight, generous negative space, restrained premium materials, and one chair as the spatial anchor. Tiny styling details are acceptable only if they do not read as additional furniture. Avoid cement-wall or concrete-room feeling, shelves, cabinets, side tables, extra pedestals unless absolutely required, multiple competing furniture pieces, decorative prop collections, cluttered tabletop styling, excessive lifestyle objects, complex room decoration, decorative architecture, busy architecture, warm yellow room tone, orange cast, overly cozy mood, or prop-heavy storytelling.";
+  }
+
+  if (config.skillOrigin?.id === "SK05_JAPANESE_CATALOG") {
+    return " Skill-specific scene fidelity for SK05: keep a quiet warm off-white paper-like catalog environment with soft lifestyle-catalog calm, gentle whitespace, low visual pressure, and a clean editorial page feeling. The scene should support Japanese catalog feeling without generating Japanese text, fake Japanese glyphs, poster graphics, Korean street mood, or dense breakdown-board structure.";
+  }
+
+  if (config.skillOrigin?.id === "SK06_KOREAN_STREET_EDITORIAL") {
+    return " Skill-specific scene fidelity for SK06: keep a muted sage or dusty green poster background with clean independent-brand setup, graphic negative space, and controlled poster balance. The background should feel like a Korean independent-brand editorial poster, not a warm off-white Japanese catalog page, clean separated studio flat lay, or product breakdown board.";
   }
 
   return "";
@@ -132,6 +144,18 @@ function buildSkillGraphicModifier(config: GenerationConfig) {
     return "Skill-specific graphic for SK04: add one small top information row made of concise English product notes, optionally grouped by item. The top row is supplemental and must not overpower the prop-styling image. Use restrained editorial typography with no large poster headline, no URLs, no brand logos, no prices, no marketing slogan, and no non-English text. Product notes must remain accurate to the uploaded items and must not cover the outfit or hero prop.";
   }
 
+  if (config.skillOrigin?.id === "SK03_LOOK_BREAKDOWN") {
+    return "Skill-specific graphic for SK03: use a clear numbered fashion item breakdown system. Each major product should have a visible number such as 01, 02, 03, or 04, a short English product title, and at most one very short descriptor line. The layout should read as a look guide, gift guide, or styling breakdown with clean information hierarchy, not as long catalog paragraphs, a brand campaign poster, Japanese catalog page, or Korean street poster.";
+  }
+
+  if (config.skillOrigin?.id === "SK05_JAPANESE_CATALOG") {
+    return "Skill-specific graphic for SK05: keep Japanese catalog feeling through quiet English-only typography, small English headings, short labels, brief notes, precise alignment, gentle whitespace, and a soft lifestyle catalog page rhythm. All newly generated visible text must be English. Do not use Japanese characters, kana, kanji, fake Japanese glyphs, pseudo-Japanese marks, Japanese-style gibberish, Hangul, Korean text, poster slogans, or dense breakdown numbering.";
+  }
+
+  if (config.skillOrigin?.id === "SK06_KOREAN_STREET_EDITORIAL") {
+    return "Skill-specific graphic for SK06: strengthen the Korean independent-brand poster structure with a generic fictional logo-like title at the top, a short setup or look title near the upper or middle area, white hand-drawn-style product callouts with thin leader lines, and a very short poster-style tagline near the bottom. Keep all visible text English-only, generic, and fictional; do not use real brand names, Hangul, Korean text, Japanese text, long copy, catalog paragraphs, or breakdown-board captions.";
+  }
+
   return "";
 }
 
@@ -192,6 +216,12 @@ function buildProhibitedBehavior(config: GenerationConfig) {
     prohibited.push("Do not copy brand names, website URLs, logos, months, or slogans from reference images; use only generic English product labels and concise neutral descriptions. Do not turn SK02 into SK03 product breakdown, SK05 catalog typography, or SK06 Korean callout editorial.");
   }
 
+  if (config.skillOrigin?.id === "SK03_LOOK_BREAKDOWN") {
+    prohibited.push("Do not show a clear visible face, recognizable facial features, portrait-focused model, clear side-face identity, or hairstyle/face-led composition; crop below chin, keep the head out of frame, or use back/side-back framing without identifiable facial features.");
+    prohibited.push("Do not let the main look overpower the separated item breakdown; SK03 must keep both a main look and a clear item breakdown.");
+    prohibited.push("Do not use long catalog paragraphs, dense brand catalog copy, poster-style branding layout, SK05 calm catalog page pacing, SK06 Korean poster language, or SK01/SK02/SK04 flat-lay-only composition.");
+  }
+
   if (config.skillOrigin?.id === "SK04_PROP_STYLING") {
     prohibited.push("Do not remove the meaningful hero prop/object relationship or convert SK04 into SK01 flat lay, SK03 product breakdown, or a generic product arrangement.");
     prohibited.push("Do not use cement-wall or concrete-room atmosphere; SK04 should read as a clean grey-white studio wall/floor environment.");
@@ -199,6 +229,19 @@ function buildProhibitedBehavior(config: GenerationConfig) {
     prohibited.push("Do not let prop fidelity override product fidelity; never distort uploaded products just to fit the furniture.");
     prohibited.push("Do not use warm yellow room tone, orange cast, overly cozy mood, vintage warm filter, hard spotlight, or theatrical contrast.");
     prohibited.push("Do not show a real human, face, skin, full mannequin, or strong 3D invisible-person body; SK04 may suggest a wearable human outline through chair-supported garment placement only. Do not let the top information row become a large poster headline or cover the products.");
+  }
+
+  if (config.skillOrigin?.id === "SK05_JAPANESE_CATALOG") {
+    prohibited.push("Do not generate Japanese characters, kana, kanji, fake Japanese text, Japanese-style glyph imitation, pseudo-Japanese marks, Hangul, Korean text, or non-English visible text.");
+    prohibited.push("Do not turn SK05 into a Korean independent-brand poster, streetwear poster, SK03 numbered breakdown board, gift guide, campaign poster, or generic model portrait.");
+    prohibited.push("Do not use large poster slogans, loud branding, dense product board structure, long catalog paragraphs, or hand-drawn Korean callouts.");
+  }
+
+  if (config.skillOrigin?.id === "SK06_KOREAN_STREET_EDITORIAL") {
+    prohibited.push("Do not show a real human, visible face, visible skin, mannequin realism, strong 3D invisible-person body, walking-body anatomy, portrait, or model photography.");
+    prohibited.push("Do not turn SK06 into SK03's item breakdown board, SK05's calm Japanese catalog page, SK02's clean separated studio flat lay, or SK01's natural concrete flat lay.");
+    prohibited.push("Do not omit the Korean independent-brand poster structure: generic fictional title, setup/look title, white hand-drawn callouts, and very short poster tagline.");
+    prohibited.push("Do not use Hangul, Korean text, Japanese text, real brand names, long marketing copy, dense catalog paragraphs, or product labels that cover product details.");
   }
 
   if (config.composition.id === "C01") {

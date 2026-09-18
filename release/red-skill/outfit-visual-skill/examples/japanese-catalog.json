@@ -1,7 +1,7 @@
 {
   "mode": "native_agent",
-  "request": "用 05 日杂目录感",
+  "request": "Use 05. Create a Japanese catalog-feeling outfit visual from my uploaded product references.",
   "skillId": "SK05_JAPANESE_CATALOG",
   "userProvidedRoles": ["top", "bottom", "shoes"],
-  "note": "Attach real user product images for the listed roles. Use English-only visible typography."
+  "note": "Attach real user product images for the listed roles. Keep the catalog feeling quiet and soft, and use English-only visible typography with no Japanese characters or fake Japanese text."
 }
