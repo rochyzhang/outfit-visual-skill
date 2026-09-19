@@ -132,8 +132,15 @@ assert.match(sk01Contract, /thin arrows or leader lines plus short English label
 assert.match(sk01Contract, /Do not use all-caps for every product name/);
 assert.match(sk02Contract, /restrained top title such as `OUTFIT NOTES`, `EDITED LOOK`, or `MONTHLY OUTFIT`/);
 assert.match(sk02Contract, /do not copy reference-image brand names, website addresses, logos, months, or slogans/);
-assert.match(sk04Contract, /form a human-shaped styling composition by placement only/);
-assert.match(sk04Contract, /garments remain empty and must not contain an invisible body/);
+assert.match(sk04Contract, /human-referential styling arrangement by garment placement only/);
+assert.match(sk04Contract, /chair is a display prop, styling support, flat display structure, and visual organizer/);
+assert.match(sk04Contract, /Tops or inner tops may rest or drape over the chair while staying visibly empty/);
+assert.match(sk04Contract, /If an outer garment exists, layer it naturally over or around the top/);
+assert.match(sk04Contract, /folds created by fabric weight, denim stiffness, garment cut, chair contact, gravity, and natural bunching/);
+assert.match(sk04Contract, /must not form inflated thighs, hidden knee shapes, calf volume, rounded leg tubes/);
+assert.match(sk04Contract, /Bags may hang from or rest against the chair as product styling/);
+assert.match(sk04Contract, /Shoes should be placed near the chair or lower composition area as clean product placement/);
+assert.match(sk04Contract, /not positioned as invisible feet or forced into SK06 standing-pose logic/);
 assert.match(sk04Contract, /soft even ambient studio light/);
 assert.match(sk04Contract, /visible sunbeam, window-light streak, diagonal light patch/);
 assert.match(sk04Contract, /one small top information row/);
