@@ -142,8 +142,14 @@ const sk06Contract = skillReadme.match(/### 06[\s\S]*$/)?.[0] ?? "";
 assert.match(sk05Contract, /limited short Japanese editorial accent text allowed/);
 assert.match(sk05Contract, /Do not create a vertical column of multiple product zoom\/detail boxes/);
 assert.match(sk06Contract, /clear standing human-pose silhouette/);
+assert.match(sk06Contract, /wearing-order arrangement logic/);
+assert.match(sk06Contract, /top or outer at the upper-body position/);
+assert.match(sk06Contract, /bottom directly below with a believable waist-to-hem relationship/);
+assert.match(sk06Contract, /shoes at the bottom as the end of the outfit/);
+assert.match(sk06Contract, /bag placed as an accessory near the upper-body or shoulder side/);
 assert.match(sk06Contract, /shoulder-to-hip relationship/);
-assert.match(sk06Contract, /coordinated toe directions/);
+assert.match(sk06Contract, /both shoe toes coordinated in one pose direction/);
+assert.match(sk06Contract, /random flat-lay scattering/);
 assert.match(sk06Contract, /standing invisible-person or worn-body presentation/);
 
 const packageFiles = walkFiles(packageDir);

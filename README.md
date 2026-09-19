@@ -106,7 +106,7 @@ Japanese magazine/catalog-inspired outfit visual with English product informatio
 
 ### 06 - Korean Street Editorial
 
-Korean / Seoul flat arranged outfit visual with white hand-drawn callouts.
+Korean / Seoul flat arranged outfit visual with white hand-drawn callouts, wearing-order placement, coordinated shoes, and a stronger standing human-pose silhouette while products remain flat and empty.
 
 ![06 - Korean Street Editorial](public/skill-examples/06-korean-street-editorial.jpg)
 

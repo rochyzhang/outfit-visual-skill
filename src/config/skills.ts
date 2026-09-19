@@ -259,7 +259,7 @@ export const workflowSkills = [
   {
     id: "SK06_KOREAN_STREET_EDITORIAL",
     name: "Korean Street Editorial",
-    description: "Korean streetwear / Seoul editorial-inspired outfit visual using English-only annotations.",
+    description: "Korean streetwear / Seoul editorial-inspired flat outfit visual with wearing-order human-pose placement and English-only annotations.",
     supportedContentTypes: ["men", "genderless"],
     category: "editorial",
     requiredInputRule: standardSingleOutfitRule,
@@ -278,7 +278,7 @@ export const workflowSkills = [
     safeguards: englishVisibleTextSafeguard,
     agent: {
       callable: true,
-      summary: "Use for Korean streetwear or Seoul editorial-inspired styling with English-only visible annotations."
+      summary: "Use for Korean streetwear or Seoul editorial-inspired flat styling with wearing-order human-pose placement and English-only visible annotations."
     }
   }
 ] as const satisfies WorkflowSkill[];

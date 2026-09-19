@@ -116,6 +116,7 @@ assert.equal(sk06.defaults.graphicPresetId, "G02");
 assert.equal(sk06.defaults.lookPresetId, "L01");
 assert.equal(sk06.safeguards.englishVisibleTextOnly, true);
 assert.match(sk06.description, /Korean streetwear \/ Seoul editorial-inspired/);
+assert.match(sk06.description, /wearing-order human-pose placement/);
 
 for (const skill of skills) {
   assert.ok(!skill.id.includes("COUPLE"));

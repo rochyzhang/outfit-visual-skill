@@ -3,5 +3,5 @@
   "request": "Use 06 Korean street editorial",
   "skillId": "SK06_KOREAN_STREET_EDITORIAL",
   "userProvidedRoles": ["top", "bottom", "shoes"],
-  "note": "Attach real user product images for the listed roles. Create a muted sage Korean street editorial with a flat staged outfit arranged into a clear standing human-pose silhouette, visible shoulder/torso/hip/leg gesture, controlled asymmetry, coordinated shoe-toe direction, and white hand-drawn English callouts. All products must remain flat, staged, empty, and product-like with no standing invisible-person or worn-body presentation."
+  "note": "Attach real user product images for the listed roles. Create a muted sage Korean street editorial with a flat staged outfit arranged into a clear standing human-pose silhouette using wearing-order placement: top at upper body, trousers directly below, shoes at the bottom with coordinated toe direction, and bag near the upper-body or shoulder side. Keep visible shoulder/torso/hip/leg gesture, controlled asymmetry, coordinated shoe-to-trouser direction, and white hand-drawn English callouts. All products must remain flat, staged, empty, and product-like with no standing invisible-person, worn-body presentation, inflated garment volume, or random flat-lay scattering."
 }
