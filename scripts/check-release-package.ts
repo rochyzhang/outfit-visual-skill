@@ -17,6 +17,7 @@ const requiredPackageFiles = [
   "skill-manifest.json",
   "examples/minimal-flat-lay.json",
   "examples/clean-editorial-flat-lay.json",
+  "examples/look-breakdown.json",
   "examples/prop-styling.json",
   "examples/japanese-catalog.json",
   "examples/korean-street-editorial.json",
@@ -137,6 +138,7 @@ const sk02PositiveContract = sk02Contract
   .filter((line) => /^- (Composition|Scene|Look|Graphic) rule:/.test(line))
   .join("\n");
 const sk01Contract = skillReadme.match(/### 01[\s\S]*?(?=### 02)/)?.[0] ?? "";
+const sk03Contract = skillReadme.match(/### 03[\s\S]*?(?=### 04)/)?.[0] ?? "";
 const sk04Contract = skillReadme.match(/### 04[\s\S]*?(?=### 05)/)?.[0] ?? "";
 assert.doesNotMatch(
   sk02PositiveContract,
@@ -147,21 +149,28 @@ assert.match(sk01Contract, /thin arrows or leader lines plus short English label
 assert.match(sk01Contract, /Do not use all-caps for every product name/);
 assert.match(sk02Contract, /restrained top title such as `OUTFIT NOTES`, `EDITED LOOK`, or `MONTHLY OUTFIT`/);
 assert.match(sk02Contract, /do not copy reference-image brand names, website addresses, logos, months, or slogans/);
+assert.match(sk03Contract, /approved look breakdown structure/);
+assert.match(sk03Contract, /reflow and redistribute the layout/);
+assert.match(sk03Contract, /free-floating handwritten words/);
+assert.match(sk03Contract, /Daily Outfit-style text/);
+assert.match(sk03Contract, /SK06 hand-drawn callouts/);
 assert.match(sk04Contract, /Interpret the SK04 reference as a chair-supported product display system/);
 assert.match(sk04Contract, /garments arranged on a chair as a fashion display, not as an invisible person sitting in the clothes/);
 assert.match(sk04Contract, /Human-referential reading is allowed only through garment order and outfit relationship, not body shape, human pose, or body posture/);
 assert.match(sk04Contract, /Garments must remain empty, unworn, non-inflated, and product-like/);
 assert.match(sk04Contract, /All 3D form must come from fabric weight, garment cut, material stiffness, gravity, natural folds, contact with the chair, contact with the floor, or contact with other products; never from hidden human anatomy/);
-assert.match(sk04Contract, /Tops or inner tops may rest over the chair back, wrap lightly around chair edges, hang naturally from chair contact, or be supported by the chair while staying visibly empty/);
-assert.match(sk04Contract, /If an outer garment exists, layer it naturally over or around the top, or drape it over the chair back or side/);
+assert.match(sk04Contract, /Tops or inner tops may rest over the chair back, lie over the chair back, hang over the chair edge, or be softly supported by the chair while staying visibly empty/);
 assert.match(sk04Contract, /Trousers must be laid or draped from the chair seat or seat edge/);
 assert.match(sk04Contract, /legs may drape downward naturally, collapse, flatten, twist, fold, or pool/);
 assert.match(sk04Contract, /folds created by fabric weight, denim stiffness, garment cut, gravity, chair contact, and natural bunching/);
 assert.match(sk04Contract, /Natural garment volume is allowed; human anatomical volume is not/);
 assert.match(sk04Contract, /must not form two clean anatomical leg tubes, inflated trouser legs, hidden thigh shapes, hidden knee shapes, calf volume, pelvis or hip anatomy/);
-assert.match(sk04Contract, /Bags may hang from or rest against the chair as an independent product/);
-assert.match(sk04Contract, /Shoes should stay product-like near the chair or lower composition area/);
+assert.match(sk04Contract, /Bags may hang naturally from or rest against the chair as independent products/);
+assert.match(sk04Contract, /Shoes and hats should stay product-like near the chair or lower composition area/);
 assert.match(sk04Contract, /not aligned as invisible feet or forced into SK06 standing-pose logic/);
+assert.match(sk04Contract, /only one small top information row/);
+assert.match(sk04Contract, /no extra flat-lay product image row/);
+assert.match(sk04Contract, /flat-lay mini images/);
 assert.match(sk04Contract, /soft even ambient studio light/);
 assert.match(sk04Contract, /visible sunbeam, window-light streak, diagonal light patch/);
 assert.match(sk04Contract, /one small top information row/);
@@ -169,21 +178,28 @@ const sk05Contract = skillReadme.match(/### 05[\s\S]*?(?=### 06)/)?.[0] ?? "";
 const sk06Contract = skillReadme.match(/### 06[\s\S]*$/)?.[0] ?? "";
 assert.match(sk05Contract, /limited short Japanese editorial accent text allowed/);
 assert.match(sk05Contract, /Do not create a vertical column of multiple product zoom\/detail boxes/);
+assert.match(sk05Contract, /not hand-drawn callouts/);
+assert.match(sk05Contract, /Do not generate hand-drawn text, white sketch arrows, SK06-style handwritten labels/);
+assert.match(sk05Contract, /book props/);
 assert.match(sk06Contract, /flat products arranged in normal wearing order/);
 assert.match(sk06Contract, /wearing-order arrangement logic/);
-assert.match(sk06Contract, /top or outer at the upper-body position/);
+assert.match(sk06Contract, /top or outer and any hat at the upper-body\/head position/);
 assert.match(sk06Contract, /bottom directly below with a believable waist-to-hem relationship/);
 assert.match(sk06Contract, /shoes at the bottom as the end of the outfit/);
-assert.match(sk06Contract, /bag placed as an accessory near the upper-body or shoulder side/);
+assert.match(sk06Contract, /both shoe toes must point left/);
+assert.match(sk06Contract, /hat .*face left/);
+assert.match(sk06Contract, /bag is placed as an accessory near the upper-body or shoulder side/i);
 assert.match(sk06Contract, /must not simulate a standing body/);
 assert.match(sk06Contract, /Pose feeling must not come from body volume/);
 assert.match(sk06Contract, /remain laid out, staged, flat, empty, unworn, non-inflated, and product-like/);
 assert.match(sk06Contract, /never from hidden human anatomy/);
 assert.match(sk06Contract, /Trousers must stay flat and empty with no hidden hips, pelvis, thigh anatomy, knee anatomy, calf anatomy/);
 assert.match(sk06Contract, /Shoes are staged products, not worn feet/);
-assert.match(sk06Contract, /both shoe toes coordinated in one pose direction/);
+assert.match(sk06Contract, /both shoe toes must point left in one coordinated pose direction/);
 assert.match(sk06Contract, /random flat-lay scattering/);
 assert.match(sk06Contract, /standing invisible-person, hidden standing body, or worn-body presentation/);
+assert.match(sk06Contract, /SK05 Japanese magazine typography/);
+assert.match(sk06Contract, /detail boxes, thumbnails, book props/);
 assert.doesNotMatch(sk06Contract, /clear standing human-pose silhouette/);
 assert.doesNotMatch(sk06Contract, /shoulder-to-hip relationship/);
 

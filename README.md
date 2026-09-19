@@ -88,25 +88,25 @@ Clean, tidy studio flat-lay outfit information layout with a restrained English 
 
 ### 03 - Look Breakdown
 
-Complete look plus individual product breakdown.
+Complete look plus individual product breakdown with clean English labels, enough space for optional hat/bag items, and no extra slogans, books, thumbnails, or detail boxes.
 
 ![03 - Look Breakdown](public/skill-examples/03-look-breakdown.png)
 
 ### 04 - Prop Styling
 
-Outfit styled with one hero chair or simple prop in a clean premium grey-white studio, with a small top information row and a human-shaped arrangement by placement only.
+Outfit styled with one hero chair or simple prop in a clean premium grey-white studio, with a small text-only top information row and chair-supported garments that stay empty rather than worn by an invisible seated body.
 
 ![04 - Prop Styling](public/skill-examples/04-prop-styling.png)
 
 ### 05 - Japanese Catalog
 
-Japanese magazine/catalog-inspired outfit visual with English product information and limited short Japanese editorial accent text.
+Japanese magazine/catalog-inspired outfit visual with English product information, limited short Japanese editorial accent text, refined magazine typography, and no hand-drawn callouts, books, thumbnails, or detail boxes.
 
 ![05 - Japanese Catalog](public/skill-examples/05-japanese-catalog.png)
 
 ### 06 - Korean Street Editorial
 
-Korean / Seoul flat arranged outfit visual with white hand-drawn callouts, wearing-order placement, coordinated shoes, and a stronger standing human-pose silhouette while products remain flat and empty.
+Korean / Seoul flat arranged outfit visual with white hand-drawn callouts, wearing-order placement, shoes pointing left, hat brim/front aligned left when present, and a standing human-pose silhouette made by placement only while products remain flat and empty.
 
 ![06 - Korean Street Editorial](public/skill-examples/06-korean-street-editorial.png)
 

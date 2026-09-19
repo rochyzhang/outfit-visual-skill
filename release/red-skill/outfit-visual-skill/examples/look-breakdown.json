@@ -1,0 +1,7 @@
+{
+  "mode": "native_agent",
+  "request": "Use 03",
+  "skillId": "SK03_LOOK_BREAKDOWN",
+  "userProvidedRoles": ["top", "bottom", "shoes", "bag", "hat"],
+  "note": "Attach real user product images for the listed roles. Create the approved look breakdown layout: one primary styled Look plus separate product/component breakdown, clean English sans-serif labels, small item numbers, and enough negative space for optional hat or bag items. Reflow the layout when extra products are present so items do not overlap, crowd, cover, or squeeze the main Look. Do not add free-floating slogans, handwritten words, books, thumbnails, detail boxes, zoom frames, SK05 catalog typography, or SK06 hand-drawn callouts."
+}
