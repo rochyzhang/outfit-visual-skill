@@ -26,12 +26,12 @@ const requiredPackageFiles = [
 ];
 
 const skillReferenceMapping = [
-  ["01", "examples/visual/01-minimal-flat-lay.jpg"],
+  ["01", "examples/visual/01-minimal-flat-lay.png"],
   ["02", "examples/visual/02-clean-editorial-flat-lay.png"],
-  ["03", "examples/visual/03-look-breakdown.jpg"],
+  ["03", "examples/visual/03-look-breakdown.png"],
   ["04", "examples/visual/04-prop-styling.jpg"],
   ["05", "examples/visual/05-japanese-catalog.png"],
-  ["06", "examples/visual/06-korean-street-editorial.jpg"]
+  ["06", "examples/visual/06-korean-street-editorial.png"]
 ] as const;
 
 const requiredIgnorePatterns = [
@@ -116,7 +116,7 @@ const skillReadme = safeRead(path.join(packageDir, "SKILL.md"));
 assert.match(skillReadme, /only that Skill's own Reference image path may be used/i);
 assert.match(skillReadme, /All other packaged visual examples are for gallery browsing, user selection, and documentation only/i);
 assert.match(skillReadme, /For Use 01, explicitly ignore `02-clean-editorial-flat-lay\.png`/);
-assert.match(skillReadme, /For Use 02, explicitly ignore `01-minimal-flat-lay\.jpg`/);
+assert.match(skillReadme, /For Use 02, explicitly ignore `01-minimal-flat-lay\.png`/);
 for (const [code, referencePath] of skillReferenceMapping) {
   assert.match(skillReadme, new RegExp(`${code} may use only \`${referencePath.replaceAll("/", "\\/")}\``));
   assert.ok(existsSync(path.join(packageDir, referencePath)), `Missing mapped visual reference: ${referencePath}`);
@@ -127,8 +127,8 @@ assert.equal(
   "SK04 packaged visual reference changed unexpectedly"
 );
 assert.equal(
-  sha256(path.join(packageDir, "examples/visual/06-korean-street-editorial.jpg")),
-  "3FE476538E7CCBFE3B2C960C247E8CFA43CDB8EA2399268C7433448FC5268F2A",
+  sha256(path.join(packageDir, "examples/visual/06-korean-street-editorial.png")),
+  "F45377402E7BE222CD35F662AE18A3F326AECA64D84B20085663C7477E855130",
   "SK06 packaged visual reference changed unexpectedly"
 );
 const sk02Contract = skillReadme.match(/### 02[\s\S]*?(?=### 03)/)?.[0] ?? "";

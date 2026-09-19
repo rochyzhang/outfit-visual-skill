@@ -41,7 +41,7 @@
       "id": "SK01_MINIMAL_FLAT_LAY",
       "name": "Minimal Flat Lay",
       "code": "01",
-      "referenceImage": "examples/visual/01-minimal-flat-lay.jpg"
+      "referenceImage": "examples/visual/01-minimal-flat-lay.png"
     },
     {
       "id": "SK02_INVISIBLE_EDITORIAL",
@@ -53,7 +53,7 @@
       "id": "SK03_LOOK_BREAKDOWN",
       "name": "Look Breakdown",
       "code": "03",
-      "referenceImage": "examples/visual/03-look-breakdown.jpg"
+      "referenceImage": "examples/visual/03-look-breakdown.png"
     },
     {
       "id": "SK04_PROP_STYLING",
@@ -71,7 +71,7 @@
       "id": "SK06_KOREAN_STREET_EDITORIAL",
       "name": "Korean Street Editorial",
       "code": "06",
-      "referenceImage": "examples/visual/06-korean-street-editorial.jpg"
+      "referenceImage": "examples/visual/06-korean-street-editorial.png"
     }
   ],
   "safety": {

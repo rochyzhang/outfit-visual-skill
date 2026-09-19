@@ -22,7 +22,7 @@ Examples:
 - Forbidden elements: human model, portrait photography, lifestyle street photography, pure white cutout collage, warm beige/yellow floor cast, brownish or muddy grey cast, overly contrasty floor texture, hard spotlight, floating graphic composition, sterile ecommerce grid, poster title, dense information layout, all-caps-only product naming, SK02-style systematic label grid, invented products, substituted products, missing required products.
 - Usage example: "Use 01"
 
-![01 - Minimal Flat Lay](../public/skill-examples/01-minimal-flat-lay.jpg)
+![01 - Minimal Flat Lay](../public/skill-examples/01-minimal-flat-lay.png)
 
 ## 02 - Clean Editorial Flat Lay
 
@@ -46,7 +46,7 @@ Examples:
 - Forbidden elements: copied products from the reference image, invented products, non-English labels, cluttered poster layout, wrong output type.
 - Usage example: "Use 03"
 
-![03 - Look Breakdown](../public/skill-examples/03-look-breakdown.jpg)
+![03 - Look Breakdown](../public/skill-examples/03-look-breakdown.png)
 
 ## 04 - Prop Styling
 
@@ -82,4 +82,4 @@ Examples:
 - Forbidden elements: visible person, mannequin, Korean text, Hangul, standing invisible-person styling, hidden standing body, worn-body presentation, inflated garment volume, pelvis/hip/thigh/knee/calf anatomy, shoes posed like invisible feet, random opposing shoe directions, shoes detached from the wearing-order relationship, random flat-lay scattering, accessory placement with no wearing-order logic, rigid straight-line flat lay with no pose, independent product breakdown, generic catalog grid, invented products, copied reference-image products, missing required products.
 - Usage example: "Use 06 Korean street editorial"
 
-![06 - Korean Street Editorial](../public/skill-examples/06-korean-street-editorial.jpg)
+![06 - Korean Street Editorial](../public/skill-examples/06-korean-street-editorial.png)

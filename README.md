@@ -58,7 +58,7 @@ Native Agent Mode does not add automatic asset classification: use explicit Top,
 
 The Skill translates simple requests such as `Use 01`, `Use 02`, `Use Clean Editorial Flat Lay`, `Use Japanese Catalog`, `Use 05 Japanese catalog`, or `Use 06 Korean street editorial` into the canonical visual contracts. The contract is stronger than the generic meaning of the Skill name.
 
-In Native Agent Mode, packaged gallery images are isolated per selected Skill. `Use 01` may consult only `01-minimal-flat-lay.jpg`; `Use 02` may consult only `02-clean-editorial-flat-lay.png`; the other packaged examples are gallery/documentation references only and must not influence the selected Skill.
+In Native Agent Mode, packaged gallery images are isolated per selected Skill. `Use 01` may consult only `01-minimal-flat-lay.png`; `Use 02` may consult only `02-clean-editorial-flat-lay.png`; the other packaged examples are gallery/documentation references only and must not influence the selected Skill.
 
 ## Visual Skill Gallery
 
@@ -78,7 +78,7 @@ Examples:
 
 Realistic cool-grey concrete flat-lay outfit image with richer lightweight Title Case English arrow labels and short descriptors.
 
-![01 - Minimal Flat Lay](public/skill-examples/01-minimal-flat-lay.jpg)
+![01 - Minimal Flat Lay](public/skill-examples/01-minimal-flat-lay.png)
 
 ### 02 - Clean Editorial Flat Lay
 
@@ -90,7 +90,7 @@ Clean, tidy studio flat-lay outfit information layout with a restrained English 
 
 Complete look plus individual product breakdown.
 
-![03 - Look Breakdown](public/skill-examples/03-look-breakdown.jpg)
+![03 - Look Breakdown](public/skill-examples/03-look-breakdown.png)
 
 ### 04 - Prop Styling
 
@@ -108,7 +108,7 @@ Japanese magazine/catalog-inspired outfit visual with English product informatio
 
 Korean / Seoul flat arranged outfit visual with white hand-drawn callouts, wearing-order placement, coordinated shoes, and a stronger standing human-pose silhouette while products remain flat and empty.
 
-![06 - Korean Street Editorial](public/skill-examples/06-korean-street-editorial.jpg)
+![06 - Korean Street Editorial](public/skill-examples/06-korean-street-editorial.png)
 
 ## Agent Tools
 
