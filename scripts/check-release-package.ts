@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 
 const root = process.cwd();
 const packageDir = path.join(root, "release", "red-skill", "outfit-visual-skill");
@@ -89,6 +90,10 @@ function safeRead(filePath: string) {
   return readFileSync(filePath, "utf8");
 }
 
+function sha256(filePath: string) {
+  return createHash("sha256").update(readFileSync(filePath)).digest("hex").toUpperCase();
+}
+
 for (const file of requiredRootFiles) {
   assert.ok(existsSync(path.join(root, file)), `Missing root release file: ${file}`);
 }
@@ -116,6 +121,11 @@ for (const [code, referencePath] of skillReferenceMapping) {
   assert.match(skillReadme, new RegExp(`${code} may use only \`${referencePath.replaceAll("/", "\\/")}\``));
   assert.ok(existsSync(path.join(packageDir, referencePath)), `Missing mapped visual reference: ${referencePath}`);
 }
+assert.equal(
+  sha256(path.join(packageDir, "examples/visual/04-prop-styling.jpg")),
+  "1C3C2D5CD6FB4A1C5CE01912AB9122B2F3A108418E0B7FA09BE935C15002BFE0",
+  "SK04 packaged visual reference changed unexpectedly"
+);
 const sk02Contract = skillReadme.match(/### 02[\s\S]*?(?=### 03)/)?.[0] ?? "";
 const sk02PositiveContract = sk02Contract
   .split(/\n/)
@@ -132,14 +142,17 @@ assert.match(sk01Contract, /thin arrows or leader lines plus short English label
 assert.match(sk01Contract, /Do not use all-caps for every product name/);
 assert.match(sk02Contract, /restrained top title such as `OUTFIT NOTES`, `EDITED LOOK`, or `MONTHLY OUTFIT`/);
 assert.match(sk02Contract, /do not copy reference-image brand names, website addresses, logos, months, or slogans/);
-assert.match(sk04Contract, /human-referential styling arrangement by garment placement only/);
-assert.match(sk04Contract, /chair is a display prop, styling support, flat display structure, and visual organizer/);
-assert.match(sk04Contract, /Tops or inner tops may rest or drape over the chair while staying visibly empty/);
-assert.match(sk04Contract, /If an outer garment exists, layer it naturally over or around the top/);
-assert.match(sk04Contract, /folds created by fabric weight, denim stiffness, garment cut, chair contact, gravity, and natural bunching/);
+assert.match(sk04Contract, /Interpret the SK04 reference as a product display system/);
+assert.match(sk04Contract, /chair-supported outfit display and garments arranged in natural wearing order on a display chair/);
+assert.match(sk04Contract, /Human-referential reading is allowed only through garment order and outfit relationship, not body shape, human pose, or body posture/);
+assert.match(sk04Contract, /Tops or inner tops may rest over the chair back, wrap lightly around chair edges, hang naturally from chair contact, or be supported by the chair while staying visibly empty/);
+assert.match(sk04Contract, /If an outer garment exists, layer it naturally over or around the top, or drape it over the chair back or side/);
+assert.match(sk04Contract, /Trousers must be laid or draped from the chair seat or seat edge/);
+assert.match(sk04Contract, /folds created by fabric weight, denim stiffness, garment cut, gravity, chair contact, and natural bunching/);
+assert.match(sk04Contract, /Natural garment volume is allowed; human anatomical volume is not/);
 assert.match(sk04Contract, /must not form inflated thighs, hidden knee shapes, calf volume, rounded leg tubes/);
-assert.match(sk04Contract, /Bags may hang from or rest against the chair as product styling/);
-assert.match(sk04Contract, /Shoes should be placed near the chair or lower composition area as clean product placement/);
+assert.match(sk04Contract, /Bags may hang from or rest against the chair as an independent product/);
+assert.match(sk04Contract, /Shoes should stay product-like near the chair or lower composition area/);
 assert.match(sk04Contract, /not positioned as invisible feet or forced into SK06 standing-pose logic/);
 assert.match(sk04Contract, /soft even ambient studio light/);
 assert.match(sk04Contract, /visible sunbeam, window-light streak, diagonal light patch/);
