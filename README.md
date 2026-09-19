@@ -96,7 +96,7 @@ Complete look plus individual product breakdown.
 
 Outfit styled with one hero chair or simple prop in a clean premium grey-white studio, with a small top information row and a human-shaped arrangement by placement only.
 
-![04 - Prop Styling](public/skill-examples/04-prop-styling.jpg)
+![04 - Prop Styling](public/skill-examples/04-prop-styling.png)
 
 ### 05 - Japanese Catalog
 

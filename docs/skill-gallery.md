@@ -58,7 +58,7 @@ Examples:
 - Forbidden elements: prop as main subject, rough cement room, industrial concrete-wall dominance, cement-wall or concrete-room atmosphere, visible sunbeam, window-light streak, diagonal light patch, dramatic floor shadow, warm sunlight, shelf/cabinet/table clutter, multiple competing furniture pieces, decorative architecture, warm yellow/orange room tone, overly cozy grading, hard spotlight, invented fashion products, copied reference-image products, impossible fabric contact, missing required products, real human, face, skin, full mannequin, hidden mannequin, chair acting like hidden torso/pelvis/thighs/legs, invisible seated person, invisible body volume inside garments, inflated trousers, thigh/knee/calf anatomy, shoes posed like invisible feet, SK06 standing-pose semantics, strong 3D invisible-person body, large poster headline.
 - Usage example: "Use Prop Styling"
 
-![04 - Prop Styling](../public/skill-examples/04-prop-styling.jpg)
+![04 - Prop Styling](../public/skill-examples/04-prop-styling.png)
 
 ## 05 - Japanese Catalog
 

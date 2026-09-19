@@ -29,7 +29,7 @@ const skillReferenceMapping = [
   ["01", "examples/visual/01-minimal-flat-lay.png"],
   ["02", "examples/visual/02-clean-editorial-flat-lay.png"],
   ["03", "examples/visual/03-look-breakdown.png"],
-  ["04", "examples/visual/04-prop-styling.jpg"],
+  ["04", "examples/visual/04-prop-styling.png"],
   ["05", "examples/visual/05-japanese-catalog.png"],
   ["06", "examples/visual/06-korean-street-editorial.png"]
 ] as const;
@@ -122,13 +122,13 @@ for (const [code, referencePath] of skillReferenceMapping) {
   assert.ok(existsSync(path.join(packageDir, referencePath)), `Missing mapped visual reference: ${referencePath}`);
 }
 assert.equal(
-  sha256(path.join(packageDir, "examples/visual/04-prop-styling.jpg")),
-  "1C3C2D5CD6FB4A1C5CE01912AB9122B2F3A108418E0B7FA09BE935C15002BFE0",
+  sha256(path.join(packageDir, "examples/visual/04-prop-styling.png")),
+  "9DC2799467C5068A6A550FE70F4D832B1CCD1FCC14211FB5507F4F72EE7317F6",
   "SK04 packaged visual reference changed unexpectedly"
 );
 assert.equal(
   sha256(path.join(packageDir, "examples/visual/06-korean-street-editorial.png")),
-  "F45377402E7BE222CD35F662AE18A3F326AECA64D84B20085663C7477E855130",
+  "1586167828195EC2958D858BA40B6D45FC32BFD20A838E69E010E2A4062F8D54",
   "SK06 packaged visual reference changed unexpectedly"
 );
 const sk02Contract = skillReadme.match(/### 02[\s\S]*?(?=### 03)/)?.[0] ?? "";
